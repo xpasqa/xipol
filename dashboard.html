@@ -22,10 +22,82 @@
   </head>
   <body class="bg-gray-50 font-sans">
     <div class="flex min-h-screen">
-      <!-- Sidebar dari file JS -->
-      <div id="sidebar"></div>
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="w-64 bg-politik text-white flex flex-col p-6 transition-all duration-300"
+      >
+        <div class="flex items-center justify-between mb-10">
+          <h1
+            id="sidebar-title"
+            class="text-2xl font-bold transition-all duration-300"
+          >
+            Ilmu Politik
+          </h1>
+          <button id="toggleSidebar" class="text-white hover:text-gray-300">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1">
+          <ul class="space-y-4">
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-4 rounded hover:bg-politik-light transition flex items-center"
+              >
+                <span class="icon mr-2">📄</span
+                ><span class="label">Pages</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-4 rounded hover:bg-politik-light transition flex items-center"
+              >
+                <span class="icon mr-2">📝</span
+                ><span class="label">Article</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-4 rounded hover:bg-politik-light transition flex items-center"
+              >
+                <span class="icon mr-2">👤</span><span class="label">User</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- User Info & Logout -->
+        <div
+          class="mt-10 border-t border-white/20 pt-6 flex items-center justify-between"
+        >
+          <div class="flex items-center">
+            <span class="icon mr-2">🌙</span>
+            <span id="logout-label" class="text-sm font-semibold">Logout</span>
+          </div>
+          <button
+            class="text-sm bg-white text-politik px-3 py-1 rounded hover:bg-gray-100 transition"
+          >
+            L
+          </button>
+        </div>
+      </aside>
 
-      <!-- Main Content -->
+      <!-- Main content -->
       <main class="flex-1 p-8">
         <h2 class="text-3xl font-semibold text-politik mb-4">Dashboard</h2>
         <p class="text-gray-700">
@@ -34,7 +106,22 @@
       </main>
     </div>
 
-    <!-- Sidebar Script -->
-    <script src="components/sidebar.js"></script>
+    <script>
+      const toggleBtn = document.getElementById("toggleSidebar");
+      const sidebar = document.getElementById("sidebar");
+      const title = document.getElementById("sidebar-title");
+      const labels = sidebar.querySelectorAll(".label");
+      const logoutLabel = document.getElementById("logout-label");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("w-64");
+        sidebar.classList.toggle("w-20");
+        title.textContent = sidebar.classList.contains("w-20")
+          ? "IP"
+          : "Ilmu Politik";
+        labels.forEach((label) => label.classList.toggle("hidden"));
+        logoutLabel.classList.toggle("hidden");
+      });
+    </script>
   </body>
 </html>
