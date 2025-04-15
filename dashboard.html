@@ -1,127 +1,96 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard | Ilmu Politik</title>
+    <title>Admin Dashboard - Xipol</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- TinyMCE CDN -->
+    <script
+      src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              politik: {
-                DEFAULT: "#7f1d1d",
-                light: "#991b1b",
-              },
-            },
-          },
-        },
-      };
-    </script>
-  </head>
-  <body class="bg-gray-50 font-sans">
-    <div class="flex min-h-screen">
-      <!-- Sidebar -->
-      <aside
-        id="sidebar"
-        class="w-64 bg-politik text-white flex flex-col p-6 transition-all duration-300"
-      >
-        <div class="flex items-center justify-between mb-10">
-          <h1
-            id="sidebar-title"
-            class="text-2xl font-bold transition-all duration-300"
-          >
-            Ilmu Politik
-          </h1>
-          <button id="toggleSidebar" class="text-white hover:text-gray-300">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-        <nav class="flex-1">
-          <ul class="space-y-4">
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-4 rounded hover:bg-politik-light transition flex items-center"
-              >
-                <span class="icon mr-2">📄</span
-                ><span class="label">Pages</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-4 rounded hover:bg-politik-light transition flex items-center"
-              >
-                <span class="icon mr-2">📝</span
-                ><span class="label">Article</span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                class="block py-2 px-4 rounded hover:bg-politik-light transition flex items-center"
-              >
-                <span class="icon mr-2">👤</span><span class="label">User</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <!-- User Info & Logout -->
-        <div
-          class="mt-10 border-t border-white/20 pt-6 flex items-center justify-between"
-        >
-          <div class="flex items-center">
-            <span class="icon mr-2">🌙</span>
-            <span id="logout-label" class="text-sm font-semibold">Logout</span>
-          </div>
-          <button
-            class="text-sm bg-white text-politik px-3 py-1 rounded hover:bg-gray-100 transition"
-          >
-            L
-          </button>
-        </div>
-      </aside>
-
-      <!-- Main content -->
-      <main class="flex-1 p-8">
-        <h2 class="text-3xl font-semibold text-politik mb-4">Dashboard</h2>
-        <p class="text-gray-700">
-          Silakan pilih menu di sidebar untuk mulai mengelola konten.
-        </p>
-      </main>
-    </div>
-
-    <script>
-      const toggleBtn = document.getElementById("toggleSidebar");
-      const sidebar = document.getElementById("sidebar");
-      const title = document.getElementById("sidebar-title");
-      const labels = sidebar.querySelectorAll(".label");
-      const logoutLabel = document.getElementById("logout-label");
-
-      toggleBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("w-64");
-        sidebar.classList.toggle("w-20");
-        title.textContent = sidebar.classList.contains("w-20")
-          ? "IP"
-          : "Ilmu Politik";
-        labels.forEach((label) => label.classList.toggle("hidden"));
-        logoutLabel.classList.toggle("hidden");
+      tinymce.init({
+        selector: "#content",
+        height: 300,
+        menubar: false,
+        plugins: "link image code lists",
+        toolbar:
+          "undo redo | formatselect | bold italic | alignleft aligncenter alignright | bullist numlist | link image | code",
+        branding: false,
       });
     </script>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <div class="max-w-4xl mx-auto py-8 px-4">
+      <h1 class="text-3xl font-bold mb-6">📝 Admin Dashboard</h1>
+
+      <!-- Form Tambah Artikel -->
+      <form id="formArtikel" class="bg-white p-6 rounded shadow mb-10">
+        <h2 class="text-xl font-semibold mb-4">Tambah Artikel</h2>
+        <div class="mb-4">
+          <input
+            type="text"
+            id="title"
+            placeholder="Judul Artikel"
+            class="w-full border px-4 py-2 rounded"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            type="text"
+            id="author"
+            placeholder="Nama Author"
+            class="w-full border px-4 py-2 rounded"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            type="text"
+            id="image"
+            placeholder="URL Gambar"
+            class="w-full border px-4 py-2 rounded"
+          />
+        </div>
+        <div class="mb-4">
+          <textarea
+            id="content"
+            placeholder="Isi Artikel"
+            class="w-full border px-4 py-2 rounded"
+            rows="4"
+          ></textarea>
+        </div>
+        <div class="mb-4">
+          <input
+            type="text"
+            id="tags"
+            placeholder="Tags (pisahkan dengan koma)"
+            class="w-full border px-4 py-2 rounded"
+          />
+        </div>
+        <div class="mb-4">
+          <select id="status" class="w-full border px-4 py-2 rounded">
+            <option value="draft">Draft</option>
+            <option value="published">Published</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+        >
+          Tambah Artikel
+        </button>
+      </form>
+
+      <!-- List Artikel -->
+      <h2 class="text-xl font-semibold mb-4">Daftar Artikel</h2>
+      <div id="artikelList" class="space-y-4">
+        <!-- Artikel akan dirender di sini -->
+      </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
   </body>
 </html>
