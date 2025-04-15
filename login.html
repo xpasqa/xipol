@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Ilmu Politik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              onest: ['"Onest"', "sans-serif"],
+            },
+            colors: {
+              politik: {
+                DEFAULT: "#7f1d1d",
+                light: "#991b1b",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-onest text-gray-900 bg-white">
+    <div class="min-h-screen flex">
+      <!-- Left Image -->
+      <div
+        class="relative hidden md:block md:w-1/2 bg-cover bg-center"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?auto=format&fit=crop&w=1200&q=80');
+        "
+      >
+        <a
+          href="/"
+          class="absolute top-6 left-6 bg-white/70 text-politik font-semibold text-lg px-4 py-2 rounded-md shadow hover:bg-white"
+        >
+          Ilmu Politik
+        </a>
+      </div>
+
+      <!-- Right Form -->
+      <div class="w-full md:w-1/2 flex items-center justify-center p-8">
+        <div class="max-w-md w-full space-y-6">
+          <h2 class="text-3xl font-bold text-center text-politik">
+            Login Admin
+          </h2>
+          <p class="text-center text-gray-600 text-sm">
+            Masuk ke dashboard pengelolaan artikel
+          </p>
+
+          <form id="login-form" action="#" method="POST" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium">Email</label>
+              <input
+                type="email"
+                name="email"
+                required
+                class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium">Password</label>
+              <input
+                type="password"
+                name="password"
+                required
+                class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-md"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-politik text-white py-2 rounded-md hover:bg-politik-light transition"
+            >
+              Login
+            </button>
+          </form>
+
+          <p class="text-center text-sm text-gray-500">
+            Belum punya akun?
+            <a href="/register.html" class="text-politik hover:underline"
+              >Daftar sekarang</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
