@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Ilmu Politik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              politik: {
+                DEFAULT: "#7f1d1d",
+                light: "#991b1b",
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 font-sans">
+    <div class="flex min-h-screen">
+      <!-- Sidebar dari file JS -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-8">
+        <h2 class="text-3xl font-semibold text-politik mb-4">Dashboard</h2>
+        <p class="text-gray-700">
+          Silakan pilih menu di sidebar untuk mulai mengelola konten.
+        </p>
+      </main>
+    </div>
+
+    <!-- Sidebar Script -->
+    <script src="components/sidebar.js"></script>
+  </body>
+</html>

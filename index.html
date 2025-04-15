@@ -636,5 +636,50 @@
 
     <div id="footer"></div>
     <script src="components/footer.js"></script>
+
+    <!-- Firebase Configuration -->
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBsCwFPr8F4NR7aD5AHrExFyQen86jvvl8",
+        authDomain: "xipol-2659c.firebaseapp.com",
+        projectId: "xipol-2659c",
+        storageBucket: "xipol-2659c.firebasestorage.app",
+        messagingSenderId: "299364965067",
+        appId: "1:299364965067:web:647f7951513a624076d94e",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Auth Logic -->
+    <script>
+      const auth = firebase.auth();
+
+      document
+        .getElementById("login-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = e.target.email.value;
+          const password = e.target.password.value;
+
+          auth
+            .signInWithEmailAndPassword(email, password)
+            .then((userCredential) => {
+              localStorage.setItem("loggedIn", "true");
+              window.location.href = "/dashboard.html";
+            })
+            .catch((error) => {
+              alert("Gagal login: " + error.message);
+            });
+        });
+    </script>
   </body>
 </html>
