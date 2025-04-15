@@ -95,6 +95,4 @@ Proyek ini menggunakan lisensi **MIT** — bebas digunakan dan dimodifikasi untu
 ---
 
 ## ✉️ Kontak
-
-Dibuat oleh **[Your Name]**  
 Untuk kolaborasi atau pertanyaan, silakan hubungi langsung melalui GitHub.
