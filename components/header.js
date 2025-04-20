@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <nav class="hidden md:flex space-x-6 text-sm">
               <a href="/index.html" class="hover:text-teal-400 transition">Home</a>
               <a href="/about.html" class="hover:text-teal-400 transition">About</a>
-              <a href="/programs.html" class="hover:text-teal-400 transition">Programs</a>
+              <a href="/dosen.html" class="hover:text-teal-400 transition">Dosen</a>
               <a href="/faculty.html" class="hover:text-teal-400 transition">Faculty</a>
               <a href="/research.html" class="hover:text-teal-400 transition">Research</a>
               <a href="/contact.html" class="hover:text-teal-400 transition">Contact</a>
