@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <a href="/about.html" class="hover:text-teal-400 transition">About</a>
               <a href="/dosen.html" class="hover:text-teal-400 transition">Dosen</a>
               <a href="/faculty.html" class="hover:text-teal-400 transition">Faculty</a>
-              <a href="/research.html" class="hover:text-teal-400 transition">Research</a>
+              <a href="/news.html" class="hover:text-teal-400 transition">News</a>
               <a href="/contact.html" class="hover:text-teal-400 transition">Contact</a>
             </nav>
   
