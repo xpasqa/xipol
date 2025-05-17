@@ -464,63 +464,48 @@
       </div>
     </section>
 
-    <!-- Artikel Section -->
-    <section id="research" class="py-20 bg-gray-100">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col items-center mb-12">
-          <h2 class="text-3xl font-bold text-primary-950 mb-4">Artikel</h2>
-          <div class="w-24 h-1 bg-primary-950 mb-8"></div>
-        </div>
+ <!-- Artikel Section -->
+ <section id="research" class="py-20 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col items-center mb-12">
+      <h2 class="text-3xl font-bold text-primary-950 mb-4">Artikel</h2>
+      <div class="w-24 h-1 bg-primary-950 mb-8"></div>
+    </div>
 
-        <div
-          id="latest-articles"
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          <!-- Artikel akan muncul di sini -->
-        </div>
-      </div>
-    </section>
+    <div id="latest-articles" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Artikel akan muncul di sini -->
+    </div>
+  </div>
+</section>
+<script type="module">
+  import { supabase } from './js/supabaseClient.js'
 
-    <div id="footer"></div>
-    <script src="components/footer.js"></script>
+  const container = document.getElementById("latest-articles")
 
-    <script type="module">
-      import { supabase } from "./js/supabaseClient.js";
+  const { data: articles, error } = await supabase
+    .from("articles")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(6)
 
-      const container = document.getElementById("latest-articles");
+  if (error || !articles) {
+    container.innerHTML = `<p class="text-red-500">Gagal mengambil data: ${error?.message || 'Unknown error'}</p>`;
+  } else {
+    articles.forEach((article) => {
+      container.innerHTML += `
+        <a href="article.html?slug=${article.slug}" class="bg-white rounded-xl shadow hover:shadow-md overflow-hidden transition hover:scale-[1.02] duration-300 block">
+          <img src="${article.cover_image}" alt="${article.title}" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-primary mb-2">${article.title}</h3>
+            <p class="text-sm text-gray-600">${new Date(article.created_at).toLocaleDateString()}</p>
+          </div>
+        </a>
+      `;
+    });
+  }
+</script>
 
-      const { data: articles, error } = await supabase
-        .from("articles")
-        .select("*")
-        .order("created_at", { ascending: false })
-        .limit(6);
-
-      if (error || !articles) {
-        container.innerHTML = `<p class="text-red-500">Gagal mengambil data: ${
-          error?.message || "Unknown error"
-        }</p>`;
-      } else {
-        articles.forEach((article) => {
-          container.innerHTML += `
-            <a href="${
-              article.slug
-            }.html" class="bg-white rounded-xl shadow hover:shadow-md overflow-hidden transition hover:scale-[1.02] duration-300 block">
-              <img src="${article.cover_image}" alt="${
-            article.title
-          }" class="w-full h-48 object-cover" />
-              <div class="p-4">
-                <h3 class="text-lg font-semibold text-primary mb-2">${
-                  article.title
-                }</h3>
-                <p class="text-sm text-gray-600">${new Date(
-                  article.created_at
-                ).toLocaleDateString()}</p>
-              </div>
-            </a>
-          `;
-        });
-      }
-    </script>
+</body>
 
     <div id="footer"></div>
     <script src="components/footer.js"></script>
