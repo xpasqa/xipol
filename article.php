@@ -101,6 +101,7 @@ $slug = $_GET['slug'] ?? '';
   <!-- Header -->
   <div id="header"></div>
   <script src="components/header.js"></script>
+  <script src="components/style.js"></script>
 
   <!-- Artikel -->
   <section class="py-16">
