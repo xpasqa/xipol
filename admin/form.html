@@ -154,13 +154,20 @@
           const content = quill.root.innerHTML;
 
           if (id) {
-            await supabase
+            const { error } = await supabase
               .from("articles")
               .update({ title, slug, author, cover_image, content })
               .eq("id", id);
+
+            if (error) {
+              console.error("Update error:", error);
+              alert("Gagal memperbarui artikel: " + error.message);
+              return;
+            }
+
             alert("Artikel berhasil diperbarui.");
           } else {
-            await supabase.from("articles").insert([
+            const { data, error } = await supabase.from("articles").insert([
               {
                 title,
                 slug,
@@ -170,6 +177,13 @@
                 created_at: new Date().toISOString(),
               },
             ]);
+
+            if (error) {
+              console.error("Insert error:", error);
+              alert("Gagal menambahkan artikel: " + error.message);
+              return;
+            }
+
             alert("Artikel berhasil ditambahkan.");
           }
 
@@ -178,3 +192,4 @@
     </script>
   </body>
 </html>
+i
