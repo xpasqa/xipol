@@ -1,7 +1,9 @@
 RewriteEngine On
 RewriteBase /
 
-# Redirect semua *.html ke article.php?slug=namaslug
+# Jangan rewrite kalau file atau folder beneran ada
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} ^/([a-zA-Z0-9\-\_]+)\.html$
-RewriteRule ^([a-zA-Z0-9\-\_]+)\.html$ article.php?slug=$1 [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite slug ke article.php
+RewriteRule ^([a-zA-Z0-9-]+)$ article.php?slug=$1 [L,QSA]
