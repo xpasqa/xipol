@@ -7,6 +7,20 @@ document.getElementById("sidebar").innerHTML = `
       <a href="index.html" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-800 font-medium">Semua News</a>
       <a href="form.html" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-800 font-medium">Tulis Artikel</a>
       <a href="#" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-800 font-medium">Dosen</a>
+      <a href="#" id="logout-link" class="block px-4 py-2 rounded text-red-600 hover:bg-gray-200 font-medium">Logout</a>
     </nav>
   </aside>
 `;
+
+import { supabase } from '../js/supabaseClient.js';
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutLink = document.getElementById("logout-link");
+  if (logoutLink) {
+    logoutLink.addEventListener("click", async (e) => {
+      e.preventDefault();
+      await supabase.auth.signOut();
+      window.location.href = "/login.html";
+    });
+  }
+});

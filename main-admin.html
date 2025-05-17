@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Admin Artikel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Onest", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white min-h-screen">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside id="sidebar"></aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-3xl font-bold text-primary-950 mb-6">
+            Kelola Artikel
+          </h1>
+
+          <!-- Daftar Artikel -->
+          <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-bold mb-4">Daftar Artikel</h2>
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr>
+                  <th class="border-b py-2">Judul</th>
+                  <th class="border-b py-2">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="article-list"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="components/sidebar.js"></script>
+    <script type="module">
+      import { supabase } from "./js/supabaseClient.js";
+
+      const tableBody = document.getElementById("article-list");
+
+      async function loadArticles() {
+        const { data: articles, error } = await supabase
+          .from("articles")
+          .select("*")
+          .order("created_at", { ascending: false });
+        tableBody.innerHTML = "";
+        articles.forEach((article) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td class="border-b py-2">${article.title}</td>
+            <td class="border-b py-2">
+              <button class="text-blue-600 mr-2" onclick="window.editArticle('${article.id}')">Edit</button>
+              <button class="text-red-600" onclick="window.deleteArticle('${article.id}')">Hapus</button>
+            </td>
+          `;
+          tableBody.appendChild(tr);
+        });
+      }
+
+      window.editArticle = async (id) => {
+        const { data } = await supabase
+          .from("articles")
+          .select("*")
+          .eq("id", id)
+          .single();
+        alert(
+          `Edit fitur dapat diarahkan ke form terpisah. Artikel: ${data.title}`
+        );
+      };
+
+      window.deleteArticle = async (id) => {
+        if (confirm("Yakin mau hapus artikel ini?")) {
+          await supabase.from("articles").delete().eq("id", id);
+          loadArticles();
+        }
+      };
+
+      loadArticles();
+    </script>
+  </body>
+</html>
