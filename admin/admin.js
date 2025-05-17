@@ -1,33 +1,54 @@
-import { supabase } from '../js/supabaseClient.js';
+import { supabase } from "../js/supabaseClient.js";
 
-const tableBody = document.getElementById('article-list');
+const tableBody = document.getElementById("article-list");
 
 async function loadArticles() {
-  const { data: articles } = await supabase.from('articles').select('*').order('created_at', { ascending: false });
-  tableBody.innerHTML = '';
+  const { data: articles, error } = await supabase
+    .from("articles")
+    .select("id, title")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Error fetching articles:", error);
+    tableBody.innerHTML = `<tr><td colspan='2' class='py-4 text-red-600'>Gagal memuat data artikel</td></tr>`;
+    return;
+  }
+
+  if (!articles.length) {
+    tableBody.innerHTML = `<tr><td colspan='2' class='py-4 text-gray-500'>Belum ada artikel.</td></tr>`;
+    return;
+  }
+
+  tableBody.innerHTML = "";
   articles.forEach((article) => {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `
+    const row = document.createElement("tr");
+    row.innerHTML = `
       <td class="border-b py-2">${article.title}</td>
-      <td class="border-b py-2">
-        <button class="text-blue-600 mr-2" onclick="editArticle('${article.id}')">Edit</button>
-        <button class="text-red-600" onclick="deleteArticle('${article.id}')">Hapus</button>
+      <td class="border-b py-2 space-x-2">
+        <a href="form.html?edit=${article.id}" class="text-blue-600 hover:underline text-sm">Edit</a>
+        <button class="text-red-600 hover:underline text-sm" data-id="${article.id}">Hapus</button>
       </td>
     `;
-    tableBody.appendChild(tr);
+    tableBody.appendChild(row);
+  });
+
+  // Tambahkan event listener untuk tombol hapus
+  document.querySelectorAll("button[data-id]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const id = button.getAttribute("data-id");
+      const konfirmasi = confirm("Yakin ingin menghapus artikel ini?");
+      if (!konfirmasi) return;
+
+      const { error } = await supabase.from("articles").delete().eq("id", id);
+
+      if (error) {
+        alert("Gagal menghapus artikel: " + error.message);
+      } else {
+        alert("Artikel berhasil dihapus.");
+        loadArticles();
+      }
+    });
   });
 }
-
-window.editArticle = async (id) => {
-  const { data } = await supabase.from('articles').select('*').eq('id', id).single();
-  alert(`Edit fitur diarahkan ke halaman form.html?edit=${data.id}`);
-};
-
-window.deleteArticle = async (id) => {
-  if (confirm('Yakin mau hapus artikel ini?')) {
-    await supabase.from('articles').delete().eq('id', id);
-    loadArticles();
-  }
-};
 
 loadArticles();
