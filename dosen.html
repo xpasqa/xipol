@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dosen Ilmu Politik</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Link Google Fonts -->
+    <title>Ilmu Politik UIN Bandung</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Onest -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-
     <!-- Tailwind Configuration -->
     <script>
       tailwind.config = {
@@ -52,12 +54,7 @@
       body {
         font-family: "Onest", sans-serif;
       }
-      :root {
-        --primary-color: #450a0a;
-        --secondary-color: #7f1d1d;
-        --accent-color: #b91c1c;
-        --text-light: #fef2f2;
-      }
+
       .bg-custom-primary {
         background-color: var(--primary-color);
       }
@@ -78,6 +75,28 @@
         border-color: var(--accent-color);
       }
 
+      .hero-pattern {
+        background-image: url("/api/placeholder/1600/900");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .hero-pattern::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(69, 10, 10, 0.95) 0%,
+          rgba(69, 10, 10, 0.8) 50%,
+          rgba(69, 10, 10, 0.6) 100%
+        );
+      }
+
       .hover-scale {
         transition: transform 0.3s ease;
       }
@@ -88,7 +107,12 @@
     </style>
   </head>
   <body class="bg-gray-100 font-onest">
-    <div id="header"></div>
+    <!-- Header Section -->
+
+    <body>
+      <div id="header"></div>
+      <script src="components/header.js"></script>
+    </body>
     <!-- Header Section -->
     <header
       class="w-full bg-[url('./img/nathan-dumlao-ewGMqs2tmJI-unsplash.jpg')] bg-cover bg-center relative"
@@ -163,91 +187,90 @@
     <!-- Search Box End -->
     <!-- Main Konten Area Start -->
     <main class="container mx-auto px-4 py-12">
-       <!-- Card -->
-    <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-10">
-      <!-- Card 1 -->
-      <div class="flex flex-col items-center text-center">
-        <img
-          src="img/asepp_11zon.jpg"
-          alt="h asep"
-          class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
-        />
-        <div class="font-semibold py-3">Asep Sahid Gatara</div>
-        <p class="font-thin">Politik Nasional</p>
-      </div>
-      <!-- Card 1 -->
-      <div class="flex flex-col items-center text-center">
-        <img
-          src="img/asepp_11zon.jpg"
-          alt="h asep"
-          class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
-        />
-        <div class="font-semibold py-3">Asep Sahid Gatara</div>
-        <p class="font-thin">Politik Nasional</p>
-      </div>
-      <!-- Card 1 -->
-      <div class="flex flex-col items-center text-center">
-        <img
-          src="img/asepp_11zon.jpg"
-          alt="h asep"
-          class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
-        />
-        <div class="font-semibold py-3">Asep Sahid Gatara</div>
-        <p class="font-thin">Politik Nasional</p>
-      </div>
+      <!-- Card -->
+      <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 gap-10">
         <!-- Card 1 -->
-      <div class="flex flex-col items-center text-center">
-        <img
-          src="img/asepp_11zon.jpg"
-          alt="h asep"
-          class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
-        />
-        <div class="font-semibold py-3">Asep Sahid Gatara</div>
-        <p class="font-thin">Politik Nasional</p>
-      </div>
+        <div class="flex flex-col items-center text-center">
+          <img
+            src="img/asepp_11zon.jpg"
+            alt="h asep"
+            class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
+          />
+          <div class="font-semibold py-3">Asep Sahid Gatara</div>
+          <p class="font-thin">Politik Nasional</p>
+        </div>
+        <!-- Card 1 -->
+        <div class="flex flex-col items-center text-center">
+          <img
+            src="img/asepp_11zon.jpg"
+            alt="h asep"
+            class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
+          />
+          <div class="font-semibold py-3">Asep Sahid Gatara</div>
+          <p class="font-thin">Politik Nasional</p>
+        </div>
+        <!-- Card 1 -->
+        <div class="flex flex-col items-center text-center">
+          <img
+            src="img/asepp_11zon.jpg"
+            alt="h asep"
+            class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
+          />
+          <div class="font-semibold py-3">Asep Sahid Gatara</div>
+          <p class="font-thin">Politik Nasional</p>
+        </div>
+        <!-- Card 1 -->
+        <div class="flex flex-col items-center text-center">
+          <img
+            src="img/asepp_11zon.jpg"
+            alt="h asep"
+            class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
+          />
+          <div class="font-semibold py-3">Asep Sahid Gatara</div>
+          <p class="font-thin">Politik Nasional</p>
+        </div>
         <!-- Card 1 -->
 
-      <div class="flex flex-col items-center text-center">
-        <img
-          src="img/asepp_11zon.jpg"
-          alt="h asep"
-          class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
-        />
-        <div class="font-semibold py-3">Asep Sahid Gatara</div>
-        <p class="font-thin">Politik Nasional</p>
+        <div class="flex flex-col items-center text-center">
+          <img
+            src="img/asepp_11zon.jpg"
+            alt="h asep"
+            class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
+          />
+          <div class="font-semibold py-3">Asep Sahid Gatara</div>
+          <p class="font-thin">Politik Nasional</p>
+        </div>
+        <!-- Card 1 -->
+        <div class="flex flex-col items-center text-center">
+          <img
+            src="img/asepp_11zon.jpg"
+            alt="h asep"
+            class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
+          />
+          <div class="font-semibold py-3">Asep Sahid Gatara</div>
+          <p class="font-thin">Politik Nasional</p>
+        </div>
+        <!-- Card 1 -->
+        <div class="flex flex-col items-center text-center">
+          <img
+            src="img/asepp_11zon.jpg"
+            alt="h asep"
+            class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
+          />
+          <div class="font-semibold py-3">Asep Sahid Gatara</div>
+          <p class="font-thin">Politik Nasional</p>
+        </div>
+        <!-- Card 1 -->
+        <div class="flex flex-col items-center text-center">
+          <img
+            src="img/asepp_11zon.jpg"
+            alt="h asep"
+            class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
+          />
+          <div class="font-semibold py-3">Asep Sahid Gatara</div>
+          <p class="font-thin">Politik Nasional</p>
+        </div>
       </div>
-        <!-- Card 1 -->
-        <div class="flex flex-col items-center text-center">
-          <img
-            src="img/asepp_11zon.jpg"
-            alt="h asep"
-            class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
-          />
-          <div class="font-semibold py-3">Asep Sahid Gatara</div>
-          <p class="font-thin">Politik Nasional</p>
-        </div>
-        <!-- Card 1 -->
-        <div class="flex flex-col items-center text-center">
-          <img
-            src="img/asepp_11zon.jpg"
-            alt="h asep"
-            class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
-          />
-          <div class="font-semibold py-3">Asep Sahid Gatara</div>
-          <p class="font-thin">Politik Nasional</p>
-        </div>
-        <!-- Card 1 -->
-        <div class="flex flex-col items-center text-center">
-          <img
-            src="img/asepp_11zon.jpg"
-            alt="h asep"
-            class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
-          />
-          <div class="font-semibold py-3">Asep Sahid Gatara</div>
-          <p class="font-thin">Politik Nasional</p>
-        </div>
-
-    </div>
     </main>
     <!-- Main Konten Area End -->
 

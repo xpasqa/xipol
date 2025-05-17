@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/about.html" class="block hover:text-teal-400">About</a>
             <a href="/programs.html" class="block hover:text-teal-400">Programs</a>
             <a href="/faculty.html" class="block hover:text-teal-400">Faculty</a>
-            <a href="/research.html" class="block hover:text-teal-400">Research</a>
+            <a href="/news.html" class="block hover:text-teal-400">News</a>
             <a href="/contact.html" class="block hover:text-teal-400">Contact</a>
             <a href="/login.html" class="block hover:text-teal-400">Login</a>
             <a href="/register.html" class="block hover:text-teal-400">Register</a>
