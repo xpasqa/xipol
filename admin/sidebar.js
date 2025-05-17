@@ -1,7 +1,9 @@
 document.getElementById("sidebar").innerHTML = `
   <aside class="w-64 bg-gray-100 shadow-lg border-r min-h-screen">
     <div class="p-6 border-b">
-      <h1 class="text-2xl font-bold text-primary-950">Ilmu Politik</h1>
+      <a href="/" target="_blank" class="text-2xl font-bold text-primary-950 hover:underline block">
+        Ilmu Politik
+      </a>
     </div>
     <nav class="p-4 space-y-2">
       <a href="index.html" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-800 font-medium">Semua News</a>
@@ -24,3 +26,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+git
