@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artikel - Ilmu Politik UIN Bandung</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 text-gray-900 font-onest">
+    <!-- Header -->
+    <div id="header"></div>
+    <script src="components/style.js"></script>
+    <script src="components/header.js"></script>
+
+    <!-- Judul Halaman -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold text-primary-950 mb-4">Semua Artikel</h1>
+        <p class="text-gray-600 text-lg">
+          Temukan berbagai tulisan ilmiah, opini, dan kajian terbaru dari dunia
+          Ilmu Politik.
+        </p>
+      </div>
+    </section>
+
+    <!-- Artikel Cards -->
+    <section class="py-10">
+      <div class="max-w-6xl mx-auto px-4">
+        <div
+          id="news-list"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <!-- Cards akan muncul di sini -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script src="components/footer.js"></script>
+
+    <!-- Supabase Logic -->
+    <script type="module">
+      import { supabase } from "./js/supabaseClient.js";
+
+      const container = document.getElementById("news-list");
+
+      const { data: articles, error } = await supabase
+        .from("articles")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (error || !articles) {
+        container.innerHTML = `<p class="text-red-500">Gagal mengambil data: ${
+          error?.message || "Unknown error"
+        }</p>`;
+      } else if (articles.length === 0) {
+        container.innerHTML = `<p class="text-gray-600">Belum ada artikel yang tersedia.</p>`;
+      } else {
+        articles.forEach((article) => {
+          container.innerHTML += `
+            <a href="/${
+              article.slug
+            }" class="bg-white rounded-xl overflow-hidden shadow hover:shadow-md transition hover:scale-[1.02] duration-300 block">
+              <img src="${article.cover_image}" alt="${
+            article.title
+          }" class="w-full h-48 object-cover"/>
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-primary-700 mb-1">${
+                  article.title
+                }</h3>
+                <p class="text-sm text-gray-600">${new Date(
+                  article.created_at
+                ).toLocaleDateString()}</p>
+              </div>
+            </a>
+          `;
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Onest", sans-serif;
+      }
+    </style>
+  </head>
+  <script type="module">
+    import { supabase } from "../js/supabaseClient.js";
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    if (!session) {
+      window.location.href = "/login.html";
+    }
+  </script>
+  <body class="bg-white min-h-screen">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-3xl font-bold text-primary-950 mb-6">
+            Daftar Artikel
+          </h1>
+
+          <div class="bg-white rounded-lg shadow p-6">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr>
+                  <th class="border-b py-2">Judul</th>
+                  <th class="border-b py-2">Author</th>
+                  <th class="border-b py-2">Published</th>
+                  <th class="border-b py-2 w-48">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="article-list"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Load Sidebar Component -->
+    <script type="module" src="sidebar.js"></script>
+
+    <!-- CRUD Logic -->
+    <script type="module" src="admin.js"></script>
+  </body>
+</html>

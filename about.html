@@ -1,18 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Link Google Fonts -->
+    <title>About Ilmu Politik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-
   </head>
-  <body>
 
+  <body class="bg-gray-50 text-gray-800 font-onest">
+    <div id="header"></div>
+    <script src="components/style.js"></script>
+    <script src="components/header.js"></script>
+
+    <!-- Hero Section (Gambar Background dengan Teks) -->
+    <section
+      id="home"
+      class="relative h-[300px] bg-cover bg-center flex items-center justify-center text-center text-white"
+      style="
+        background-image: url('https://source.unsplash.com/1600x900/?politics');
+      "
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div class="relative z-10 px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Tentang Ilmu Politik
+        </h1>
+        <p class="text-lg text-gray-200">
+          Fakultas Ilmu Sosial dan Ilmu Politik UIN Bandung
+        </p>
+      </div>
+    </section>
+
+    <!-- Tentang Ilmu Politik -->
+    <section class="py-16">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+          <img
+            src="https://source.unsplash.com/600x400/?politics,university"
+            alt="Ilmu Politik"
+            class="w-full rounded-lg shadow-md"
+          />
+          <p class="text-lg text-gray-700">
+            Ilmu Politik adalah bidang ilmu yang mempelajari kekuasaan,
+            pemerintahan, ideologi, partisipasi publik, hingga hubungan
+            internasional. Di UIN Bandung, pendekatan keilmuan ini dipadukan
+            dengan nilai-nilai spiritualitas dan etika, membentuk lulusan yang
+            tidak hanya kritis dan analitis, tetapi juga berintegritas. Kami
+            membekali mahasiswa dengan keterampilan akademik dan praktikal untuk
+            menjawab tantangan politik kontemporer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visi Misi -->
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-4 max-w-4xl text-center">
+        <h2 class="text-2xl font-bold mb-6 text-primary-900">Visi & Misi</h2>
+        <div class="space-y-8 text-left">
+          <div>
+            <h3 class="text-xl font-semibold text-primary-700">Visi</h3>
+            <p class="text-gray-700">
+              Mewujudkan pusat pendidikan dan pengembangan ilmu politik yang
+              unggul, kritis, dan berorientasi pada keadilan sosial serta
+              demokrasi.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-primary-700">Misi</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+              <li>
+                Menyelenggarakan pendidikan ilmu politik yang berkualitas dan
+                kontekstual.
+              </li>
+              <li>
+                Mengembangkan penelitian yang berkontribusi pada kebijakan
+                publik.
+              </li>
+              <li>Mendorong pengabdian kepada masyarakat berbasis keilmuan.</li>
+              <li>
+                Menjalin kemitraan strategis dengan lembaga dalam dan luar
+                negeri.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sejarah Singkat -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4 max-w-4xl text-center">
+        <h2 class="text-2xl font-bold mb-4 text-primary-900">
+          Sejarah Singkat
+        </h2>
+        <p class="text-gray-700">
+          Program Studi Ilmu Politik berdiri sejak tahun XXXX, didorong oleh
+          kebutuhan akan kajian akademik dalam memahami dinamika politik di
+          Indonesia dan dunia. Selama bertahun-tahun, program ini telah
+          melahirkan lulusan yang aktif di berbagai sektor strategis.
+        </p>
+      </div>
+    </section>
+
+    <!-- Profil Lulusan Section -->
+    <section id="profil-lulusan" class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-primary-950">Profil Lulusan</h2>
+          <div class="w-20 h-1 bg-primary-700 mx-auto mt-4"></div>
+          <p class="mt-4 text-gray-700 max-w-2xl mx-auto">
+            Lulusan Ilmu Politik UIN Bandung dibekali dengan kompetensi yang
+            kuat untuk berkarier secara profesional di berbagai bidang
+            strategis. Berikut adalah profil utama lulusan kami:
+          </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <img
+              src="https://source.unsplash.com/200x200/?publicspeaking"
+              alt="Komunikator"
+              class="mx-auto mb-4 rounded-full shadow-md"
+            />
+            <h3 class="text-lg font-semibold text-primary-900 mb-2">
+              Komunikator
+            </h3>
+            <p class="text-sm text-gray-700">
+              Mampu menyampaikan pesan politik secara efektif melalui media
+              massa, kampanye, atau juru bicara lembaga publik.
+            </p>
+          </div>
+          <div class="text-center">
+            <img
+              src="https://source.unsplash.com/200x200/?consultant"
+              alt="Konsultan Politik"
+              class="mx-auto mb-4 rounded-full shadow-md"
+            />
+            <h3 class="text-lg font-semibold text-primary-900 mb-2">
+              Konsultan Politik
+            </h3>
+            <p class="text-sm text-gray-700">
+              Menyusun strategi politik, kampanye elektoral, dan branding tokoh
+              publik berbasis riset dan data.
+            </p>
+          </div>
+          <div class="text-center">
+            <img
+              src="https://source.unsplash.com/200x200/?policy"
+              alt="Analis Kebijakan"
+              class="mx-auto mb-4 rounded-full shadow-md"
+            />
+            <h3 class="text-lg font-semibold text-primary-900 mb-2">
+              Analis Kebijakan
+            </h3>
+            <p class="text-sm text-gray-700">
+              Mengkaji dan merumuskan kebijakan publik berbasis bukti dan
+              analisis ilmiah.
+            </p>
+          </div>
+          <div class="text-center">
+            <img
+              src="https://source.unsplash.com/200x200/?politician"
+              alt="Politisi"
+              class="mx-auto mb-4 rounded-full shadow-md"
+            />
+            <h3 class="text-lg font-semibold text-primary-900 mb-2">
+              Politisi
+            </h3>
+            <p class="text-sm text-gray-700">
+              Menjadi pemimpin tangguh dan visioner di lembaga legislatif,
+              eksekutif, maupun partai politik.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+    <script src="components/footer.js"></script>
   </body>
 </html>

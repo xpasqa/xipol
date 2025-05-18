@@ -3,92 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dosen Ilmu Politik</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Link Google Fonts -->
+    <title>Ilmu Politik UIN Bandung</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Onest -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Tailwind Configuration -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              onest: ["Onest", "sans-serif"],
-            },
-            colors: {
-              primary: {
-                50: "#fef2f2",
-                100: "#fee2e2",
-                200: "#fecaca",
-                300: "#fca5a5",
-                400: "#f87171",
-                500: "#ef4444",
-                600: "#dc2626",
-                700: "#b91c1c",
-                800: "#991b1b",
-                900: "#7f1d1d",
-                950: "#450a0a",
-              },
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      body {
-        font-family: "Onest", sans-serif;
-      }
-      :root {
-        --primary-color: #450a0a;
-        --secondary-color: #7f1d1d;
-        --accent-color: #b91c1c;
-        --text-light: #fef2f2;
-      }
-
-      body {
-        font-family: "Onest", sans-serif;
-      }
-      :root {
-        --primary-color: #450a0a;
-        --secondary-color: #7f1d1d;
-        --accent-color: #b91c1c;
-        --text-light: #fef2f2;
-      }
-      .bg-custom-primary {
-        background-color: var(--primary-color);
-      }
-
-      .bg-custom-secondary {
-        background-color: var(--secondary-color);
-      }
-
-      .bg-custom-accent {
-        background-color: var(--accent-color);
-      }
-
-      .text-custom-light {
-        color: var(--text-light);
-      }
-
-      .border-custom {
-        border-color: var(--accent-color);
-      }
-
-      .hover-scale {
-        transition: transform 0.3s ease;
-      }
-
-      .hover-scale:hover {
-        transform: scale(1.03);
-      }
-    </style>
-  </head>
-  <body class="bg-gray-100 font-onest">
-    <div id="header"></div>
+    <body>
+      <div id="header"></div>
+      <script src="components/style.js"></script>
+      <script src="components/header.js"></script>
+    </body>
+    
     <!-- Header Section -->
     <header
       class="w-full bg-[url('./img/nathan-dumlao-ewGMqs2tmJI-unsplash.jpg')] bg-cover bg-center relative"
@@ -170,7 +101,11 @@
           <img
             src="img/asepp_11zon.jpg"
             alt="h asep"
+<<<<<<< HEAD
             class="w-32 h-32 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
+=======
+            class="w-30 h-30 object-cover rounded-full shadow-lg hover:scale-95 transition-transform duration-500 group"
+>>>>>>> upstream/main
           />
           <div class="font-semibold py-3">Asep Sahid Gatara</div>
           <p class="font-thin">Politik Nasional</p>

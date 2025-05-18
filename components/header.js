@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <nav class="hidden md:flex space-x-6 text-sm">
               <a href="/index.html" class="hover:text-teal-400 transition">Home</a>
               <a href="/about.html" class="hover:text-teal-400 transition">About</a>
-              <a href="/programs.html" class="hover:text-teal-400 transition">Programs</a>
+              <a href="/dosen.html" class="hover:text-teal-400 transition">Dosen</a>
               <a href="/faculty.html" class="hover:text-teal-400 transition">Faculty</a>
-              <a href="/research.html" class="hover:text-teal-400 transition">Research</a>
+              <a href="/news.html" class="hover:text-teal-400 transition">News</a>
               <a href="/contact.html" class="hover:text-teal-400 transition">Contact</a>
             </nav>
   
@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/about.html" class="block hover:text-teal-400">About</a>
             <a href="/programs.html" class="block hover:text-teal-400">Programs</a>
             <a href="/faculty.html" class="block hover:text-teal-400">Faculty</a>
-            <a href="/research.html" class="block hover:text-teal-400">Research</a>
+            <a href="/news.html" class="block hover:text-teal-400">News</a>
             <a href="/contact.html" class="block hover:text-teal-400">Contact</a>
             <a href="/login.html" class="block hover:text-teal-400">Login</a>
             <a href="/register.html" class="block hover:text-teal-400">Register</a>
