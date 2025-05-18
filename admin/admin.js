@@ -2,24 +2,6 @@ import { supabase } from "../js/supabaseClient.js";
 
 const tableBody = document.getElementById("article-list");
 
-// Add toast container
-const toastContainer = document.createElement("div");
-toastContainer.className = "fixed bottom-4 right-4 z-50 space-y-2";
-document.body.appendChild(toastContainer);
-
-function showToast(message, type = "success") {
-  const toast = document.createElement("div");
-  toast.className = `px-4 py-2 rounded shadow text-white animate-fade-in-up ${
-    type === "success" ? "bg-green-600" : "bg-red-600"
-  }`;
-  toast.textContent = message;
-  toastContainer.appendChild(toast);
-
-  setTimeout(() => {
-    toast.remove();
-  }, 3000);
-}
-
 async function loadArticles() {
   const { data: articles, error } = await supabase
     .from("articles")
@@ -65,27 +47,13 @@ function addDeleteListeners() {
       const { error } = await supabase.from("articles").delete().eq("id", id);
 
       if (error) {
-        showToast("Gagal menghapus artikel: " + error.message, "error");
+        alert("Gagal menghapus artikel: " + error.message);
       } else {
-        showToast("Artikel berhasil dihapus.", "success");
+        alert("Artikel berhasil dihapus.");
         loadArticles();
       }
     });
   });
 }
 
-// CSS animation via tailwind plugin
-const style = document.createElement("style");
-style.textContent = `
-  @keyframes fade-in-up {
-    0% { opacity: 0; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fade-in-up {
-    animation: fade-in-up 0.3s ease-out;
-  }
-`;
-document.head.appendChild(style);
-
 loadArticles();
-git
