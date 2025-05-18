@@ -115,33 +115,41 @@ $slug = $_GET['slug'] ?? '';
   <script src="components/footer.js"></script>
 
   <!-- Supabase Fetch -->
-  <script type="module">
-    import { supabase } from "./js/supabaseClient.js";
 
-    const slug = "<?= htmlspecialchars($slug) ?>";
-    const container = document.getElementById("article-content");
+
+  <script type="module">
+    import { supabase } from './js/supabaseClient.js'
+
+    const slug = window.location.pathname.split("/").pop().replace(".html", "")
+    const container = document.getElementById("article-content")
 
     if (!slug) {
-      container.innerHTML = `<p class='text-red-500'>Slug tidak ditemukan di URL.</p>`;
-      throw new Error("Slug missing");
+      container.innerHTML = `<p class="text-red-500">Slug tidak ditemukan.</p>`
+      throw new Error("Slug missing")
     }
 
     const { data: articles, error } = await supabase
       .from("articles")
-      .select("*")
+      .select("title, author, content, cover_image, created_at")
       .eq("slug", slug)
-      .limit(1);
+      .limit(1)
 
     if (error || !articles || articles.length === 0) {
-      container.innerHTML = `<p class='text-red-500'>Artikel tidak ditemukan.</p>`;
+      container.innerHTML = `<p class="text-red-500">Artikel tidak ditemukan.</p>`
     } else {
-      const article = articles[0];
+      const article = articles[0]
+      const publishedDate = new Date(article.created_at).toLocaleDateString("id-ID", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      })
+
       container.innerHTML = `
-          <img src="${article.cover_image}" class="w-full h-72 object-cover rounded-lg shadow mb-4" alt="${article.title}">
-          <h1 class="text-4xl font-bold text-primary-950">${article.title}</h1>
-          <p class="text-sm text-gray-500">${new Date(article.created_at).toLocaleDateString()}</p>
-          <div class="prose max-w-none mt-6">${article.content}</div>
-        `;
+    <img src="${article.cover_image}" alt="${article.title}" class="w-full h-64 object-cover rounded-lg mb-4 shadow" />
+    <h1 class="text-4xl font-bold text-primary-950 mb-2">${article.title}</h1>
+    <p class="text-sm text-gray-500 mb-4">Ditulis oleh <strong>${article.author || 'Admin'}</strong> • ${publishedDate}</p>
+    <div class="prose max-w-none mt-6">${article.content}</div>
+  `
     }
   </script>
 </body>
