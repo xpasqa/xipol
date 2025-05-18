@@ -103,8 +103,13 @@ $slug = $_GET['slug'] ?? '';
   <script src="components/header.js"></script>
   <script src="components/style.js"></script>
 
+  <!-- Breadcrumb -->
+  <div class="max-w-4xl mx-auto px-4 pt-6">
+    <a href="/news.html" class="text-sm text-primary-900 hover:underline">← Kembali ke Semua Artikel</a>
+  </div>
+
   <!-- Artikel -->
-  <section class="py-16">
+  <section class="py-12">
     <div class="max-w-4xl mx-auto px-4">
       <div id="article-content" class="space-y-6 text-lg leading-relaxed"></div>
     </div>
@@ -115,8 +120,6 @@ $slug = $_GET['slug'] ?? '';
   <script src="components/footer.js"></script>
 
   <!-- Supabase Fetch -->
-
-
   <script type="module">
     import { supabase } from './js/supabaseClient.js'
 
@@ -145,11 +148,11 @@ $slug = $_GET['slug'] ?? '';
       })
 
       container.innerHTML = `
-    <img src="${article.cover_image}" alt="${article.title}" class="w-full h-64 object-cover rounded-lg mb-4 shadow" />
-    <h1 class="text-4xl font-bold text-primary-950 mb-2">${article.title}</h1>
-    <p class="text-sm text-gray-500 mb-4">Ditulis oleh <strong>${article.author || 'Admin'}</strong> • ${publishedDate}</p>
-    <div class="prose max-w-none mt-6">${article.content}</div>
-  `
+        <img src="${article.cover_image}" alt="${article.title}" class="w-full h-64 object-cover rounded-lg mb-4 shadow" />
+        <h1 class="text-4xl font-bold text-primary-950 mb-2">${article.title}</h1>
+        <p class="text-sm text-gray-500 mb-4">Ditulis oleh <strong>${article.author || 'Admin'}</strong> • ${publishedDate}</p>
+        <div class="prose max-w-none mt-6">${article.content}</div>
+      `
     }
   </script>
 </body>
