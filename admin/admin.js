@@ -5,26 +5,30 @@ const tableBody = document.getElementById("article-list");
 async function loadArticles() {
   const { data: articles, error } = await supabase
     .from("articles")
-    .select("id, title")
+    .select("id, title, slug, author, created_at")
     .order("created_at", { ascending: false });
 
   if (error) {
     console.error("Error fetching articles:", error);
-    tableBody.innerHTML = `<tr><td colspan='2' class='py-4 text-red-600'>Gagal memuat data artikel</td></tr>`;
+    tableBody.innerHTML = `<tr><td colspan='4' class='py-4 text-red-600'>Gagal memuat data artikel</td></tr>`;
     return;
   }
 
   if (!articles.length) {
-    tableBody.innerHTML = `<tr><td colspan='2' class='py-4 text-gray-500'>Belum ada artikel.</td></tr>`;
+    tableBody.innerHTML = `<tr><td colspan='4' class='py-4 text-gray-500'>Belum ada artikel.</td></tr>`;
     return;
   }
 
   tableBody.innerHTML = "";
   articles.forEach((article) => {
+    const publishedDate = new Date(article.created_at).toLocaleDateString();
     const row = document.createElement("tr");
     row.innerHTML = `
       <td class="border-b py-2">${article.title}</td>
+      <td class="border-b py-2">${article.author || "-"}</td>
+      <td class="border-b py-2">${publishedDate}</td>
       <td class="border-b py-2 space-x-2">
+        <a href="/article.html?slug=${article.slug}" class="text-green-600 hover:underline text-sm" target="_blank">View</a>
         <a href="form.html?edit=${article.id}" class="text-blue-600 hover:underline text-sm">Edit</a>
         <button class="delete-btn text-red-600 hover:underline text-sm" data-id="${article.id}">Hapus</button>
       </td>
