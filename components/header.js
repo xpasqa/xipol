@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
 
         <a href="/news.html" class="hover:text-teal-400 transition">News</a>
-        <a href="/contact.html" class="hover:text-teal-400 transition">Contact</a>
+        <a href="/contact.html" class="hover:text-teal-400 transition">Kontak</a>
       </nav>
 
   
@@ -140,22 +140,87 @@ document.addEventListener("DOMContentLoaded", function () {
           </svg>
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
-          <a href="/about.html#tentang" class="block hover:text-teal-400">Tentang Ilmu Politik</a>
-          <a href="/about.html#sejarah" class="block hover:text-teal-400">Sejarah Prodi</a>
-          <a href="/about.html#visi-misi" class="block hover:text-teal-400">Visi, Misi dan Tujuan</a>
-          <a href="/about.html#struktur" class="block hover:text-teal-400">Struktur Prodi</a>
-          <a href="/about.html#prospek" class="block hover:text-teal-400">Prospek Lulusan</a>
-          <a href="/about.html#fasilitas" class="block hover:text-teal-400">Fasilitas dan Sarana</a>
-          <a href="/about.html#akreditasi" class="block hover:text-teal-400">Sertifikat Akreditasi</a>
+          <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Tentang Ilmu Politik</a>
+            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Sejarah Prodi</a>
+            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Visi, Misi dan Tujuan</a>
+            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100">Struktur Prodi</a>
+            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100">Tridharma Perguruan Tinggi</a>
+            <a href="/about.html#prospek" class="block px-4 py-2 hover:bg-teal-100">Prospek Lulusan</a>
+            <a href="/about.html#fasilitas" class="block px-4 py-2 hover:bg-teal-100">Fasilitas dan Sarana</a>
+            <a href="/about.html#prospek" class="block px-4 py-2 hover:bg-teal-100">Political Laboratorium</a>
+            <a href="/about.html#akreditasi" class="block px-4 py-2 hover:bg-teal-100">Sertifikat Akreditasi</a>
         </div>
       </div>
 
-      <a href="/dosen.html" class="block hover:text-teal-400">Dosen</a>
-      <a href="/faculty.html" class="block hover:text-teal-400">Faculty</a>
+      <div>
+        <button
+          class="w-full text-left flex items-center justify-between hover:text-teal-400 transition focus:outline-none"
+          onclick="this.nextElementSibling.classList.toggle('hidden')">
+          Akademik
+          <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20">
+            <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
+          </svg>
+        </button>
+        <div class="mt-1 ml-4 space-y-1 hidden">
+          <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Kurikulum</a>
+            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Panduan Akademik</a>
+            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Layanan Akademik Mahasiswa</a>
+            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100">Cek Plagiarisme</a>
+        </div>
+      </div>
+
+      <div>
+        <button
+          class="w-full text-left flex items-center justify-between hover:text-teal-400 transition focus:outline-none"
+          onclick="this.nextElementSibling.classList.toggle('hidden')">
+          Dosen
+          <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20">
+            <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
+          </svg>
+        </button>
+        <div class="mt-1 ml-4 space-y-1 hidden">
+         <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Profile Dosen</a>
+            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen Ilmu Politik</a>
+            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
+            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
+        </div>
+      </div>
+
+      <div>
+        <button
+          class="w-full text-left flex items-center justify-between hover:text-teal-400 transition focus:outline-none"
+          onclick="this.nextElementSibling.classList.toggle('hidden')">
+          Mahasiswa
+          <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20">
+            <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
+          </svg>
+        </button>
+        <div class="mt-1 ml-4 space-y-1 hidden">
+        <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Organisasi Kemahasiswaan</a>
+            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Beasiswa Mahasiswa</a>
+            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah</a>
+            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100">Kode Mahasiswa</a>
+        </div>
+      </div>
+
+      <div>
+        <button
+          class="w-full text-left flex items-center justify-between hover:text-teal-400 transition focus:outline-none"
+          onclick="this.nextElementSibling.classList.toggle('hidden')">
+          Alumni
+          <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20">
+            <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
+          </svg>
+        </button>
+        <div class="mt-1 ml-4 space-y-1 hidden">
+         <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Pusat Karir</a>
+            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Survey</a>
+            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Lulusan</a>
+        </div>
+      </div>
+
       <a href="/news.html" class="block hover:text-teal-400">News</a>
-      <a href="/contact.html" class="block hover:text-teal-400">Contact</a>
-      <a href="/login.html" class="block hover:text-teal-400">Login</a>
-      <a href="/register.html" class="block hover:text-teal-400">Register</a>
+      <a href="/contact.html" class="block hover:text-teal-400">Kontak</a>
     </div>
   </div>
 </header>
