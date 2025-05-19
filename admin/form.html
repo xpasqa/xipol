@@ -32,15 +32,6 @@
       }
     </style>
   </head>
-  <script type="module">
-    import { supabase } from "../js/supabaseClient.js";
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
-    if (!session) {
-      window.location.href = "/login.html";
-    }
-  </script>
   <body class="bg-white min-h-screen">
     <div class="flex min-h-screen">
       <!-- Sidebar -->
@@ -188,21 +179,22 @@
           const content = quill.root.innerHTML;
 
           if (file) {
-            const { data: uploadData, error: uploadError } =
-              await supabase.storage
-                .from("artikel-images")
-                .upload(`public/${file.name}`, file, { upsert: true });
+            const formData = new FormData();
+            formData.append("file", file);
 
-            if (uploadError) {
-              alert("Upload gambar gagal: " + uploadError.message);
+            const response = await fetch("/upload.php", {
+              method: "POST",
+              body: formData,
+            });
+
+            const result = await response.json();
+
+            if (!result.success) {
+              alert("Upload gagal: " + result.message);
               return;
             }
 
-            const { data: publicUrl } = supabase.storage
-              .from("artikel-images")
-              .getPublicUrl(`public/${file.name}`);
-
-            cover_image = publicUrl.publicUrl;
+            cover_image = result.url;
           }
 
           const payload = { title, slug, author, cover_image, content };
