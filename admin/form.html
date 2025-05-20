@@ -32,15 +32,6 @@
       }
     </style>
   </head>
-  <script type="module">
-    import { supabase } from "../js/supabaseClient.js";
-    const {
-      data: { session },
-    } = await supabase.auth.getSession();
-    if (!session) {
-      window.location.href = "/login.html";
-    }
-  </script>
   <body class="bg-white min-h-screen">
     <div class="flex min-h-screen">
       <!-- Sidebar -->
@@ -94,9 +85,25 @@
                 <input
                   type="text"
                   id="cover_image"
-                  class="w-full border p-2 rounded"
-                  required
+                  class="w-full border p-2 rounded mb-2"
                 />
+
+                <label class="block font-semibold mb-1"
+                  >Atau Upload Gambar</label
+                >
+                <input
+                  type="file"
+                  id="cover_image_file"
+                  class="w-full border p-2 rounded"
+                  accept="image/*"
+                />
+                <div class="mt-2">
+                  <img
+                    id="image_preview"
+                    class="w-48 rounded shadow hidden"
+                    alt="Preview"
+                  />
+                </div>
               </div>
 
               <div>
@@ -116,7 +123,6 @@
       </main>
     </div>
 
-    <!-- Component & Editor Scripts -->
     <script type="module" src="sidebar.js"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
@@ -126,6 +132,7 @@
       const quill = new Quill("#editor", { theme: "snow" });
       const urlParams = new URLSearchParams(window.location.search);
       const articleId = urlParams.get("edit");
+      const previewImg = document.getElementById("image_preview");
 
       if (articleId) {
         document.getElementById("form-title").textContent = "Edit Artikel";
@@ -139,51 +146,76 @@
         document.getElementById("slug").value = data.slug;
         document.getElementById("author").value = data.author;
         document.getElementById("cover_image").value = data.cover_image;
+        previewImg.src = data.cover_image;
+        previewImg.classList.remove("hidden");
         quill.root.innerHTML = data.content;
       }
+
+      document
+        .getElementById("cover_image_file")
+        .addEventListener("change", (e) => {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+              previewImg.src = event.target.result;
+              previewImg.classList.remove("hidden");
+            };
+            reader.readAsDataURL(file);
+          }
+        });
 
       document
         .getElementById("article-form")
         .addEventListener("submit", async (e) => {
           e.preventDefault();
+
           const id = document.getElementById("article-id").value;
           const title = document.getElementById("title").value;
           const slug = document.getElementById("slug").value;
           const author = document.getElementById("author").value;
-          const cover_image = document.getElementById("cover_image").value;
+          const file = document.getElementById("cover_image_file").files[0];
+          let cover_image = document.getElementById("cover_image").value;
           const content = quill.root.innerHTML;
+
+          if (file) {
+            const formData = new FormData();
+            formData.append("file", file);
+
+            const response = await fetch("/upload.php", {
+              method: "POST",
+              body: formData,
+            });
+
+            const result = await response.json();
+
+            if (!result.success) {
+              alert("Upload gagal: " + result.message);
+              return;
+            }
+
+            cover_image = result.url;
+          }
+
+          const payload = { title, slug, author, cover_image, content };
 
           if (id) {
             const { error } = await supabase
               .from("articles")
-              .update({ title, slug, author, cover_image, content })
+              .update(payload)
               .eq("id", id);
-
-            if (error) {
-              console.error("Update error:", error);
-              alert("Gagal memperbarui artikel: " + error.message);
-              return;
-            }
-
+            if (error)
+              return alert("Gagal memperbarui artikel: " + error.message);
             alert("Artikel berhasil diperbarui.");
           } else {
-            const { data, error } = await supabase.from("articles").insert([
+            const { error } = await supabase.from("articles").insert([
               {
-                title,
-                slug,
-                author,
-                cover_image,
-                content,
+                ...payload,
                 created_at: new Date().toISOString(),
               },
             ]);
-
-            if (error) {
-              console.error("Insert error:", error);
-              alert("Gagal menambahkan artikel: " + error.message);
-              return;
-            }
-
+            if (error)
+              return alert("Gagal menambahkan artikel: " + error.message);
             alert("Artikel berhasil ditambahkan.");
           }
 
@@ -192,4 +224,3 @@
     </script>
   </body>
 </html>
-i

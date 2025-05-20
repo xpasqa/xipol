@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     <!-- Footer Section -->
     <footer class="bg-custom-primary text-white pt-16 pb-8">
      
-      <div class="container mx-auto px-4">
+      <div class="container max-w-7xl mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
           <!-- About Column -->
           <div class="md:col-span-1">
