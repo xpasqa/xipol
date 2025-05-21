@@ -1,5 +1,26 @@
 <?php
-$slug = $_GET['slug'] ?? '';
+$slug = $_GET['slug'] ?? basename($_SERVER['REQUEST_URI'], ".html");
+
+// Ambil metadata dari Supabase
+$apiUrl = "https://zpniygdnkrrgllgxfjiv.supabase.co/rest/v1/articles?slug=eq.$slug&select=title,cover_image,content";
+$headers = [
+  "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpwbml5Z2Rua3JyZ2xsZ3hmaml2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc0OTQ4NDQsImV4cCI6MjA2MzA3MDg0NH0.zRa40N2t-uENazXYk46O0WJoOhAzk5McKmapofv5Lpk",
+  "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpwbml5Z2Rua3JyZ2xsZ3hmaml2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc0OTQ4NDQsImV4cCI6MjA2MzA3MDg0NH0.zRa40N2t-uENazXYk46O0WJoOhAzk5McKmapofv5Lpk"
+];
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $apiUrl);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+$response = curl_exec($ch);
+curl_close($ch);
+
+$data = json_decode($response, true);
+$article = $data[0] ?? null;
+
+$title = $article["title"] ?? "Artikel";
+$description = isset($article["content"]) ? strip_tags(substr($article["content"], 0, 160)) : "Artikel dari Ilmu Politik UIN Bandung.";
+$cover_image = $article["cover_image"] ?? "/img/default.jpg";
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -7,7 +28,16 @@ $slug = $_GET['slug'] ?? '';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artikel</title>
+  <title><?= htmlspecialchars($title) ?> | Ilmu Politik UIN Bandung</title>
+  <meta name="description" content="<?= htmlspecialchars($description) ?>" />
+
+  <!-- OG Meta Tags -->
+  <meta property="og:title" content="<?= htmlspecialchars($title) ?>" />
+  <meta property="og:description" content="<?= htmlspecialchars($description) ?>" />
+  <meta property="og:image" content="<?= htmlspecialchars($cover_image) ?>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://xipol.site/<?= $slug ?>.html" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Tailwind CSS + Config -->
   <script>
@@ -34,7 +64,6 @@ $slug = $_GET['slug'] ?? '';
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
-
   <style>
     body {
       font-family: "Onest", sans-serif;
@@ -81,10 +110,7 @@ $slug = $_GET['slug'] ?? '';
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg,
-          rgba(69, 10, 10, 0.95) 0%,
-          rgba(69, 10, 10, 0.8) 50%,
-          rgba(69, 10, 10, 0.6) 100%);
+      background: linear-gradient(135deg, rgba(69, 10, 10, 0.95) 0%, rgba(69, 10, 10, 0.8) 50%, rgba(69, 10, 10, 0.6) 100%);
     }
 
     .hover-scale {
@@ -98,28 +124,23 @@ $slug = $_GET['slug'] ?? '';
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-onest">
-  <!-- Header -->
   <div id="header"></div>
   <script src="components/header.js"></script>
   <script src="components/style.js"></script>
 
-  <!-- Breadcrumb -->
   <div class="max-w-4xl mx-auto px-4 pt-6">
     <a href="/news.html" class="text-sm text-primary-900 hover:underline">← Kembali ke Semua Artikel</a>
   </div>
 
-  <!-- Artikel -->
   <section class="py-12">
     <div class="max-w-4xl mx-auto px-4">
       <div id="article-content" class="space-y-6 text-lg leading-relaxed"></div>
     </div>
   </section>
 
-  <!-- Footer -->
   <div id="footer"></div>
   <script src="components/footer.js"></script>
 
-  <!-- Supabase Fetch -->
   <script type="module">
     import { supabase } from './js/supabaseClient.js'
 
