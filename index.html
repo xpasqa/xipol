@@ -386,31 +386,50 @@
     <div id="footer"></div>
     <script src="components/footer.js"></script>
     <script type="module">
-      import { supabase } from './js/supabaseClient.js'
+      import { supabase } from "./js/supabaseClient.js";
 
-      const container = document.getElementById("latest-articles")
+      const container = document.getElementById("news-list");
 
       const { data: articles, error } = await supabase
         .from("articles")
         .select("*")
-        .order("created_at", { ascending: false })
-        .limit(6)
+        .order("created_at", { ascending: false });
 
       if (error || !articles) {
-        container.innerHTML = `<p class="text-red-500">Gagal mengambil data: ${error?.message || 'Unknown error'}</p>`;
+        container.innerHTML = `<p class="text-red-500">Gagal mengambil data: ${
+          error?.message || "Unknown error"
+        }</p>`;
+      } else if (articles.length === 0) {
+        container.innerHTML = `<p class="text-gray-600">Belum ada artikel yang tersedia.</p>`;
       } else {
         articles.forEach((article) => {
+          const publishedDate = new Date(article.created_at).toLocaleDateString(
+            "id-ID",
+            {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            }
+          );
+
           container.innerHTML += `
-            <a href="/${article.slug}" class="bg-white rounded-xl shadow hover:shadow-md overflow-hidden transition hover:scale-[1.02] duration-300 block">
-              <img src="${article.cover_image}" alt="${article.title}" class="w-full h-48 object-cover" />
-              <div class="p-4">
-                <h3 class="text-lg font-semibold text-primary mb-2">${article.title}</h3>
-                <p class="text-sm text-gray-600">${new Date(article.created_at).toLocaleDateString()}</p>
-              </div>
-            </a>
-          `;
+        <a href="/${
+          article.slug
+        }.html" class="bg-white rounded-xl overflow-hidden shadow hover:shadow-md transition hover:scale-[1.02] duration-300 block">
+          <img src="${article.cover_image}" alt="${
+            article.title
+          }" class="w-full h-48 object-cover" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-primary-700 mb-2">${
+              article.title
+            }</h3>
+            <p class="text-sm text-gray-600 mb-2">
+              <strong>${article.author || "Admin"}</strong> • ${publishedDate}
+            </p>
+          </div>
+        </a>
+      `;
         });
       }
-    </script>
-  </body>
+    </script>  </body>
 </html>
