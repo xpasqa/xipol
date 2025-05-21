@@ -34,9 +34,9 @@ $cover_image = $article["cover_image"] ?? "/img/default.jpg";
   <!-- OG Meta Tags -->
   <meta property="og:title" content="<?= htmlspecialchars($title) ?>" />
   <meta property="og:description" content="<?= htmlspecialchars($description) ?>" />
-  <meta property="og:image" content="<?= htmlspecialchars($cover_image) ?>" />
+  <meta property="og:image" content="<?= htmlspecialchars($image) ?>" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://xipol.site/<?= $slug ?>.html" />
+  <meta property="og:url" content="https://ilmupolitik.uinsgd.ac.id/<?= $slug ?>.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Open Graph Metadata -->
