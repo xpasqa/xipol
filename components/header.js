@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/about.html#home" class="block px-4 py-2 hover:bg-teal-100">Sejarah Prodi</a>
             <a href="/about.html#visimisi" class="block px-4 py-2 hover:bg-teal-100">Visi, Misi dan Tujuan</a>
             <a href="/about.html#tridharma" class="block px-4 py-2 hover:bg-teal-100">Tridharma Perguruan Tinggi</a>
-            <a href="/about.html#profil" class="block px-4 py-2 hover:bg-teal-100">profil Lulusan</a>
+            <a href="/about.html#profil" class="block px-4 py-2 hover:bg-teal-100">Profil Lulusan</a>
             <a href="/about.html#fasilitas" class="block px-4 py-2 hover:bg-teal-100">Fasilitas dan Sarana</a>
             <a href="/about.html#alumni" class="block px-4 py-2 hover:bg-teal-100">Kiprah Alumni</a>
             <a href="/polabs.html" class="block px-4 py-2 hover:bg-teal-100">Political Laboratorium</a>
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/about.html#home" class="block px-4 py-2 hover:bg-teal-100">Sejarah Prodi</a>
             <a href="/about.html#visimisi" class="block px-4 py-2 hover:bg-teal-100">Visi, Misi dan Tujuan</a>
             <a href="/about.html#tridharma" class="block px-4 py-2 hover:bg-teal-100">Tridharma Perguruan Tinggi</a>
-            <a href="/about.html#profil" class="block px-4 py-2 hover:bg-teal-100">profil Lulusan</a>
+            <a href="/about.html#profil" class="block px-4 py-2 hover:bg-teal-100">Profil Lulusan</a>
             <a href="/about.html#fasilitas" class="block px-4 py-2 hover:bg-teal-100">Fasilitas dan Sarana</a>
             <a href="/about.html#alumni" class="block px-4 py-2 hover:bg-teal-100">Kiprah Alumni</a>
             <a href="/polabs.html" class="block px-4 py-2 hover:bg-teal-100">Political Laboratorium</a>
