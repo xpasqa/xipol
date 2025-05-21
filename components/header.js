@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Organisasi Kemahasiswaan</a>
             <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Beasiswa Mahasiswa</a>
             <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah</a>
-            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100">Kode Mahasiswa</a>
+            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100"> Mahasiswa Berprestasi</a>
           </div>
         </div>
 
