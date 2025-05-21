@@ -39,6 +39,48 @@ $cover_image = $article["cover_image"] ?? "/img/default.jpg";
   <meta property="og:url" content="https://xipol.site/<?= $slug ?>.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="<?= $title ?>">
+  <meta property="og:description" content="<?= $description ?>">
+  <meta property="og:image" content="<?= $image ?>">
+  <meta property="og:url" content="<?= $url ?>">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="<?= $published_time ?>">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<?= $title ?>">
+  <meta name="twitter:description" content="<?= $description ?>">
+  <meta name="twitter:image" content="<?= $image ?>">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="<?= $url ?>">
+
+  <!-- Schema JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "<?= $title ?>",
+    "image": ["<?= $image ?>"],
+    "author": {
+      "@type": "Organization",
+      "name": "Ilmu Politik UIN Bandung"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Ilmu Politik UIN Bandung",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://xipol.site/img/logo.png"
+      }
+    },
+    "datePublished": "<?= $published_time ?>",
+    "url": "<?= $url ?>",
+    "description": "<?= $description ?>"
+  }
+  </script>
+
   <!-- Tailwind CSS + Config -->
   <script>
     tailwind.config = {
