@@ -103,7 +103,7 @@ $cover_image = $article["cover_image"] ?? "/img/default.jpg";
       },
     };
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
   <style>
