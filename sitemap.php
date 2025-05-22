@@ -3,7 +3,7 @@ header('Content-Type: application/xml');
 
 $apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpwbml5Z2Rua3JyZ2xsZ3hmaml2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc0OTQ4NDQsImV4cCI6MjA2MzA3MDg0NH0.zRa40N2t-uENazXYk46O0WJoOhAzk5McKmapofv5Lpk";
 $projectUrl = "https://zpniygdnkrrgllgxfjiv.supabase.co";
-$siteUrl = "https://xipol.site";
+$siteUrl = "https://ilmupolitik.uinsgd.ac.id";
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, "$projectUrl/rest/v1/articles?select=slug,created_at");

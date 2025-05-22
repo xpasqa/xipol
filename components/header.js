@@ -141,7 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
           <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Tentang Ilmu Politik</a>
-           <a href="/about.html#home" class="block px-4 py-2 hover:bg-teal-100">Tentang Ilmu Politik</a>
             <a href="/about.html#home" class="block px-4 py-2 hover:bg-teal-100">Sejarah Prodi</a>
             <a href="/about.html#visimisi" class="block px-4 py-2 hover:bg-teal-100">Visi, Misi dan Tujuan</a>
             <a href="/about.html#tridharma" class="block px-4 py-2 hover:bg-teal-100">Tridharma Perguruan Tinggi</a>

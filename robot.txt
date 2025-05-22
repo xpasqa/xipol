@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://xipol.xvntr.my.id/sitemap.php
+Sitemap: https://ilmupolitik.uinsgd.ac.id/sitemap.php
