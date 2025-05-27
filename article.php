@@ -1,4 +1,19 @@
 <?php
+// Allow from any origin (or specify your frontend domain instead of *)
+header("Access-Control-Allow-Origin: *");
+
+// Allow common methods
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+
+// Allow specific headers
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+// Optional: respond to preflight OPTIONS request
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+  http_response_code(200);
+  exit;
+}
+
 $slug = $_GET['slug'] ?? basename($_SERVER['REQUEST_URI'], ".html");
 
 // Ambil metadata dari Supabase

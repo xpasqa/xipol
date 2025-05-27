@@ -7,3 +7,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 
 # Rewrite slug ke article.php
 RewriteRule ^([a-zA-Z0-9-]+)$ article.php?slug=$1 [L,QSA]
+
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin "*"
+  Header set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
+  Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
