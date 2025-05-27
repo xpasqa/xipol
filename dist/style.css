@@ -1163,6 +1163,14 @@ video {
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
 }
 
+.bg-\[url\(\/img\/pexels-pixabay-267885\.jpg\)\] {
+  background-image: url(/img/pexels-pixabay-267885.jpg);
+}
+
+.bg-\[url\(\.\.\/img\/pexels-pixabay-267885\.jpg\)\] {
+  background-image: url(../img/pexels-pixabay-267885.jpg);
+}
+
 .from-primary-950 {
   --tw-gradient-from: #450a0a var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(69 10 10 / 0) var(--tw-gradient-to-position);
