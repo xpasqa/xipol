@@ -1,43 +1,25 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artikel - Ilmu Politik UIN Bandung</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Ilmu Politik UIN Bandung</title>
+    <!-- Tailwind CSS via CDN -->
+    <link rel="stylesheet" href="dist/style.css" />
+    <!-- Google Fonts - Onest -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              onest: ["Onest", "sans-serif"],
-            },
-            colors: {
-              primary: {
-                950: "#450a0a",
-              },
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      body {
-        font-family: "Onest", sans-serif;
-      }
-    </style>
+    <body>
+      <div id="header"></div>
+      <script src="components/style.js"></script>
+      <script src="components/header.js"></script>
+    </body>
   </head>
   <body class="bg-gray-100 text-gray-900 font-onest">
-    <!-- Header -->
-    <div id="header"></div>
-    <script src="components/header.js"></script>
-
     <!-- Konten Artikel -->
     <section class="py-16">
       <div class="max-w-4xl mx-auto px-4">
