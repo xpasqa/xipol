@@ -2,7 +2,6 @@ import { supabase } from './supabaseClient.js'
 
 const params = new URLSearchParams(window.location.search)
 const slug = params.get("slug")
-
 const container = document.getElementById("article-content")
 
 if (!slug) {
@@ -10,15 +9,19 @@ if (!slug) {
   throw new Error("Slug missing from query")
 }
 
-const { data: articles, error } = await supabase
-  .from('articles')
-  .select('title, author, content, cover_image, created_at')
-  .eq('slug', slug)
-  .limit(1)
+try {
+  const { data: articles, error } = await supabase
+    .from('articles')
+    .select('title, author, content, cover_image, created_at')
+    .eq('slug', slug)
+    .limit(1)
 
-if (error || !articles || articles.length === 0) {
-  container.innerHTML = `<p class="text-red-500">Artikel tidak ditemukan.</p>`
-} else {
+  if (error) throw error
+  if (!articles || articles.length === 0) {
+    container.innerHTML = `<p class="text-red-500">Artikel tidak ditemukan.</p>`
+    return
+  }
+
   const article = articles[0]
   const publishedDate = new Date(article.created_at).toLocaleDateString("id-ID", {
     day: "numeric",
@@ -32,4 +35,7 @@ if (error || !articles || articles.length === 0) {
     <p class="text-sm text-gray-600 mb-4">Ditulis oleh <strong>${article.author || 'Admin'}</strong> • ${publishedDate}</p>
     <div class="prose prose-lg max-w-none">${article.content}</div>
   `
+} catch (err) {
+  console.error("Error loading article:", err)
+  container.innerHTML = `<p class="text-red-500">Terjadi kesalahan saat memuat artikel.</p>`
 }

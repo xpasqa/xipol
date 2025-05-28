@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artikel - Ilmu Politik UIN Bandung</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              onest: ["Onest", "sans-serif"],
+            },
+            colors: {
+              primary: {
+                950: "#450a0a",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Onest", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-900 font-onest">
+    <!-- Header -->
+    <div id="header"></div>
+    <script src="components/header.js"></script>
+
+    <!-- Konten Artikel -->
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-4">
+        <div id="article-content" class="space-y-6 text-lg leading-relaxed">
+          <!-- Artikel akan di-render di sini -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script src="components/footer.js"></script>
+
+    <!-- Supabase Logic -->
+    <script type="module">
+      import { supabase } from "./js/supabaseClient.js";
+
+      const slug = new URLSearchParams(window.location.search).get("slug");
+      const container = document.getElementById("article-content");
+
+      if (!slug) {
+        container.innerHTML =
+          '<p class="text-red-500">Slug tidak ditemukan di URL.</p>';
+        throw new Error("Slug not found");
+      }
+
+      const { data: articles, error } = await supabase
+        .from("articles")
+        .select("*")
+        .eq("slug", slug);
+
+      if (error || !articles || articles.length === 0) {
+        container.innerHTML =
+          '<p class="text-red-500">Artikel tidak ditemukan.</p>';
+      } else {
+        const article = articles[0];
+
+        container.innerHTML = `
+          <img src="${
+            article.cover_image
+          }" class="w-full h-72 object-cover rounded-lg shadow mb-4" alt="${
+          article.title
+        }">
+          <h1 class="text-4xl font-bold text-primary-950">${article.title}</h1>
+          <p class="text-sm text-gray-500">${new Date(
+            article.created_at
+          ).toLocaleDateString()}</p>
+          <div class="prose max-w-none mt-6">
+            ${article.content}
+          </div>
+        `;
+      }
+    </script>
+  </body>
+</html>
