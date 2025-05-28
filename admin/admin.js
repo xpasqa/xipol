@@ -21,14 +21,19 @@ async function loadArticles() {
 
   tableBody.innerHTML = "";
   articles.forEach((article) => {
-    const publishedDate = new Date(article.created_at).toLocaleDateString();
+    const publishedDate = new Date(article.created_at).toLocaleDateString("id-ID", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+
     const row = document.createElement("tr");
     row.innerHTML = `
       <td class="border-b py-2">${article.title}</td>
       <td class="border-b py-2">${article.author || "-"}</td>
       <td class="border-b py-2">${publishedDate}</td>
       <td class="border-b py-2 space-x-2">
-        <a href="/${article.slug}" class="text-green-600 hover:underline text-sm" target="_blank">View</a>
+        <a href="/${article.slug}.html" class="text-green-600 hover:underline text-sm" target="_blank">View</a>
         <a href="form.html?edit=${article.id}" class="text-blue-600 hover:underline text-sm">Edit</a>
         <button class="delete-btn text-red-600 hover:underline text-sm" data-id="${article.id}">Hapus</button>
       </td>
