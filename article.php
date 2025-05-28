@@ -29,6 +29,7 @@ $cover_image = $article["cover_image"] ?? "/img/default.jpg";
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><?= htmlspecialchars($title) ?> | Ilmu Politik UIN Bandung</title>
+  <link rel="stylesheet" href="dist/style.css">
   <meta name="description" content="<?= htmlspecialchars($description) ?>" />
 </head>
 
