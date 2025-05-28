@@ -20,7 +20,7 @@ if (error || !articles) {
     });
 
     container.innerHTML += `
-      <a href="/${article.slug}" class="bg-white rounded-xl overflow-hidden shadow hover:shadow-md transition hover:scale-[1.02] duration-300 block">
+      <a href="article.html?slug=${article.slug}" class="bg-white rounded-xl overflow-hidden shadow hover:shadow-md transition hover:scale-[1.02] duration-300 block">
         <img src="${article.cover_image}" alt="${article.title}" class="w-full h-48 object-cover" />
         <div class="p-4">
           <h3 class="text-lg font-semibold text-primary-700 mb-2">${article.title}</h3>
