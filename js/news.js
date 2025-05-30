@@ -4,31 +4,32 @@ const container = document.getElementById("news-list");
 
 const { data: articles, error } = await supabase
   .from("articles")
-  .select("*")
+  .select("title, slug, cover_image, created_at, author")
   .order("created_at", { ascending: false });
 
-if (error || !articles) {
-  container.innerHTML = `<p class="text-red-500">Gagal mengambil data: ${error?.message || "Unknown error"}</p>`;
-} else if (articles.length === 0) {
-  container.innerHTML = `<p class="text-gray-600">Belum ada artikel yang tersedia.</p>`;
+if (error) {
+  container.innerHTML = `<p class="text-red-500">Gagal memuat artikel: ${error.message}</p>`;
+  throw error;
+}
+
+if (!articles || articles.length === 0) {
+  container.innerHTML = `<p class="text-gray-500">Belum ada artikel yang tersedia.</p>`;
 } else {
   articles.forEach((article) => {
-    const publishedDate = new Date(article.created_at).toLocaleDateString("id-ID", {
+    const date = new Date(article.created_at).toLocaleDateString("id-ID", {
       day: "numeric",
       month: "long",
       year: "numeric",
     });
 
     container.innerHTML += `
-      <a href="article.html?slug=${article.slug}" class="bg-white rounded-xl overflow-hidden shadow hover:shadow-md transition hover:scale-[1.02] duration-300 block">
-        <img src="${article.cover_image}" alt="${article.title}" class="w-full h-48 object-cover" />
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-primary-700 mb-2">${article.title}</h3>
-          <p class="text-sm text-gray-600 mb-2">
-            <strong>${article.author || "Admin"}</strong> • ${publishedDate}
-          </p>
-        </div>
-      </a>
+  <a href="article.html?slug=${article.slug}" class="block bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden">
+    <img src="${article.cover_image}" alt="${article.title}" class="w-full h-48 object-cover" />
+    <div class="p-4">
+      <h2 class="text-xl font-semibold text-primary-950 mb-1">${article.title}</h2>
+      <p class="text-sm text-gray-600">${article.author || 'Admin'} • ${date}</p>
+    </div>
+  </a>
     `;
   });
 }
