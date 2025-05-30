@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Dosen</title>
+    <link rel="stylesheet" href="../dist/style.css" />
+    <style>
+      body {
+        font-family: "Onest", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white min-h-screen">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-3xl font-bold text-primary-950 mb-6" id="form-title">
+            Tambah Dosen
+          </h1>
+
+          <div class="bg-white rounded-lg shadow p-6">
+            <form id="lecturer-form" class="space-y-4">
+              <input type="hidden" id="lecturer-id" />
+
+              <div>
+                <label class="block font-semibold mb-1">Urutan</label>
+                <input
+                  type="number"
+                  id="order"
+                  class="w-full border p-2 rounded"
+                />
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1">Nama</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full border p-2 rounded"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1">NIP</label>
+                <input
+                  type="text"
+                  id="nip"
+                  class="w-full border p-2 rounded"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full border p-2 rounded"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1">Bidang</label>
+                <input
+                  type="text"
+                  id="field"
+                  class="w-full border p-2 rounded"
+                />
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1"
+                  >Google Scholar URL</label
+                >
+                <input
+                  type="url"
+                  id="google_scholar"
+                  class="w-full border p-2 rounded"
+                />
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1">Foto URL</label>
+                <input
+                  type="text"
+                  id="photo_url"
+                  class="w-full border p-2 rounded mb-2"
+                />
+
+                <label class="block font-semibold mb-1">Atau Upload Foto</label>
+                <input
+                  type="file"
+                  id="photo"
+                  class="w-full border p-2 rounded"
+                  accept="image/*"
+                />
+                <img
+                  id="photo_preview"
+                  class="w-32 mt-3 rounded shadow hidden"
+                  alt="Preview"
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="bg-primary-950 text-white px-6 py-2 rounded"
+              >
+                Simpan Dosen
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Sidebar -->
+    <script type="module" src="sidebar.js"></script>
+
+    <!-- Logic -->
+    <script type="module">
+      import { supabase } from "../js/supabaseClient.js";
+
+      const form = document.getElementById("lecturer-form");
+      const preview = document.getElementById("photo_preview");
+      const urlParams = new URLSearchParams(window.location.search);
+      const lecturerId = urlParams.get("edit");
+
+      if (lecturerId) {
+        document.getElementById("form-title").textContent = "Edit Dosen";
+        (async () => {
+          const { data } = await supabase
+            .from("lecturers")
+            .select("*")
+            .eq("id", lecturerId)
+            .single();
+          if (data) {
+            document.getElementById("lecturer-id").value = data.id;
+            document.getElementById("name").value = data.name;
+            document.getElementById("nip").value = data.nip;
+            document.getElementById("email").value = data.email;
+            document.getElementById("field").value = data.field;
+            document.getElementById("google_scholar").value =
+              data.google_scholar;
+            document.getElementById("order").value = data.order ?? "";
+            document.getElementById("photo_url").value = data.photo_url;
+            if (data.photo_url) {
+              preview.src = data.photo_url;
+              preview.classList.remove("hidden");
+            }
+          }
+        })();
+      }
+
+      document.getElementById("photo").addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            preview.src = event.target.result;
+            preview.classList.remove("hidden");
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const id = document.getElementById("lecturer-id").value;
+        const name = document.getElementById("name").value;
+        const nip = document.getElementById("nip").value;
+        const email = document.getElementById("email").value;
+        const field = document.getElementById("field").value;
+        const scholar = document.getElementById("google_scholar").value;
+        const order = parseInt(document.getElementById("order").value) || null;
+        const file = document.getElementById("photo").files[0];
+        let photo_url = document.getElementById("photo_url").value;
+
+        if (file) {
+          const formData = new FormData();
+          formData.append("file", file);
+          const response = await fetch("/upload.php", {
+            method: "POST",
+            body: formData,
+          });
+          const result = await response.json();
+          if (!result.success) {
+            alert("Upload gagal: " + result.message);
+            return;
+          }
+          photo_url = result.url;
+        }
+
+        const payload = {
+          name,
+          nip,
+          email,
+          field,
+          google_scholar: scholar,
+          order,
+          photo_url,
+        };
+
+        if (id) {
+          const { error } = await supabase
+            .from("lecturers")
+            .update(payload)
+            .eq("id", id);
+          if (error) return alert("Gagal memperbarui dosen: " + error.message);
+          alert("Dosen berhasil diperbarui.");
+        } else {
+          const { error } = await supabase.from("lecturers").insert([payload]);
+          if (error) return alert("Gagal menambahkan dosen: " + error.message);
+          alert("Dosen berhasil ditambahkan.");
+        }
+
+        window.location.href = "dosen.html";
+      });
+    </script>
+  </body>
+</html>
