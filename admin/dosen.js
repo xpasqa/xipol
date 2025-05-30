@@ -33,17 +33,15 @@ async function loadDosen() {
         <a href="${dosen.google_scholar}" target="_blank" class="text-blue-600 underline">Lihat</a>
       </td>
       <td class="py-2 space-x-2">
-  <a href="dosen-edit.html?edit=${dosen.id}" class="text-blue-600 underline">Edit</a>
-  <button onclick="deleteDosen('${dosen.id}')" class="text-red-600 hover:underline">Hapus</button>
-</td>
-
+        <a href="dosen-edit.html?edit=${dosen.id}" class="text-blue-600 underline">Edit</a>
+        <button onclick="deleteDosen('${dosen.id}')" class="text-red-600 hover:underline">Hapus</button>
+      </td>
     `;
 
     tableBody.appendChild(row);
   });
 }
 
-// Optional: Tambah fungsi hapus jika diperlukan
 window.deleteDosen = async function (id) {
   if (confirm("Yakin ingin menghapus dosen ini?")) {
     const { error } = await supabase.from("lecturers").delete().eq("id", id);
