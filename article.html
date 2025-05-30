@@ -57,20 +57,26 @@
       } else {
         const article = articles[0];
 
+        const date = new Date(article.created_at).toLocaleDateString("id-ID", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        });
+
         container.innerHTML = `
-          <img src="${
-            article.cover_image
-          }" class="w-full h-72 object-cover rounded-lg shadow mb-4" alt="${
+  <img src="${
+    article.cover_image
+  }" class="w-full h-72 object-cover rounded-lg shadow mb-4" alt="${
           article.title
         }">
-          <h1 class="text-4xl font-bold text-primary-950">${article.title}</h1>
-          <p class="text-sm text-gray-500">${new Date(
-            article.created_at
-          ).toLocaleDateString()}</p>
-          <div class="prose max-w-none mt-6">
-            ${article.content}
-          </div>
-        `;
+  <h1 class="text-4xl font-bold text-primary-950 mb-2">${article.title}</h1>
+  <p class="text-sm text-gray-600 mb-6">
+    Ditulis oleh <strong>${article.author || "Admin"}</strong> •  ${date}
+  </p>
+  <div class="prose max-w-none mt-6">
+    ${article.content}
+  </div>
+`;
       }
     </script>
   </body>
