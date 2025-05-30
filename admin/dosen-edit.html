@@ -208,6 +208,8 @@
           photo_url,
         };
 
+        console.log("Payload ke Supabase:", payload);
+
         if (id) {
           const { error } = await supabase
             .from("lecturers")
