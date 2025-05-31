@@ -47,11 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Panduan Akademik</a>
             <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Layanan Akademik Mahasiswa</a>
             <a href="/cek-plagiarisme.html" class="block px-4 py-2 hover:bg-teal-100">Cek Plagiarisme</a>
-          </div>
+            </div>
         </div>
 
         <div class="relative group">
-          <a href="#"
+          <a href="/dosen.html"
              class="inline-flex items-center hover:text-teal-400 transition">
             Dosen
             <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20">
@@ -81,23 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="#" class="block px-4 py-2 hover:bg-teal-100">Beasiswa Mahasiswa</a>
             <a href="#" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah Mahasiswa</a>
             <a href="/prestasi-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100"> Mahasiswa Berprestasi<a>
-          </div>
-        </div>
-
-         <div class="relative group">
-          <a href="#"
-             class="inline-flex items-center hover:text-teal-400 transition">
-            Alumni
-            <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20">
-              <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
-            </svg>
-          </a>
-          <div
-            class="absolute left-0 top-full mt-2 w-48 bg-white text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
-            <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Pusat Karir</a>
-            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Survey</a>
-            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Lulusan</a>
-      
           </div>
         </div>
 
@@ -201,22 +184,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="#" class="block px-4 py-2 hover:bg-teal-100">Beasiswa Mahasiswa</a>
             <a href="#" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah Mahasiswa</a>
             <a href="/prestasi-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100"> Mahasiswa Berprestasi<a>
-        </div>
-      </div>
-
-      <div>
-        <button
-          class="w-full text-left flex items-center justify-between hover:text-teal-400 transition focus:outline-none"
-          onclick="this.nextElementSibling.classList.toggle('hidden')">
-          Alumni
-          <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20">
-            <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
-          </svg>
-        </button>
-        <div class="mt-1 ml-4 space-y-1 hidden">
-         <a href="/pusat-karir.html" class="block px-4 py-2 hover:bg-teal-100">Pusat Karir</a>
-            <a href="/survey.html" class="block px-4 py-2 hover:bg-teal-100">Survey</a>
-            <a href="/lulusan.html" class="block px-4 py-2 hover:bg-teal-100">Lulusan</a>
         </div>
       </div>
 

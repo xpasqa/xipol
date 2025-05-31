@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dosen Ilmu Politik</title>
+    <link rel="stylesheet" href="dist/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-onest">
+    <div id="header"></div>
+    <script src="components/style.js"></script>
+    <script src="components/header.js"></script>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative h-[300px] bg-cover bg-center flex items-center justify-center text-center text-white"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1668706971199-37e30a4e6298?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div class="relative z-10 px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Hubungi Kami</h1>
+        <p class="text-lg text-gray-200">
+          Fakultas Ilmu Sosial dan Ilmu Politik UIN Bandung
+        </p>
+      </div>
+    </section>
+
+    <section class="py-12 px-4 max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Formulir Kontak -->
+        <form class="space-y-4">
+          <div>
+            <label for="name" class="block font-medium mb-1">Nama</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full px-4 py-2 border border-gray-300 rounded"
+              required
+            />
+          </div>
+          <div>
+            <label for="email" class="block font-medium mb-1">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full px-4 py-2 border border-gray-300 rounded"
+              required
+            />
+          </div>
+          <div>
+            <label for="phone" class="block font-medium mb-1"
+              >Nomor Telepon</label
+            >
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="w-full px-4 py-2 border border-gray-300 rounded"
+            />
+          </div>
+          <div>
+            <label for="message" class="block font-medium mb-1">Pesan</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              class="w-full px-4 py-2 border border-gray-300 rounded"
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="bg-primary-950 text-white px-6 py-2 rounded hover:bg-primary-900"
+          >
+            Kirim
+          </button>
+        </form>
+
+        <!-- Informasi Kontak -->
+        <div class="space-y-4 text-gray-700 mt-10">
+          <h3 class="text-xl font-semibold text-primary-950">
+            FISIP UIN Sunan Gunung Djati Bandung
+          </h3>
+          <p>Jl. AH. Nasution No. 105,<br />Cibiru, Bandung</p>
+          <p><strong>Telepon:</strong> (022) 1234567</p>
+          <p>
+            <strong>Email:</strong>
+            <a
+              href="mailto:ipoll@uinsgd.ac.id"
+              class="text-blue-700 hover:underline"
+              >ipol@uinsgd.ac.id</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+    <script src="components/footer.js"></script>
+  </body>
+</html>

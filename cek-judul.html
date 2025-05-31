@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dosen Ilmu Politik</title>
+    <link rel="stylesheet" href="dist/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-onest">
+    <div id="header"></div>
+    <script src="components/style.js"></script>
+    <script src="components/header.js"></script>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative h-[300px] bg-cover bg-center flex items-center justify-center text-center text-white"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1668706971199-37e30a4e6298?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div class="relative z-10 px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Cek Judul Skripsi</h1>
+        <p class="text-lg text-gray-200">
+          Fakultas Ilmu Sosial dan Ilmu Politik UIN Bandung
+        </p>
+      </div>
+    </section>
+
+    <section class="py-10 px-4 max-w-4xl mx-auto">
+      <div class="flex gap-2 mb-6">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Cari judul skripsi..."
+          class="flex-1 px-4 py-2 border border-gray-300 rounded"
+        />
+        <button
+          onclick="searchTitles()"
+          class="bg-primary-950 text-white px-6 py-2 rounded hover:bg-primary-900"
+        >
+          Search
+        </button>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="min-w-full border border-gray-300 text-sm text-left">
+          <thead class="bg-gray-100 text-gray-700">
+            <tr>
+              <th class="border px-4 py-2">Judul</th>
+              <th class="border px-4 py-2">Nama</th>
+              <th class="border px-4 py-2">Tahun</th>
+            </tr>
+          </thead>
+          <tbody id="resultList" class="text-gray-800"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script>
+      const skripsiList = [
+        {
+          judul:
+            "Analisis Peran Partai Politik Lokal dalam Pemerintahan Daerah",
+          nama: "Andi Saputra",
+          tahun: "2022",
+        },
+        {
+          judul: "Strategi Komunikasi Politik dalam Kampanye Pemilu Legislatif",
+          nama: "Rina Mulyani",
+          tahun: "2021",
+        },
+        {
+          judul: "Dinamika Politik Identitas dalam Pilkada di Indonesia",
+          nama: "Budi Rahmat",
+          tahun: "2023",
+        },
+        {
+          judul: "Pengaruh Media Sosial terhadap Partisipasi Politik Mahasiswa",
+          nama: "Siti Aminah",
+          tahun: "2020",
+        },
+        {
+          judul: "Implementasi Kebijakan Publik di Era Desentralisasi",
+          nama: "Dedi Gunawan",
+          tahun: "2022",
+        },
+      ];
+
+      function renderList(data) {
+        const resultList = document.getElementById("resultList");
+        resultList.innerHTML = "";
+        if (data.length === 0) {
+          resultList.innerHTML = `<tr><td colspan="3" class="px-4 py-2 text-gray-500 text-center">Tidak ada hasil ditemukan.</td></tr>`;
+          return;
+        }
+        data.forEach((item) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td class="border px-4 py-2">${item.judul}</td>
+            <td class="border px-4 py-2">${item.nama}</td>
+            <td class="border px-4 py-2">${item.tahun}</td>
+          `;
+          resultList.appendChild(row);
+        });
+      }
+
+      function searchTitles() {
+        const input = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const filtered = skripsiList.filter(
+          (item) =>
+            item.judul.toLowerCase().includes(input) ||
+            item.nama.toLowerCase().includes(input) ||
+            item.tahun.includes(input)
+        );
+        renderList(filtered);
+      }
+
+      // Render all on page load
+      renderList(skripsiList);
+    </script>
+
+    <div id="footer"></div>
+    <script src="components/footer.js"></script>
+  </body>
+</html>
