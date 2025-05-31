@@ -73,16 +73,16 @@
             <img
               src="${dosen.photo_url || "img/default-avatar.png"}"
               alt="${dosen.name}"
-              class="w-36 h-36 object-cover rounded-full shadow mb-4"
+              class="w-28 h-28 object-cover rounded-full shadow mb-2"
             />
-            <h2 class="text-xl font-extrabold text-primary-950 mb-1">${
+            <h2 class="text-xl font-extrabold text-primary-950 mb">${
               dosen.name
             }</h2>
-            <p class="text-sm text-gray-600">${dosen.field}</p>
-            <p class="text-sm text-gray-500 mb-2">NIP: ${dosen.nip}</p>
+            <p class="text-sm font-extrabold text-gray-900">${dosen.field}</p>
+            <p class="text-sm text-gray-500 mb-2">${dosen.nip}</p>
             ${
               dosen.google_scholar
-                ? `<a href="${dosen.google_scholar}" target="_blank" class="text-xs text-blue-600 hover:underline">Google Scholar</a>`
+                ? `<a href="${dosen.google_scholar}" target="_blank" class="text-sm text-blue-300 hover:underline">Google Scholar</a>`
                 : ""
             }
           `;
