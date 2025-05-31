@@ -48,12 +48,12 @@
         </button>
       </div>
       <div class="overflow-x-auto">
-        <table class="min-w-full border border-gray-300 text-sm text-left">
+        <table class="w-full border border-gray-300 text-sm text-left">
           <thead class="bg-gray-100 text-gray-700">
             <tr>
-              <th class="border px-4 py-2">Judul</th>
-              <th class="border px-4 py-2">Nama</th>
-              <th class="border px-4 py-2">Tahun</th>
+              <th class="border px-4 py-2 w-[60%]">Judul</th>
+              <th class="border px-4 py-2 w-[25%]">Nama</th>
+              <th class="border px-4 py-2 w-[15%] text-right">Tahun</th>
             </tr>
           </thead>
           <tbody id="resultList" class="text-gray-800"></tbody>
@@ -103,7 +103,7 @@
           row.innerHTML = `
             <td class="border px-4 py-2">${item.judul}</td>
             <td class="border px-4 py-2">${item.nama}</td>
-            <td class="border px-4 py-2">${item.tahun}</td>
+            <td class="border px-4 py-2 text-right">${item.tahun}</td>
           `;
           resultList.appendChild(row);
         });
