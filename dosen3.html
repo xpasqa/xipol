@@ -34,7 +34,6 @@
 
     <!-- Dosen Grid Section -->
     <section class="container mx-auto px-4 py-16">
-      <h2 class="text-3xl font-semibold text-center mb-10">Dosen Aktif</h2>
       <div
         id="dosen-container"
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10"
@@ -73,7 +72,7 @@
             <img
               src="${dosen.photo_url || "img/default-avatar.png"}"
               alt="${dosen.name}"
-              class="w-33 h-33 object-cover rounded-full shadow mb-2"
+              class="w-33 h-33 max-w-[60%] object-cover rounded-full shadow mb-2"
             />
             <h2 class="text-xl font-extrabold text-primary-950 mb">${
               dosen.name
