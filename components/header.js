@@ -60,10 +60,10 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
           <div
             class="absolute left-0 top-full mt-2 w-48 bg-white text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
-            <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Profile Dosen</a>
-            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen Ilmu Politik</a>
-            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
-            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
+            <a href="/dosen.html" class="block px-4 py-2 hover:bg-teal-100">Profile Dosen</a>
+            <a href="/dosen-ilmu-politik.html#rekognisi" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen Ilmu Politik</a>
+            <a href="/dosen-ilmu-politik.html#infografis" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
+            <a href="/dosen-ilmu-politik.html#kodeetik" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
           </div>
         </div>
 
@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
 
         <a href="/news.html" class="hover:text-teal-400 transition">News</a>
+        <a href="/survey.html" class=" hover:text-teal-400">Survey</a>
         <a href="/contact.html" class="hover:text-teal-400 transition">Kontak</a>
       </nav>
 
@@ -179,10 +180,10 @@ document.addEventListener("DOMContentLoaded", function () {
           </svg>
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
-         <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Profile Dosen</a>
-            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen Ilmu Politik</a>
-            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
-            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
+            <a href="/dosen.html" class="block px-4 py-2 hover:bg-teal-100">Profile Dosen</a>
+            <a href="/dosen-ilmu-politik.html#rekognisi" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen Ilmu Politik</a>
+            <a href="/dosen-ilmu-politik.html#infografis" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
+            <a href="/dosen-ilmu-politik.html#kodeetik" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
         </div>
       </div>
 
@@ -196,10 +197,10 @@ document.addEventListener("DOMContentLoaded", function () {
           </svg>
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
-        <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Organisasi Kemahasiswaan</a>
-            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Beasiswa Mahasiswa</a>
-            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah</a>
-            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100">Kode Mahasiswa</a>
+        <a href="/oragnisasi-kemahasiswaan.html" class="block px-4 py-2 hover:bg-teal-100">Organisasi Kemahasiswaan</a>
+            <a href="/beasiswa-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100">Beasiswa Mahasiswa</a>
+            <a href="/publikasi-ilmiah-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah</a>
+            <a href="/kode-etik-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100">Kode Mahasiswa</a>
         </div>
       </div>
 
@@ -213,13 +214,14 @@ document.addEventListener("DOMContentLoaded", function () {
           </svg>
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
-         <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Pusat Karir</a>
-            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Survey</a>
-            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Lulusan</a>
+         <a href="/pusat-karir.html" class="block px-4 py-2 hover:bg-teal-100">Pusat Karir</a>
+            <a href="/survey.html" class="block px-4 py-2 hover:bg-teal-100">Survey</a>
+            <a href="/lulusan.html" class="block px-4 py-2 hover:bg-teal-100">Lulusan</a>
         </div>
       </div>
 
       <a href="/news.html" class="block hover:text-teal-400">News</a>
+      <a href="/survey.html" class="block hover:text-teal-400">Survey</a>
       <a href="/contact.html" class="block hover:text-teal-400">Kontak</a>
     </div>
   </div>
