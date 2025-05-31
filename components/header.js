@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Kurikulum</a>
             <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Panduan Akademik</a>
             <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Layanan Akademik Mahasiswa</a>
-            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100">Cek Plagiarisme</a>
+            <a href="/cek-plagiarisme.html" class="block px-4 py-2 hover:bg-teal-100">Cek Plagiarisme</a>
           </div>
         </div>
 
@@ -77,10 +77,10 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
           <div
             class="absolute left-0 top-full mt-2 w-48 bg-white text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
-            <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Organisasi Kemahasiswaan</a>
-            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Beasiswa Mahasiswa</a>
-            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah</a>
-            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100"> Mahasiswa Berprestasi</a>
+            <a href="/himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himapol</a>
+            <a href="#" class="block px-4 py-2 hover:bg-teal-100">Beasiswa Mahasiswa</a>
+            <a href="#" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah Mahasiswa</a>
+            <a href="/prestasi-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100"> Mahasiswa Berprestasi<a>
           </div>
         </div>
 
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Kurikulum</a>
             <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Panduan Akademik</a>
             <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Layanan Akademik Mahasiswa</a>
-            <a href="/about.html#struktur" class="block px-4 py-2 hover:bg-teal-100">Cek Plagiarisme</a>
+            <a href="/cek-plagiarisme.html" class="block px-4 py-2 hover:bg-teal-100">Cek Plagiarisme</a>
         </div>
       </div>
 
@@ -197,10 +197,10 @@ document.addEventListener("DOMContentLoaded", function () {
           </svg>
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
-        <a href="/oragnisasi-kemahasiswaan.html" class="block px-4 py-2 hover:bg-teal-100">Organisasi Kemahasiswaan</a>
-            <a href="/beasiswa-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100">Beasiswa Mahasiswa</a>
-            <a href="/publikasi-ilmiah-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah</a>
-            <a href="/kode-etik-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100">Kode Mahasiswa</a>
+            <a href="/himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himapol</a>
+            <a href="#" class="block px-4 py-2 hover:bg-teal-100">Beasiswa Mahasiswa</a>
+            <a href="#" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah Mahasiswa</a>
+            <a href="/prestasi-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100"> Mahasiswa Berprestasi<a>
         </div>
       </div>
 
