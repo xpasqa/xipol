@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const header = `
+  const header = `
       <header class="bg-primary-950 shadow-sm relative z-50 text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex space-x-6 text-sm">
+
+              <a href="/index.html" class="hover:text-teal-400 transition">Home</a>
+
 
         <!-- About dengan Dropdown -->
         <div class="relative group">
@@ -28,8 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/about.html#profil" class="block px-4 py-2 hover:bg-teal-100">Profil Lulusan</a>
             <a href="/about.html#fasilitas" class="block px-4 py-2 hover:bg-teal-100">Fasilitas dan Sarana</a>
             <a href="/about.html#alumni" class="block px-4 py-2 hover:bg-teal-100">Kiprah Alumni</a>
-            <a href="/polabs.html" class="block px-4 py-2 hover:bg-teal-100">Political Laboratorium</a>
-            <a href="/akreditas.gihtml" class="block px-4 py-2 hover:bg-teal-100">Sertifikat Akreditasi</a>
+            <a href="/akreditas.html" class="block px-4 py-2 hover:bg-teal-100">Sertifikat Akreditasi</a>
           </div>
         </div>
 
@@ -43,51 +45,51 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
           <div
             class="absolute left-0 top-full mt-2 w-48 bg-white text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
-            <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Kurikulum</a>
-            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Panduan Akademik</a>
-            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Layanan Akademik Mahasiswa</a>
+            <a href="/kurikulum.html" class="block px-4 py-2 hover:bg-teal-100">Matrik Kurikulum</a>
+            <a href="/panduan-akademik.html" class="block px-4 py-2 hover:bg-teal-100">Panduan Akademik</a>
             <a href="/cek-plagiarisme.html" class="block px-4 py-2 hover:bg-teal-100">Cek Plagiarisme</a>
+            <a href="/cek-judul.html" class="block px-4 py-2 hover:bg-teal-100">Cek Judul Skripsi</a>
             </div>
         </div>
-
+      
         <div class="relative group">
-          <a href="/dosen.html"
+          <a href="#"
              class="inline-flex items-center hover:text-teal-400 transition">
-            Dosen
+            Stakeholder
             <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20">
               <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
             </svg>
           </a>
           <div
             class="absolute left-0 top-full mt-2 w-48 bg-white text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
-            <a href="/dosen.html" class="block px-4 py-2 hover:bg-teal-100">Profile Dosen</a>
-            <a href="/dosen-ilmu-politik.html#rekognisi" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen Ilmu Politik</a>
-            <a href="/dosen-ilmu-politik.html#infografis" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
-            <a href="/dosen-ilmu-politik.html#kodeetik" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
-          </div>
+            <a href="/dosen.html" class="block px-4 py-2 hover:bg-teal-100">Dosen</a>
+            <a href="/himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himpunan Mahasiswa</a>
+            <a href="/alumni.html" class="block px-4 py-2 hover:bg-teal-100">Alumni</a>
+            <a href="/polabs.html" class="block px-4 py-2 hover:bg-teal-100">Political Labs</a>            
+            </div>
         </div>
 
          <div class="relative group">
           <a href="#"
              class="inline-flex items-center hover:text-teal-400 transition">
-            Mahasiswa
+            Tridharma
             <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20">
               <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
             </svg>
           </a>
           <div
             class="absolute left-0 top-full mt-2 w-48 bg-white text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
-            <a href="/himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himapol</a>
-            <a href="#" class="block px-4 py-2 hover:bg-teal-100">Beasiswa Mahasiswa</a>
-            <a href="#" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah Mahasiswa</a>
-            <a href="/prestasi-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100"> Mahasiswa Berprestasi<a>
-          </div>
+            <a href="/publikasi-ilmiah.html" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah</a>
+            <a href="/pengabdian-masyarakat.html" class="block px-4 py-2 hover:bg-teal-100">Pengabdian Masyarakat</a>
+            <a href="https://journal.uinsgd.ac.id/index.php/politicon" class="block px-4 py-2 hover:bg-teal-100">Jurnal Politcon</a>
+            <a href="https://journal.uinsgd.ac.id/index.php/candidate" class="block px-4 py-2 hover:bg-teal-100">Jurnal Candidate</a>            
+            </div>
         </div>
 
-        <a href="/news.html" class="hover:text-teal-400 transition">News</a>
+        <a href="/news.html" class="hover:text-teal-400 transition">Berita</a>
         <a href="/survey.html" class=" hover:text-teal-400">Survey</a>
-        <a href="/contact.html" class="hover:text-teal-400 transition">Kontak</a>
       </nav>
+
 
   
       <!-- Mobile Toggle -->
@@ -124,15 +126,14 @@ document.addEventListener("DOMContentLoaded", function () {
           </svg>
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
-          <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Tentang Ilmu Politik</a>
+          <a href="/about.html#home" class="block px-4 py-2 hover:bg-teal-100">Tentang Ilmu Politik</a>
             <a href="/about.html#home" class="block px-4 py-2 hover:bg-teal-100">Sejarah Prodi</a>
             <a href="/about.html#visimisi" class="block px-4 py-2 hover:bg-teal-100">Visi, Misi dan Tujuan</a>
             <a href="/about.html#tridharma" class="block px-4 py-2 hover:bg-teal-100">Tridharma Perguruan Tinggi</a>
             <a href="/about.html#profil" class="block px-4 py-2 hover:bg-teal-100">Profil Lulusan</a>
             <a href="/about.html#fasilitas" class="block px-4 py-2 hover:bg-teal-100">Fasilitas dan Sarana</a>
             <a href="/about.html#alumni" class="block px-4 py-2 hover:bg-teal-100">Kiprah Alumni</a>
-            <a href="/polabs.html" class="block px-4 py-2 hover:bg-teal-100">Political Laboratorium</a>
-            <a href="/akreditas.gihtml" class="block px-4 py-2 hover:bg-teal-100">Sertifikat Akreditasi</a>
+            <a href="/akreditas.html" class="block px-4 py-2 hover:bg-teal-100">Sertifikat Akreditasi</a>
         </div>
       </div>
 
@@ -146,10 +147,10 @@ document.addEventListener("DOMContentLoaded", function () {
           </svg>
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
-          <a href="/about.html#tentang" class="block px-4 py-2 hover:bg-teal-100">Kurikulum</a>
-            <a href="/about.html#sejarah" class="block px-4 py-2 hover:bg-teal-100">Panduan Akademik</a>
-            <a href="/about.html#visi-misi" class="block px-4 py-2 hover:bg-teal-100">Layanan Akademik Mahasiswa</a>
+         <a href="/kurikulum.html" class="block px-4 py-2 hover:bg-teal-100">Matrik Kurikulum</a>
+            <a href="/panduan-akademik.html" class="block px-4 py-2 hover:bg-teal-100">Panduan Akademik</a>
             <a href="/cek-plagiarisme.html" class="block px-4 py-2 hover:bg-teal-100">Cek Plagiarisme</a>
+            <a href="/cek-judul.html" class="block px-4 py-2 hover:bg-teal-100">Cek Judul Skripsi</a>
         </div>
       </div>
 
@@ -157,16 +158,16 @@ document.addEventListener("DOMContentLoaded", function () {
         <button
           class="w-full text-left flex items-center justify-between hover:text-teal-400 transition focus:outline-none"
           onclick="this.nextElementSibling.classList.toggle('hidden')">
-          Dosen
+          Stakeholder
           <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20">
             <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
           </svg>
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
-            <a href="/dosen.html" class="block px-4 py-2 hover:bg-teal-100">Profile Dosen</a>
-            <a href="/dosen-ilmu-politik.html#rekognisi" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen Ilmu Politik</a>
-            <a href="/dosen-ilmu-politik.html#infografis" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
-            <a href="/dosen-ilmu-politik.html#kodeetik" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
+           <a href="/dosen.html" class="block px-4 py-2 hover:bg-teal-100">Dosen</a>
+            <a href="/himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himpunan Mahasiswa</a>
+            <a href="/alumni.html" class="block px-4 py-2 hover:bg-teal-100">Alumni</a>
+            <a href="/polabs.html" class="block px-4 py-2 hover:bg-teal-100">Political Labs</a>       
         </div>
       </div>
 
@@ -174,40 +175,38 @@ document.addEventListener("DOMContentLoaded", function () {
         <button
           class="w-full text-left flex items-center justify-between hover:text-teal-400 transition focus:outline-none"
           onclick="this.nextElementSibling.classList.toggle('hidden')">
-          Mahasiswa
+          Tridharma
           <svg class="w-4 h-4 ml-1 fill-current" viewBox="0 0 20 20">
             <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
           </svg>
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
-            <a href="/himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himapol</a>
-            <a href="#" class="block px-4 py-2 hover:bg-teal-100">Beasiswa Mahasiswa</a>
-            <a href="#" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah Mahasiswa</a>
-            <a href="/prestasi-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100"> Mahasiswa Berprestasi<a>
+            <a href="/publikasi-ilmiah.html" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah</a>
+            <a href="/pengabdian-masyarakat.html" class="block px-4 py-2 hover:bg-teal-100">Pengabdian Masyarakat</a>
+            <a href="https://journal.uinsgd.ac.id/index.php/politicon" class="block px-4 py-2 hover:bg-teal-100">Jurnal Politcon</a>
+            <a href="https://journal.uinsgd.ac.id/index.php/candidate" class="block px-4 py-2 hover:bg-teal-100">Jurnal Candidate</a>   
         </div>
       </div>
 
       <a href="/news.html" class="block hover:text-teal-400">News</a>
       <a href="/survey.html" class="block hover:text-teal-400">Survey</a>
-      <a href="/contact.html" class="block hover:text-teal-400">Kontak</a>
     </div>
   </div>
 </header>
 
     `;
-  
-    const headerContainer = document.getElementById("header");
-    if (headerContainer) {
-      headerContainer.innerHTML = header;
-  
-      const toggleBtn = document.getElementById("menu-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
-  
-      if (toggleBtn && mobileMenu) {
-        toggleBtn.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-        });
-      }
+
+  const headerContainer = document.getElementById("header");
+  if (headerContainer) {
+    headerContainer.innerHTML = header;
+
+    const toggleBtn = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (toggleBtn && mobileMenu) {
+      toggleBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
     }
-  });
-  
+  }
+});
