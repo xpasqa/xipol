@@ -28,16 +28,6 @@
               <input type="hidden" id="skripsi-id" />
 
               <div>
-                <label class="block font-semibold mb-1">No</label>
-                <input
-                  type="number"
-                  id="no"
-                  class="w-full border p-2 rounded"
-                  required
-                />
-              </div>
-
-              <div>
                 <label class="block font-semibold mb-1">Judul Skripsi</label>
                 <input
                   type="text"
@@ -102,8 +92,6 @@
           }
           if (data) {
             document.getElementById("skripsi-id").value = data.id;
-            document.getElementById("no").value = data.no ?? "";
-            document.getElementById("no").disabled = true;
             document.getElementById("judul").value = data.judul ?? "";
             document.getElementById("author").value = data.author ?? "";
             document.getElementById("tahun").value = data.tahun ?? "";
@@ -115,7 +103,6 @@
         e.preventDefault();
 
         const id = document.getElementById("skripsi-id").value;
-        const no = parseInt(document.getElementById("no").value);
         const judul = document.getElementById("judul").value;
         const author = document.getElementById("author").value;
         const tahun = parseInt(document.getElementById("tahun").value);
@@ -126,7 +113,6 @@
         }
 
         const payload = {
-          no,
           judul,
           author,
           tahun,
