@@ -4,8 +4,8 @@ const container = document.getElementById("news-list");
 
 const { data: articles, error } = await supabase
   .from("articles")
-  .select("title, slug, cover_image, created_at, author, category")
-  .order("created_at", { ascending: false });
+  .select("title, slug, cover_image, published_date, author, category")
+  .order("published_date", { ascending: false });
 
 if (error) {
   container.innerHTML = `<p class="text-red-500">Gagal memuat artikel: ${error.message}</p>`;
@@ -16,7 +16,7 @@ if (!articles || articles.length === 0) {
   container.innerHTML = `<p class="text-gray-500">Belum ada artikel yang tersedia.</p>`;
 } else {
   articles.forEach((article) => {
-    const date = new Date(article.created_at).toLocaleDateString("id-ID", {
+    const date = new Date(article.published_date).toLocaleDateString("id-ID", {
       day: "numeric",
       month: "long",
       year: "numeric",

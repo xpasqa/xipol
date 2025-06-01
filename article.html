@@ -57,11 +57,14 @@
       } else {
         const article = articles[0];
 
-        const date = new Date(article.created_at).toLocaleDateString("id-ID", {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-        });
+        const date = new Date(article.published_date).toLocaleDateString(
+          "id-ID",
+          {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+          }
+        );
 
         container.innerHTML = `
   <img src="${

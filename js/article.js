@@ -22,6 +22,8 @@ try {
     return
   }
 
+const article = articles[0];
+
 const publishedDate = article.published_date
   ? new Date(article.published_date).toLocaleDateString("id-ID", {
       day: "numeric",
