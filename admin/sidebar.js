@@ -6,9 +6,10 @@ document.getElementById("sidebar").innerHTML = `
       </a>
     </div>
     <nav class="p-4 space-y-2">
-      <a href="index.html" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-800 font-medium">Semua News</a>
-      <a href="form.html" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-800 font-medium">Tulis Artikel</a>
+      <a href="index.html" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-800 font-medium">Artikel</a>
       <a href="dosen.html" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-800 font-medium">Dosen</a>
+         <a href="skripsi.html" class="block px-4 py-2 rounded hover:bg-gray-200 text-gray-800 font-medium">Skripsi</a>
+   
       <a href="#" id="logout-link" class="block px-4 py-2 rounded text-red-600 hover:bg-gray-200 font-medium">Logout</a>
     </nav>
   </aside>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Admin - Dosen</title>
+    <link rel="stylesheet" href="../dist/style.css" />
+    <style>
+      body {
+        font-family: "Onest", sans-serif;
+      }
+    </style>
+  </head>
+  <script type="module">
+    import { supabase } from "../js/supabaseClient.js";
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    if (!session) {
+      window.location.href = "/login.html";
+    }
+  </script>
+  <body class="bg-white min-h-screen">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex items-center justify-between mb-6">
+            <h1 class="text-3xl font-bold text-primary-950">Daftar Dosen</h1>
+            <a
+              href="dosen-edit.html"
+              id="add-dosen"
+              class="bg-primary-950 text-white px-4 py-2 rounded"
+              >Tambah Dosen</a
+            >
+          </div>
+
+          <div class="bg-white rounded-lg shadow p-6">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr>
+                  <th class="border-b py-2">Urutan</th>
+                  <th class="border-b py-2">Nama</th>
+                  <th class="border-b py-2">NIP</th>
+                  <th class="border-b py-2">Email</th>
+                  <th class="border-b py-2">Bidang</th>
+                  <th class="border-b py-2">Scholar</th>
+                  <th class="border-b py-2 w-48">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="dosen-list"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+
+      <!-- Modal Edit Form -->
+      <div
+        id="edit-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50"
+      >
+        <div class="bg-white p-6 rounded-lg w-full max-w-xl">
+          <h2 class="text-xl font-bold mb-4">Edit Dosen</h2>
+          <form id="edit-form" class="space-y-4">
+            <input type="hidden" id="edit-id" />
+            <div>
+              <label class="block text-sm font-medium">Urutan</label>
+              <input
+                type="number"
+                id="edit-order"
+                class="w-full border p-2 rounded"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Nama</label>
+              <input
+                type="text"
+                id="edit-name"
+                class="w-full border p-2 rounded"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">NIP</label>
+              <input
+                type="text"
+                id="edit-nip"
+                class="w-full border p-2 rounded"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Email</label>
+              <input
+                type="email"
+                id="edit-email"
+                class="w-full border p-2 rounded"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Bidang</label>
+              <input
+                type="text"
+                id="edit-field"
+                class="w-full border p-2 rounded"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium">Google Scholar</label>
+              <input
+                type="url"
+                id="edit-scholar"
+                class="w-full border p-2 rounded"
+              />
+            </div>
+            <div class="flex justify-end space-x-4 pt-4">
+              <button
+                type="button"
+                id="cancel-edit"
+                class="px-4 py-2 bg-gray-300 rounded"
+              >
+                Batal
+              </button>
+              <button
+                type="submit"
+                class="px-4 py-2 bg-primary-800 text-white rounded"
+              >
+                Simpan
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load Sidebar Component -->
+    <script type="module" src="sidebar.js"></script>
+    <script type="module" src="dosen.js"></script>
+  </body>
+</html>

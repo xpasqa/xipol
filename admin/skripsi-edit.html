@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Skripsi</title>
+    <link rel="stylesheet" href="../dist/style.css" />
+    <style>
+      body {
+        font-family: "Onest", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white min-h-screen">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-3xl font-bold text-primary-950 mb-6" id="form-title">
+            Tambah Skripsi
+          </h1>
+
+          <div class="bg-white rounded-lg shadow p-6">
+            <form id="skripsi-form" class="space-y-4">
+              <input type="hidden" id="skripsi-id" />
+
+              <div>
+                <label class="block font-semibold mb-1">No</label>
+                <input
+                  type="number"
+                  id="no"
+                  class="w-full border p-2 rounded"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1">Judul Skripsi</label>
+                <input
+                  type="text"
+                  id="judul"
+                  class="w-full border p-2 rounded"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1">Penulis</label>
+                <input
+                  type="text"
+                  id="author"
+                  class="w-full border p-2 rounded"
+                  required
+                />
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1">Tahun</label>
+                <input
+                  type="number"
+                  id="tahun"
+                  class="w-full border p-2 rounded"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                class="bg-primary-950 text-white px-6 py-2 rounded"
+              >
+                Simpan Skripsi
+              </button>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Sidebar -->
+    <script type="module" src="sidebar.js"></script>
+
+    <!-- Logic -->
+    <script type="module">
+      import { supabase } from "../js/supabaseClient.js";
+
+      const form = document.getElementById("skripsi-form");
+      const urlParams = new URLSearchParams(window.location.search);
+      const skripsiId = urlParams.get("edit");
+
+      if (skripsiId) {
+        document.getElementById("form-title").textContent = "Edit Skripsi";
+        (async () => {
+          const { data, error } = await supabase
+            .from("skripsi")
+            .select("*")
+            .eq("id", skripsiId)
+            .single();
+          if (error) {
+            return alert("Gagal memuat data skripsi: " + error.message);
+          }
+          if (data) {
+            document.getElementById("skripsi-id").value = data.id;
+            document.getElementById("no").value = data.no ?? "";
+            document.getElementById("no").disabled = true;
+            document.getElementById("judul").value = data.judul ?? "";
+            document.getElementById("author").value = data.author ?? "";
+            document.getElementById("tahun").value = data.tahun ?? "";
+          }
+        })();
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const id = document.getElementById("skripsi-id").value;
+        const no = parseInt(document.getElementById("no").value);
+        const judul = document.getElementById("judul").value;
+        const author = document.getElementById("author").value;
+        const tahun = parseInt(document.getElementById("tahun").value);
+
+        const currentYear = new Date().getFullYear();
+        if (tahun > currentYear) {
+          return alert("Tahun tidak boleh lebih besar dari tahun sekarang.");
+        }
+
+        const payload = {
+          no,
+          judul,
+          author,
+          tahun,
+        };
+
+        console.log("Payload ke Supabase:", payload);
+
+        if (id) {
+          const { error } = await supabase
+            .from("skripsi")
+            .update(payload)
+            .eq("id", id);
+          if (error)
+            return alert("Gagal memperbarui skripsi: " + error.message);
+          alert("Skripsi berhasil diperbarui.");
+        } else {
+          const { error } = await supabase.from("skripsi").insert([payload]);
+          if (error)
+            return alert("Gagal menambahkan skripsi: " + error.message);
+          alert("Skripsi berhasil ditambahkan.");
+        }
+
+        window.location.href = "skripsi.html";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Skripsi</title>
+    <link rel="stylesheet" href="../dist/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Onest", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white min-h-screen">
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex justify-between items-center mb-6 relative">
+            <h1 class="text-3xl font-bold text-primary-950">Daftar Skripsi</h1>
+            <div class="flex gap-2">
+              <input type="file" id="csvInput" accept=".csv" class="hidden" />
+              <button
+                id="btnImport"
+                class="bg-primary-950 text-white px-4 py-2 rounded hover:bg-primary-900"
+              >
+                Import Skripsi
+              </button>
+              <a
+                href="skripsi-edit.html"
+                class="bg-primary-950 text-white px-4 py-2 rounded hover:bg-primary-900"
+                >+ Tambah Skripsi</a
+              >
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow overflow-x-auto">
+            <table class="min-w-full text-sm">
+              <thead class="bg-primary-950 text-white">
+                <tr>
+                  <th class="py-3 px-4 text-left">No</th>
+                  <th class="py-3 px-4 text-left w-full">Judul</th>
+                  <th class="py-3 px-4 text-left">Penulis</th>
+                  <th class="py-3 px-4 text-left">Tahun</th>
+                  <th class="py-3 px-4 text-left">Aksi</th>
+                </tr>
+              </thead>
+              <tbody
+                id="skripsi-list"
+                class="divide-y divide-gray-200 bg-white"
+              ></tbody>
+            </table>
+          </div>
+          <p class="text-sm text-gray-600 mt-4">
+            Format file CSV yang valid untuk impor skripsi:
+            <strong>judul, author, tahun</strong> pada baris pertama sebagai
+            header, diikuti data pada baris-baris berikutnya. Contoh:
+            <br />
+            <code>"Pengaruh Media Sosial","Budi Setiawan",2023</code>
+          </p>
+        </div>
+      </main>
+    </div>
+
+    <!-- Sidebar -->
+    <script type="module" src="sidebar.js"></script>
+
+    <!-- Logic -->
+    <script type="module">
+      import { supabase } from "../js/supabaseClient.js";
+
+      const tbody = document.getElementById("skripsi-list");
+
+      async function loadSkripsi() {
+        const { data, error } = await supabase
+          .from("skripsi")
+          .select("*")
+          .order("tahun", { ascending: false });
+
+        if (error) {
+          tbody.innerHTML = `<tr><td colspan="5" class="p-4 text-red-500">Gagal memuat data</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = "";
+        data.forEach((item) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td class="px-4 py-2">${item.id}</td>
+            <td class="px-4 py-2 w-full max-w-[800px] whitespace-normal break-words">${item.judul}</td>
+            <td class="px-4 py-2">${item.author}</td>
+            <td class="px-4 py-2">${item.tahun}</td>
+            <td class="px-4 py-2 flex items-center gap-4">
+              <a href="skripsi-edit.html?edit=${item.id}" class="text-blue-600 hover:text-blue-800">
+                <i class="fas fa-edit"></i>
+              </a>
+              <button data-id="${item.id}" class="text-red-600 hover:text-red-800 btn-delete">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          `;
+          tbody.appendChild(row);
+        });
+
+        document.querySelectorAll(".btn-delete").forEach((btn) => {
+          btn.addEventListener("click", async () => {
+            const id = btn.dataset.id;
+            if (confirm("Yakin ingin menghapus data ini?")) {
+              const { error } = await supabase
+                .from("skripsi")
+                .delete()
+                .eq("id", id);
+              if (error) {
+                alert("Gagal menghapus: " + error.message);
+              } else {
+                loadSkripsi();
+              }
+            }
+          });
+        });
+      }
+
+      loadSkripsi();
+
+      // Import CSV handler
+      document
+        .getElementById("csvInput")
+        .addEventListener("change", async function (event) {
+          const file = event.target.files[0];
+          if (!file) return;
+
+          const reader = new FileReader();
+          reader.onload = async function (e) {
+            const text = e.target.result;
+            const rows = text.split("\n").slice(1); // skip header
+            const records = rows
+              .map((row) => {
+                if (!row.trim()) return null;
+                const [judul, author, tahun] = row
+                  .split(",")
+                  .map((s) => s.trim().replace(/^"|"$/g, ""));
+                if (!judul || !author || !tahun) return null;
+                return { judul, author, tahun: parseInt(tahun) };
+              })
+              .filter(Boolean);
+
+            if (records.length === 0) {
+              alert("Tidak ada data yang dapat diimpor.");
+              return;
+            }
+
+            const { error } = await supabase.from("skripsi").insert(records);
+            if (error) {
+              alert("Gagal import data: " + error.message);
+            } else {
+              alert("Import berhasil!");
+              loadSkripsi();
+            }
+          };
+          reader.readAsText(file);
+        });
+    </script>
+    <script>
+      document.getElementById("btnImport").addEventListener("click", () => {
+        document.getElementById("csvInput").click();
+      });
+    </script>
+  </body>
+</html>

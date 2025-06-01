@@ -60,35 +60,23 @@
       </div>
     </section>
 
-    <script>
-      const skripsiList = [
-        {
-          judul:
-            "Analisis Peran Partai Politik Lokal dalam Pemerintahan Daerah",
-          nama: "Andi Saputra",
-          tahun: "2022",
-        },
-        {
-          judul: "Strategi Komunikasi Politik dalam Kampanye Pemilu Legislatif",
-          nama: "Rina Mulyani",
-          tahun: "2021",
-        },
-        {
-          judul: "Dinamika Politik Identitas dalam Pilkada di Indonesia",
-          nama: "Budi Rahmat",
-          tahun: "2023",
-        },
-        {
-          judul: "Pengaruh Media Sosial terhadap Partisipasi Politik Mahasiswa",
-          nama: "Siti Aminah",
-          tahun: "2020",
-        },
-        {
-          judul: "Implementasi Kebijakan Publik di Era Desentralisasi",
-          nama: "Dedi Gunawan",
-          tahun: "2022",
-        },
-      ];
+    <script type="module">
+      import { supabase } from "./js/supabaseClient.js";
+
+      let skripsiList = [];
+
+      async function loadSkripsi() {
+        const { data, error } = await supabase
+          .from("skripsi")
+          .select("*")
+          .order("tahun", { ascending: false });
+        if (error) {
+          console.error("Gagal mengambil data skripsi:", error);
+          return;
+        }
+        skripsiList = data;
+        renderList(skripsiList);
+      }
 
       function renderList(data) {
         const resultList = document.getElementById("resultList");
@@ -101,7 +89,7 @@
           const row = document.createElement("tr");
           row.innerHTML = `
             <td class="border px-4 py-2">${item.judul}</td>
-            <td class="border px-4 py-2">${item.nama}</td>
+            <td class="border px-4 py-2">${item.author}</td>
             <td class="border px-4 py-2 text-right">${item.tahun}</td>
           `;
           resultList.appendChild(row);
@@ -115,14 +103,21 @@
         const filtered = skripsiList.filter(
           (item) =>
             item.judul.toLowerCase().includes(input) ||
-            item.nama.toLowerCase().includes(input) ||
-            item.tahun.includes(input)
+            item.author.toLowerCase().includes(input) ||
+            item.tahun.toString().includes(input)
         );
-        renderList(filtered);
+
+        const resultList = document.getElementById("resultList");
+        resultList.innerHTML = "";
+        if (filtered.length === 0) {
+          resultList.innerHTML = `<tr><td colspan="3" class="px-4 py-2 text-center text-gray-500">Tidak ada judul yang sama.</td></tr>`;
+        } else {
+          renderList(filtered);
+        }
       }
 
       // Render all on page load
-      renderList(skripsiList);
+      loadSkripsi();
     </script>
 
     <div id="footer"></div>
