@@ -1,0 +1,46 @@
+# =====================
+# SYSTEM & ENVIRONMENT
+# =====================
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+
+# =====================
+# NODE / DEPENDENCIES
+# =====================
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# =====================
+# BUILD OUTPUT
+# =====================
+dist/
+build/
+*.tmp
+.cache/
+
+# =====================
+# PERSONAL / EDITOR FILES
+# =====================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# =====================
+# TAILWIND CSS OUTPUT
+# =====================
+style.css
+style.css.map
+
+# =====================
+# IGNORE LOCAL UPLOADS
+# =====================
+img/uploads/
+git rm -r --cached img/uploads
+git add .gitignore
+git commit -m "Add full .gitignore and stop tracking img/uploads"
