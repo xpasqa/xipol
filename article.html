@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ilmu Politik UIN Bandung</title>
+    <!-- SEO & Open Graph Tags -->
+    <meta property="og:title" content="" id="og-title" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="" id="og-image" />
+    <meta property="og:url" content="" id="og-url" />
+    <meta property="og:description" content="" id="og-description" />
+    <meta name="description" content="" id="meta-description" />
+    <script type="application/ld+json" id="jsonld-script"></script>
     <!-- Tailwind CSS via CDN -->
     <link rel="stylesheet" href="dist/style.css" />
     <!-- Google Fonts - Onest -->
@@ -84,6 +92,52 @@
     ${article.content}
   </div>
 `;
+
+        // SEO & OG & JSON-LD
+        document.title = article.title;
+
+        document
+          .getElementById("og-title")
+          .setAttribute("content", article.title);
+        document
+          .getElementById("og-image")
+          .setAttribute("content", article.cover_image || "");
+        document
+          .getElementById("og-url")
+          .setAttribute("content", window.location.href);
+        document
+          .getElementById("og-description")
+          .setAttribute("content", article.content?.substring(0, 150) || "");
+        document
+          .getElementById("meta-description")
+          .setAttribute("content", article.content?.substring(0, 150) || "");
+
+        const jsonLd = {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: article.title,
+          image: [article.cover_image || ""],
+          author: {
+            "@type": "Organization",
+            name: "Ilmu Politik UIN Bandung",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Ilmu Politik UIN Bandung",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://ilmupolitik.uinsgd.ac.id/img/logo.png",
+            },
+          },
+          datePublished: article.published_date,
+          url: window.location.href,
+          description: article.content?.substring(0, 150) || "",
+        };
+        document.getElementById("jsonld-script").textContent = JSON.stringify(
+          jsonLd,
+          null,
+          2
+        );
       }
     </script>
   </body>
