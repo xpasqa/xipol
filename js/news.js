@@ -4,7 +4,7 @@ const container = document.getElementById("news-list");
 
 const { data: articles, error } = await supabase
   .from("articles")
-  .select("title, slug, cover_image, created_at, author")
+  .select("title, slug, cover_image, created_at, author, category")
   .order("created_at", { ascending: false });
 
 if (error) {
@@ -26,6 +26,7 @@ if (!articles || articles.length === 0) {
   <a href="article.html?slug=${article.slug}" class="block bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden">
     <img src="${article.cover_image}" alt="${article.title}" class="w-full h-48 object-cover" />
     <div class="p-4">
+      <p class="text-sm text-primary-950 mb-1">${article.category || "Umum"}</p>
       <h2 class="text-xl font-semibold text-primary-950 mb-1">${article.title}</h2>
       <p class="text-sm text-gray-600">${article.author || 'Admin'} • ${date}</p>
     </div>

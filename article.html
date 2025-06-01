@@ -48,7 +48,7 @@
 
       const { data: articles, error } = await supabase
         .from("articles")
-        .select("*")
+        .select("*, category")
         .eq("slug", slug);
 
       if (error || !articles || articles.length === 0) {
@@ -71,7 +71,11 @@
         }">
   <h1 class="text-4xl font-bold text-primary-950 mb-2">${article.title}</h1>
   <p class="text-sm text-gray-600 mb-6">
-    Ditulis oleh <strong>${article.author || "Admin"}</strong> •  ${date}
+    Ditulis oleh <strong>${
+      article.author || "Admin"
+    }</strong> •  ${date} • <span class="text-primary-950">${
+          article.category || "Umum"
+        }</span>
   </p>
   <div class="prose max-w-none mt-6">
     ${article.content}

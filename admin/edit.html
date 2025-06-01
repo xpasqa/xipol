@@ -94,6 +94,25 @@
                   required
                 />
               </div>
+              <div>
+                <label class="block font-semibold mb-1">Kategori</label>
+                <select id="category" class="w-full border p-2 rounded">
+                  <option value="Kabar Prodi">Kabar Prodi</option>
+                  <option value="Opini">Opini</option>
+                  <option value="Kegiatan">Kegiatan</option>
+                  <option value="Kolom Mahasiswa">Kolom Mahasiswa</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold mb-1"
+                  >Tanggal Publikasi</label
+                >
+                <input
+                  type="date"
+                  id="published_date"
+                  class="w-full border p-2 rounded"
+                />
+              </div>
 
               <div>
                 <label class="block font-semibold mb-1">Konten</label>
@@ -144,6 +163,9 @@
       document.getElementById("slug").value = data.slug;
       document.getElementById("author").value = data.author;
       document.getElementById("cover_image").value = data.cover_image;
+      document.getElementById("category").value = data.category || "";
+      document.getElementById("published_date").value =
+        data.published_date?.split("T")[0] || "";
       quill.root.innerHTML = data.content;
 
       document
@@ -156,11 +178,22 @@
           const slug = document.getElementById("slug").value;
           const author = document.getElementById("author").value;
           const cover_image = document.getElementById("cover_image").value;
+          const category = document.getElementById("category").value;
+          const published_date =
+            document.getElementById("published_date").value;
           const content = quill.root.innerHTML;
 
           const { error } = await supabase
             .from("articles")
-            .update({ title, slug, author, cover_image, content })
+            .update({
+              title,
+              slug,
+              author,
+              cover_image,
+              content,
+              category,
+              published_date,
+            })
             .eq("id", id);
 
           if (error) {

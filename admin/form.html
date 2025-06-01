@@ -81,6 +81,27 @@
               </div>
 
               <div>
+                <label class="block font-semibold mb-1">Kategori</label>
+                <select id="category" class="w-full border p-2 rounded">
+                  <option value="Kabar Prodi">Kabar Prodi</option>
+                  <option value="Opini">Opini</option>
+                  <option value="Kegiatan">Kegiatan</option>
+                  <option value="Kolom Mahasiswa">Kolom Mahasiswa</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1"
+                  >Tanggal Publikasi</label
+                >
+                <input
+                  type="date"
+                  id="published_date"
+                  class="w-full border p-2 rounded"
+                />
+              </div>
+
+              <div>
                 <label class="block font-semibold mb-1">Cover Image URL</label>
                 <input
                   type="text"
@@ -91,6 +112,7 @@
                 <label class="block font-semibold mb-1"
                   >Atau Upload Gambar</label
                 >
+
                 <input
                   type="file"
                   id="cover_image_file"
@@ -113,7 +135,7 @@
 
               <button
                 type="submit"
-                class="bg-primary-800 text-white px-6 py-2 rounded hover:bg-primary-950"
+                class="bg-primary-950 text-white px-6 py-2 rounded hover:bg-primary-950"
               >
                 Publish Artikel
               </button>
@@ -145,10 +167,13 @@
         document.getElementById("title").value = data.title;
         document.getElementById("slug").value = data.slug;
         document.getElementById("author").value = data.author;
+        document.getElementById("category").value = data.category || "";
         document.getElementById("cover_image").value = data.cover_image;
         previewImg.src = data.cover_image;
         previewImg.classList.remove("hidden");
         quill.root.innerHTML = data.content;
+        document.getElementById("published_date").value =
+          data.published_date?.split("T")[0] || "";
       }
 
       document
@@ -174,9 +199,12 @@
           const title = document.getElementById("title").value;
           const slug = document.getElementById("slug").value;
           const author = document.getElementById("author").value;
+          const category = document.getElementById("category").value;
           const file = document.getElementById("cover_image_file").files[0];
           let cover_image = document.getElementById("cover_image").value;
           const content = quill.root.innerHTML;
+          const published_date =
+            document.getElementById("published_date").value;
 
           if (file) {
             const formData = new FormData();
@@ -197,7 +225,15 @@
             cover_image = result.url;
           }
 
-          const payload = { title, slug, author, cover_image, content };
+          const payload = {
+            title,
+            slug,
+            author,
+            category,
+            cover_image,
+            content,
+            published_date,
+          };
 
           if (id) {
             const { error } = await supabase
