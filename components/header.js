@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/about.html#profil" class="block px-4 py-2 hover:bg-teal-100">Profil Lulusan</a>
             <a href="/about.html#fasilitas" class="block px-4 py-2 hover:bg-teal-100">Fasilitas dan Sarana</a>
             <a href="/about.html#alumni" class="block px-4 py-2 hover:bg-teal-100">Kiprah Alumni</a>
-            <a href="/akreditas.html" class="block px-4 py-2 hover:bg-teal-100">Sertifikat Akreditasi</a>
+            <a href="/akreditasi.html" class="block px-4 py-2 hover:bg-teal-100">Sertifikat Akreditasi</a>
           </div>
         </div>
 
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/about.html#profil" class="block px-4 py-2 hover:bg-teal-100">Profil Lulusan</a>
             <a href="/about.html#fasilitas" class="block px-4 py-2 hover:bg-teal-100">Fasilitas dan Sarana</a>
             <a href="/about.html#alumni" class="block px-4 py-2 hover:bg-teal-100">Kiprah Alumni</a>
-            <a href="/akreditas.html" class="block px-4 py-2 hover:bg-teal-100">Sertifikat Akreditasi</a>
+            <a href="/akreditasi.html" class="block px-4 py-2 hover:bg-teal-100">Sertifikat Akreditasi</a>
         </div>
       </div>
 
