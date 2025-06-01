@@ -5,8 +5,8 @@ const tableBody = document.getElementById("article-list");
 async function loadArticles() {
   const { data: articles, error } = await supabase
     .from("articles")
-    .select("id, title, slug, author, category, created_at")
-    .order("created_at", { ascending: false });
+    .select("id, title, slug, author, category, published_date")
+    .order("published_date", { ascending: false });
 
   if (error) {
     console.error("Error fetching articles:", error);
@@ -21,7 +21,7 @@ async function loadArticles() {
 
   tableBody.innerHTML = "";
   articles.forEach((article) => {
-    const publishedDate = new Date(article.created_at).toLocaleDateString();
+    const publishedDate = new Date(article.published_date).toLocaleDateString();
     const row = document.createElement("tr");
     row.innerHTML = `
       <td class="border-b py-2">${article.title}</td>
