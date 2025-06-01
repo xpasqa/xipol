@@ -28,9 +28,14 @@
       <!-- Main Content -->
       <main class="flex-1 p-6 bg-gray-50">
         <div class="max-w-6xl mx-auto">
-          <h1 class="text-3xl font-bold text-primary-950 mb-6">
-            Daftar Artikel
-          </h1>
+          <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-primary-950">Daftar Artikel</h1>
+            <a
+              href="/admin/form.html"
+              class="bg-primary-950 text-white px-4 py-2 rounded hover:bg-primary-900"
+              >+ Tulis Artikel</a
+            >
+          </div>
 
           <div class="bg-white rounded-lg shadow p-6">
             <table class="w-full text-left text-sm">
@@ -38,6 +43,7 @@
                 <tr>
                   <th class="border-b py-2">Judul</th>
                   <th class="border-b py-2">Author</th>
+                  <th class="border-b py-2">Kategori</th>
                   <th class="border-b py-2">Published</th>
                   <th class="border-b py-2 w-48">Aksi</th>
                 </tr>

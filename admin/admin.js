@@ -5,7 +5,7 @@ const tableBody = document.getElementById("article-list");
 async function loadArticles() {
   const { data: articles, error } = await supabase
     .from("articles")
-    .select("id, title, slug, author, created_at")
+    .select("id, title, slug, author, category, created_at")
     .order("created_at", { ascending: false });
 
   if (error) {
@@ -26,6 +26,7 @@ async function loadArticles() {
     row.innerHTML = `
       <td class="border-b py-2">${article.title}</td>
       <td class="border-b py-2">${article.author || "-"}</td>
+      <td class="border-b py-2">${article.category || "-"}</td>
       <td class="border-b py-2">${publishedDate}</td>
       <td class="border-b py-2 space-x-2">
         <a href="/article.html?slug=${article.slug}" class="text-green-600 hover:underline text-sm" target="_blank">View</a>
