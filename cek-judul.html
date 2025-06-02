@@ -40,7 +40,7 @@
           class="flex-1 px-4 py-2 border border-gray-300 rounded"
         />
         <button
-          onclick="searchTitles()"
+          id="searchButton"
           class="bg-primary-950 text-white px-6 py-2 rounded hover:bg-primary-900"
         >
           Search
@@ -122,6 +122,11 @@
           if (event.key === "Enter") {
             searchTitles();
           }
+        });
+      document
+        .getElementById("searchButton")
+        .addEventListener("click", function () {
+          searchTitles();
         });
       // Render all on page load
       loadSkripsi();
