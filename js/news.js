@@ -66,25 +66,16 @@ async function loadPage(page) {
 function renderPagination(totalPages, currentPage) {
   paginationContainer.innerHTML = "";
 
-  const maxVisible = 9;
-  let startPage = Math.max(1, currentPage - Math.floor(maxVisible / 2));
-  let endPage = startPage + maxVisible - 1;
-
-  if (endPage > totalPages) {
-    endPage = totalPages;
-    startPage = Math.max(1, endPage - maxVisible + 1);
-  }
-
-  const createButton = (label, page, disabled = false, isActive = false) => {
+  const createButton = (label, page, disabled) => {
     const btn = document.createElement("button");
     btn.textContent = label;
-    btn.className = `px-3 py-1 rounded ${
-      isActive
-        ? "bg-primary-950 text-white"
-        : "bg-white border text-primary-950 hover:bg-gray-100"
-    } ${disabled ? "cursor-not-allowed opacity-50" : ""}`;
-    btn.disabled = disabled || isActive;
-    if (!disabled && !isActive) {
+    btn.className = `px-4 py-2 rounded ${
+      disabled
+        ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+        : "bg-primary-950 text-white hover:bg-primary-800"
+    }`;
+    btn.disabled = disabled;
+    if (!disabled) {
       btn.addEventListener("click", () => loadPage(page));
     }
     return btn;
@@ -93,32 +84,6 @@ function renderPagination(totalPages, currentPage) {
   paginationContainer.appendChild(
     createButton("Sebelumnya", currentPage - 1, currentPage === 1)
   );
-
-  if (startPage > 1) {
-    paginationContainer.appendChild(createButton("1", 1));
-    if (startPage > 2) {
-      const dots = document.createElement("span");
-      dots.textContent = "...";
-      dots.className = "px-2 text-gray-500";
-      paginationContainer.appendChild(dots);
-    }
-  }
-
-  for (let i = startPage; i <= endPage; i++) {
-    paginationContainer.appendChild(
-      createButton(i.toString(), i, false, i === currentPage)
-    );
-  }
-
-  if (endPage < totalPages) {
-    if (endPage < totalPages - 1) {
-      const dots = document.createElement("span");
-      dots.textContent = "...";
-      dots.className = "px-2 text-gray-500";
-      paginationContainer.appendChild(dots);
-    }
-    paginationContainer.appendChild(createButton(totalPages.toString(), totalPages));
-  }
 
   paginationContainer.appendChild(
     createButton("Berikutnya", currentPage + 1, currentPage === totalPages)
