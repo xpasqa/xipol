@@ -6,11 +6,13 @@
     Header set Expires 0
   </FilesMatch>
 
-# Jangan cache gambar (opsional)
-
-<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg)$">
-Header set Cache-Control "no-cache, no-store, must-revalidate"
-Header set Pragma "no-cache"
-Header set Expires 0
-</FilesMatch>
+  # Jangan cache gambar (opsional)
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </FilesMatch>
 </IfModule>
+
+# Arahkan error 404 ke halaman 404.html
+ErrorDocument 404 /404.html
