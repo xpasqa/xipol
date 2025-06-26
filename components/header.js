@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const header = `
-      <header class="bg-primary-950 shadow-sm relative z-50 text-white">
+      <header class="bg-primary-950 shadow-sm sticky top-0 z-50 text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
 
