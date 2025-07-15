@@ -76,8 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
               </button>
               <div class="ml-4 mt-1 hidden">
                 <a href="/infografis-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
-                <a href="/profil-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Profil Dosen</a>
-                <a href="/rekognisi-dosen.html#rekognisi" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen Sosiologi</a>
+                <a href="/dosen.html" class="block px-4 py-2 hover:bg-teal-100">Profil Dosen</a>
+                <a href="/rekognisi-dosen.html#rekognisi" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen</a>
                 <a href="/kode-etik-dosen.html#kodeetik" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
               </div>
             </div>
@@ -107,11 +107,11 @@ document.addEventListener("DOMContentLoaded", function () {
                </svg>
              </button>
              <div class="ml-4 mt-1 hidden">
-               <a href="/publikasi-ilmiah.html#citasi" class="block px-4 py-2 hover:bg-teal-100">Citasi Karya Dosen</a>
-               <a href="/publikasi-ilmiah.html#hki" class="block px-4 py-2 hover:bg-teal-100">HKI Dosen</a>
-               <a href="/publikasi-ilmiah.html#produk" class="block px-4 py-2 hover:bg-teal-100">Produk Prodi</a>
-               <a href="/publikasi-ilmiah.html#isbn" class="block px-4 py-2 hover:bg-teal-100">Buku ISBN Dosen</a>
-               <a href="/publikasi-ilmiah.html#integrasi" class="block px-4 py-2 hover:bg-teal-100">Integrasi Penelitian & Pembelajaran</a>
+               <a href="/citasi-karya-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Citasi Karya Dosen</a>
+               <a href="/hki-dosen.html" class="block px-4 py-2 hover:bg-teal-100">HKI Dosen</a>
+               <a href="/produk-prodi.html" class="block px-4 py-2 hover:bg-teal-100">Produk Prodi</a>
+               <a href="/buku-isbn.html" class="block px-4 py-2 hover:bg-teal-100">Buku ISBN Dosen</a>
+               <a href="/integrasi-penelitian-pembelajaran.html#integrasi" class="block px-4 py-2 hover:bg-teal-100">Integrasi Penelitian & Pembelajaran</a>
              </div>
            </div>
                        <a href="/pengabdian-masyarakat.html" class="block px-4 py-2 hover:bg-teal-100">Pengabdian Masyarakat</a>
@@ -221,8 +221,8 @@ document.addEventListener("DOMContentLoaded", function () {
   </button>
   <div class="ml-4 mt-1 hidden">
     <a href="/infografis-dosen.html"" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
-    <a href="/profil-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Profil Dosen</a>
-    <a href="/rekognisi-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen Sosiologi</a>
+    <a href="/dosen.html" class="block px-4 py-2 hover:bg-teal-100">Profil Dosen</a>
+    <a href="/rekognisi-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen</a>
     <a href="/kode-etik-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
   </div>
             <a href="/himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himpunan Mahasiswa</a>
