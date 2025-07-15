@@ -65,7 +65,22 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
           <div
             class="absolute left-0 top-full mt-2 w-48 bg-white text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
-            <a href="/dosen.html" class="block px-4 py-2 hover:bg-teal-100">Dosen</a>
+            <div class="relative">
+              <button
+                onclick="this.nextElementSibling.classList.toggle('hidden')"
+                class="w-full text-left px-4 py-2 hover:bg-teal-100 flex justify-between items-center">
+                Dosen
+                <svg class="w-4 h-4 ml-2 fill-current" viewBox="0 0 20 20">
+                  <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
+                </svg>
+              </button>
+              <div class="ml-4 mt-1 hidden">
+                <a href="/infografis-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
+                <a href="/profil-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Profil Dosen</a>
+                <a href="/rekognisi-dosen.html#rekognisi" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen Sosiologi</a>
+                <a href="/kode-etik-dosen.html#kodeetik" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
+              </div>
+            </div>
             <a href="/himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himpunan Mahasiswa</a>
             <a href="/alumni.html" class="block px-4 py-2 hover:bg-teal-100">Alumni</a>
             <a href="/polabs.html" class="block px-4 py-2 hover:bg-teal-100">Political Labs</a>            
@@ -82,10 +97,39 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
           <div
             class="absolute left-0 top-full mt-2 w-48 bg-white text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
-            <a href="/publikasi-ilmiah.html" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah</a>
-            <a href="/pengabdian-masyarakat.html" class="block px-4 py-2 hover:bg-teal-100">Pengabdian Masyarakat</a>
-            <a href="https://journal.uinsgd.ac.id/index.php/politicon" class="block px-4 py-2 hover:bg-teal-100">Jurnal Politcon</a>
-            <a href="https://journal.uinsgd.ac.id/index.php/candidate" class="block px-4 py-2 hover:bg-teal-100">Jurnal Candidate</a>            
+           <div class="relative">
+             <button
+               onclick="this.nextElementSibling.classList.toggle('hidden')"
+               class="w-full text-left px-4 py-2 hover:bg-teal-100 flex justify-between items-center">
+               Publikasi Ilmiah Dosen
+               <svg class="w-4 h-4 ml-2 fill-current" viewBox="0 0 20 20">
+                 <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
+               </svg>
+             </button>
+             <div class="ml-4 mt-1 hidden">
+               <a href="/publikasi-ilmiah.html#citasi" class="block px-4 py-2 hover:bg-teal-100">Citasi Karya Dosen</a>
+               <a href="/publikasi-ilmiah.html#hki" class="block px-4 py-2 hover:bg-teal-100">HKI Dosen</a>
+               <a href="/publikasi-ilmiah.html#produk" class="block px-4 py-2 hover:bg-teal-100">Produk Prodi</a>
+               <a href="/publikasi-ilmiah.html#isbn" class="block px-4 py-2 hover:bg-teal-100">Buku ISBN Dosen</a>
+               <a href="/publikasi-ilmiah.html#integrasi" class="block px-4 py-2 hover:bg-teal-100">Integrasi Penelitian & Pembelajaran</a>
+             </div>
+           </div>
+                       <a href="/pengabdian-masyarakat.html" class="block px-4 py-2 hover:bg-teal-100">Pengabdian Masyarakat</a>
+           <div class="relative">
+             <button
+               onclick="this.nextElementSibling.classList.toggle('hidden')"
+               class="w-full text-left px-4 py-2 hover:bg-teal-100 flex justify-between items-center">
+               Jurnal
+               <svg class="w-4 h-4 ml-2 fill-current" viewBox="0 0 20 20">
+                 <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
+               </svg>
+             </button>
+             <div class="ml-4 mt-1 hidden">
+               <a href="https://journal.uinsgd.ac.id/index.php/politicon" class="block px-4 py-2 hover:bg-teal-100">Jurnal Politcon</a>
+               <a href="https://journal.uinsgd.ac.id/index.php/candidate" class="block px-4 py-2 hover:bg-teal-100">Jurnal Candidate</a>
+             </div>
+           </div>
+          
             </div>
         </div>
 
@@ -167,7 +211,20 @@ document.addEventListener("DOMContentLoaded", function () {
           </svg>
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
-           <a href="/dosen.html" class="block px-4 py-2 hover:bg-teal-100">Dosen</a>
+           <button
+    class="w-full text-left px-4 py-2 hover:bg-teal-100 flex justify-between items-center"
+    onclick="this.nextElementSibling.classList.toggle('hidden')">
+    Dosen
+    <svg class="w-4 h-4 ml-2 fill-current" viewBox="0 0 20 20">
+      <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
+    </svg>
+  </button>
+  <div class="ml-4 mt-1 hidden">
+    <a href="/infografis-dosen.html"" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
+    <a href="/profil-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Profil Dosen</a>
+    <a href="/rekognisi-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen Sosiologi</a>
+    <a href="/kode-etik-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
+  </div>
             <a href="/himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himpunan Mahasiswa</a>
             <a href="/alumni.html" class="block px-4 py-2 hover:bg-teal-100">Alumni</a>
             <a href="/polabs.html" class="block px-4 py-2 hover:bg-teal-100">Political Labs</a>       
@@ -184,10 +241,36 @@ document.addEventListener("DOMContentLoaded", function () {
           </svg>
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
-            <a href="/publikasi-ilmiah.html" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah</a>
-            <a href="/pengabdian-masyarakat.html" class="block px-4 py-2 hover:bg-teal-100">Pengabdian Masyarakat</a>
+          <button
+            class="w-full text-left px-4 py-2 hover:bg-teal-100 flex justify-between items-center"
+            onclick="this.nextElementSibling.classList.toggle('hidden')">
+            Publikasi Ilmiah Dosen
+            <svg class="w-4 h-4 ml-2 fill-current" viewBox="0 0 20 20">
+              <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
+            </svg>
+          </button>
+          <div class="ml-4 mt-1 hidden">
+            <a href="/publikasi-ilmiah.html#citasi" class="block px-4 py-2 hover:bg-teal-100">Citasi Karya Dosen</a>
+            <a href="/publikasi-ilmiah.html#hki" class="block px-4 py-2 hover:bg-teal-100">HKI Dosen</a>
+            <a href="/publikasi-ilmiah.html#produk" class="block px-4 py-2 hover:bg-teal-100">Produk Prodi</a>
+            <a href="/publikasi-ilmiah.html#isbn" class="block px-4 py-2 hover:bg-teal-100">Buku ISBN Dosen</a>
+            <a href="/publikasi-ilmiah.html#integrasi" class="block px-4 py-2 hover:bg-teal-100">Integrasi Penelitian & Pembelajaran</a>
+          </div>
+
+          <a href="/pengabdian-masyarakat.html" class="block px-4 py-2 hover:bg-teal-100">Pengabdian Masyarakat</a>
+
+          <button
+            class="w-full text-left px-4 py-2 hover:bg-teal-100 flex justify-between items-center"
+            onclick="this.nextElementSibling.classList.toggle('hidden')">
+            Jurnal
+            <svg class="w-4 h-4 ml-2 fill-current" viewBox="0 0 20 20">
+              <path d="M5.25 7.5l4.5 4.5 4.5-4.5H5.25z"/>
+            </svg>
+          </button>
+          <div class="ml-4 mt-1 hidden">
             <a href="https://journal.uinsgd.ac.id/index.php/politicon" class="block px-4 py-2 hover:bg-teal-100">Jurnal Politcon</a>
-            <a href="https://journal.uinsgd.ac.id/index.php/candidate" class="block px-4 py-2 hover:bg-teal-100">Jurnal Candidate</a>   
+            <a href="https://journal.uinsgd.ac.id/index.php/candidate" class="block px-4 py-2 hover:bg-teal-100">Jurnal Candidate</a>
+          </div>
         </div>
       </div>
 
