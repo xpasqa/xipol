@@ -4,8 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
 
-      <!-- Logo -->
-      <a href="/index.html" class="font-semibold text-xl text-white">Ilmu Politik</a>
+     <!-- Logo -->
+      <a href="/index.html" class="flex items-center space-x-2 text-white">
+        <img src="/img/logo-ilmu-politik-2.png" alt="Logo" class="h-10" />
+        <span class="font-semibold text-xl">Ilmu Politik</span>
+      </a>
 
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex space-x-6 text-sm">
