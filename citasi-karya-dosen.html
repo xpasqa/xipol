@@ -32,6 +32,113 @@
       </div>
     </section>
 
+    <body class="bg-gray-50 text-gray-800 font-[Onest]">
+      <section class="py-10 px-4 max-w-4xl mx-auto">
+        <h2 class="text-xl font-semibold text-primary-950 mb-2">
+          Karya Ilmiah Dosen yang Disitasi 2020-2023
+        </h2>
+        <div class="flex gap-2 mb-6">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Karya Ilmiah Dosen"
+            class="flex-1 px-4 py-2 border border-gray-300 rounded"
+          />
+          <button
+            id="searchButton"
+            class="bg-primary-950 text-white px-6 py-2 rounded hover:bg-primary-900"
+          >
+            Search
+          </button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full border border-gray-300 text-sm text-left">
+            <thead class="bg-gray-100 text-gray-700">
+              <tr>
+                <th class="border px-4 py-2 w-[10%]">No</th>
+                <th class="border px-4 py-2 w-[30%]">Nama</th>
+                <th class="border px-4 py-2 w-[60%] text-right">Judul Artikel yang Disitasi (Jurnal, Volume, Tahun, Nomor, Halaman)</th>
+                <th class="border px-4 py-2 w-[15%] text-right">Jumlah Sitasi</th>
+              </tr>
+            </thead>
+            <tbody id="resultList" class="text-gray-800"></tbody>
+          </table>
+        </div>
+      </section>
+  
+      <script type="module">
+        import { supabase } from "./js/supabaseClient.js";
+  
+        let skripsiList = [];
+  
+        async function loadSkripsi() {
+          const { data, error } = await supabase
+            .from("-")
+            .select("*")
+            .order("tahun", { ascending: false });
+          if (error) {
+            console.error("Gagal mengambil data skripsi:", error);
+            return;
+          }
+          skripsiList = data;
+          renderList(skripsiList);
+        }
+  
+        function renderList(data) {
+          const resultList = document.getElementById("resultList");
+          resultList.innerHTML = "";
+          if (data.length === 0) {
+            resultList.innerHTML = `<tr><td colspan="3" class="px-4 py-2 text-gray-500 text-center">Tidak ada hasil ditemukan.</td></tr>`;
+            return;
+          }
+          data.forEach((item) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+              <td class="border px-4 py-2">${item.judul}</td>
+              <td class="border px-4 py-2">${item.author}</td>
+              <td class="border px-4 py-2 text-right">${item.tahun}</td>
+            `;
+            resultList.appendChild(row);
+          });
+        }
+  
+        function searchTitles() {
+          const input = document
+            .getElementById("searchInput")
+            .value.toLowerCase();
+          const filtered = skripsiList.filter(
+            (item) =>
+              item.judul.toLowerCase().includes(input) ||
+              item.author.toLowerCase().includes(input) ||
+              item.tahun.toString().includes(input)
+          );
+  
+          const resultList = document.getElementById("resultList");
+          if (filtered.length === 0) {
+            resultList.innerHTML = `<tr><td colspan="3" class="px-4 py-2 text-center text-gray-500">Tidak ada judul yang sama.</td></tr>`;
+          } else {
+            renderList(filtered);
+          }
+        }
+  
+        // Tambahkan event listener agar pencarian bisa dipicu dengan Enter
+        document
+          .getElementById("searchInput")
+          .addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+              searchTitles();
+            }
+          });
+        document
+          .getElementById("searchButton")
+          .addEventListener("click", function () {
+            searchTitles();
+          });
+        // Render all on page load
+        loadSkripsi();
+      </script>
+    </body>
+
     <section class="py-12 px-4 max-w-6xl mx-auto">
       <div class="grid md:grid-cols-2 gap-8"></div>
     </section>

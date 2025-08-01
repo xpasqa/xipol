@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alumni Ilmu Politik</title>
+    <link rel="stylesheet" href="dist/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tambahkan CDN Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-onest">
+    <div id="header"></div>
+    <script src="components/style.js"></script>
+    <script src="components/header.js?v=3"></script>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative h-[300px] bg-cover bg-center flex items-center justify-center text-center text-white"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1668706971199-37e30a4e6298?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      "
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div class="relative z-10 px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Alumni</h1>
+        <p class="text-lg text-gray-200">
+          Fakultas Ilmu Sosial dan Ilmu Politik UIN Bandung
+        </p>
+      </div>
+    </section>
+
+    <!-- Dosen Grid Section -->
+    <section class="container mx-auto px-4 py-16">
+      <div
+        id="dosen-container"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10"
+      >
+        <!-- Kartu dosen akan dimuat dari Supabase -->
+      </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+      <div class="container max-w-7xl mx-auto px-4"> 
+        <div class="flex flex-col items-center mb-12">
+          <h2 class="text-3xl font-bold text-primary-950 mb-4">
+            Career Development Center
+          </h2>
+          <div class="w-24 h-1 bg-primary-950 mb-8"></div>
+          <p class="text-lg text-gray-700 max-w-3xl text-center">
+            Memiliki tujuan untuk menjadi mediator yang baik antara para pencari kerja dengan perusahaan/instansi/industri 
+            yang sedang membutuhkan tenaga kerja. Dalam pelaksanaan semua kegiatan, 
+            CDC bermitra dengan perusahaan untuk memberikan manfaat bersama bagi semua pemangku kepentingan, 
+            serta membantu melakukan tracer study terhadap lulusan dan pengguna lulusan TSM. Selain itu, 
+            CDC UIN Sunan Gunung Djati bandung diharapkan mampu menjadi mitra terpercaya bagi perusahaan 
+            pengguna dan mahasiswa serta lulusan UIN Sunan Gunung Djati bandung. Tiga kegiatan utama yang 
+            dilakukan oleh CDC UIN Sunan Gunung Djati bandung adalah program persiapan karir (seminar dan training), 
+            Campus Hiring, dan tracer study.
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center mb-12">
+          <h2 class="text-3xl font-bold text-primary-950 mb-4">
+            Bantu Kami Dengan Mengisi Survei
+          </h2>
+          <div class="w-24 h-1 bg-primary-950 mb-8"></div>
+          <p class="text-lg text-gray-700 max-w-3xl text-center">
+            Prodi Ilmu Politik UIN Sunan Gunung Djati Bandung
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          
+          <!-- Survei Area 1 -->
+          <div
+            class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden shadow-lg hover-scale"
+          >
+            <div
+              class="md:w-1/3 bg-custom-primary flex items-center justify-center p-6"
+            >
+              <svg
+                class="w-16 h-16 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="md:w-2/3 p-6 items-center">
+              <h3 class="text-l font-semibold text-gray-800 mb-2">
+                Survei Layanan Akademik
+              </h3>
+            </div>
+          </div>
+
+          <!-- Survei Area 1 -->
+          <div
+            class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden shadow-lg hover-scale"
+          >
+            <div
+              class="md:w-1/3 bg-custom-primary flex items-center justify-center p-6"
+            >
+              <svg
+                class="w-16 h-16 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="md:w-2/3 p-6">
+              <h3 class="text-l font-semibold text-gray-800 mb-2">
+                Survei Visi dan Misi
+              </h3>
+            </div>
+          </div>
+
+          <!-- Survei Area 1 -->
+          <div
+            class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden shadow-lg hover-scale"
+          >
+            <div
+              class="md:w-1/3 bg-custom-primary flex items-center justify-center p-6"
+            >
+              <svg
+                class="w-16 h-16 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="md:w-2/3 p-6">
+              <h3 class="text-l font-semibold text-gray-800 mb-2">
+                Survei Good Governance
+              </h3>
+            </div>
+          </div>
+
+          <!-- Survei Area 1 -->
+          <div
+            class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden shadow-lg hover-scale"
+          >
+            <div
+              class="md:w-1/3 bg-custom-primary flex items-center justify-center p-6"
+            >
+              <svg
+                class="w-16 h-16 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="md:w-2/3 p-6">
+              <h3 class="text-l font-semibold text-gray-800 mb-2">
+                Survei Fasilitas Fisik dan Non Fisik
+              </h3>
+            </div>
+          </div>
+
+          <!-- Survei Area 1 -->
+          <div
+            class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden shadow-lg hover-scale"
+          >
+            <div
+              class="md:w-1/3 bg-custom-primary flex items-center justify-center p-6"
+            >
+              <svg
+                class="w-16 h-16 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="md:w-2/3 p-6">
+              <h3 class="text-l font-semibold text-gray-800 mb-2">
+                Survei Layanan Kemahasiswaan
+              </h3>
+            </div>
+          </div>
+
+          <!-- Survei Area 1 -->
+          <div
+            class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden shadow-lg hover-scale"
+          >
+            <div
+              class="md:w-1/3 bg-custom-primary flex items-center justify-center p-6"
+            >
+              <svg
+                class="w-16 h-16 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="md:w-2/3 p-6">
+              <h3 class="text-l font-semibold text-gray-800 mb-2">
+                Survei Dosen dan Tendik dalam SDM
+              </h3>
+            </div>
+          </div>
+
+          <!-- Survei Area 1 -->
+          <div
+            class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden shadow-lg hover-scale"
+          >
+            <div
+              class="md:w-1/3 bg-custom-primary flex items-center justify-center p-6"
+            >
+              <svg
+                class="w-16 h-16 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="md:w-2/3 p-6">
+              <h3 class="text-l font-semibold text-gray-800 mb-2">
+                Survei Kepuasan Kerjasama
+              </h3>
+            </div>
+          </div>
+
+          <!-- Survei Area 1 -->
+          <div
+            class="flex flex-col md:flex-row bg-gray-50 rounded-lg overflow-hidden shadow-lg hover-scale"
+          >
+            <div
+              class="md:w-1/3 bg-custom-primary flex items-center justify-center p-6"
+            >
+              <svg
+                class="w-16 h-16 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <div class="md:w-2/3 p-6">
+              <h3 class="text-l font-semibold text-gray-800 mb-2">
+                Survei Kepuasan Pengguna Lulusan
+              </h3>
+            </div>
+          </div>
+         
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pt-16">
+          <div
+            class="bg-gray-50 p-8 rounded-lg border-t-4 border-primary-950 shadow-lg hover:transform hover:-translate-y-2 transition-all duration-300"
+          >
+            <div
+              class="w-16 rounded-full bg-primary-100 flex items-center justify-center mb-6"
+            >
+              <!-- <div class="w-8 h-8 rounded-full bg-primary-950"></div> -->
+            </div>
+            <h3 class="text-xl font-bold text-primary-950 mb-4">Lulusan</h3>
+            
+            <a href="https://drive.google.com/drive/folders/1WKh9XFgrv953luRs8glepx4Y6iSomoM6"><p class="text-gray-700">
+              Untuk melihat Laporan Survei Tracer Study, Klik link berikut
+             </p></a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+   
+
+    <div id="footer"></div>
+    <script src="components/footer.js"></script>
+  </body>
+</html>
