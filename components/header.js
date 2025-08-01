@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex space-x-6 text-sm">
 
-              <a href="../xipol/index.html" class="hover:text-teal-400 transition">Home</a>
+              <a href="../index.html" class="hover:text-teal-400 transition">Home</a>
 
 
         <!-- About dengan Dropdown -->
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </a>
           <div
             class="absolute left-0 top-full mt-2 w-48 bg-white text-black rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
-            <a href="../xipol/kurikulum.html" class="block px-4 py-2 hover:bg-teal-100">Matrik Kurikulum</a>
+            <a href="../kurikulum.html" class="block px-4 py-2 hover:bg-teal-100">Matrik Kurikulum</a>
             <a href="/panduan-akademik.html" class="block px-4 py-2 hover:bg-teal-100">Panduan Akademik</a>
             <a href="/cek-plagiarisme.html" class="block px-4 py-2 hover:bg-teal-100">Cek Plagiarisme</a>
             <a href="/cek-judul.html" class="block px-4 py-2 hover:bg-teal-100">Cek Judul Skripsi</a>
@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="/kode-etik-dosen.html#kodeetik" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
               </div>
             </div>
-            <a href="../xipol/himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himpunan Mahasiswa</a>
-            <a href="../xipol/alumni.html" class="block px-4 py-2 hover:bg-teal-100">Alumni</a>
+            <a href="../himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himpunan Mahasiswa</a>
+            <a href="../alumni.html" class="block px-4 py-2 hover:bg-teal-100">Alumni</a>
             <a href="/polabs.html" class="block px-4 py-2 hover:bg-teal-100">Political Labs</a>            
             </div>
         </div>
@@ -107,8 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
                </svg>
              </button>
              <div class="ml-4 mt-1 hidden">
-               <a href="../xipol/citasi-karya-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Citasi Karya Dosen</a>
-               <a href="../xipol/hki-dosen.html" class="block px-4 py-2 hover:bg-teal-100">HKI Dosen</a>
+               <a href="../citasi-karya-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Citasi Karya Dosen</a>
+               <a href="../hki-dosen.html" class="block px-4 py-2 hover:bg-teal-100">HKI Dosen</a>
                <a href="/produk-prodi.html" class="block px-4 py-2 hover:bg-teal-100">Produk Prodi</a>
                <a href="/buku-isbn.html" class="block px-4 py-2 hover:bg-teal-100">Buku ISBN Dosen</a>
                <a href="/integrasi-penelitian-pembelajaran.html#integrasi" class="block px-4 py-2 hover:bg-teal-100">Integrasi Penelitian & Pembelajaran</a>
@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </svg>
         </button>
         <div class="mt-1 ml-4 space-y-1 hidden">
-         <a href="../xipol/kurikulum.html" class="block px-4 py-2 hover:bg-teal-100">Matrik Kurikulum</a>
+         <a href="../kurikulum.html" class="block px-4 py-2 hover:bg-teal-100">Matrik Kurikulum</a>
             <a href="/panduan-akademik.html" class="block px-4 py-2 hover:bg-teal-100">Panduan Akademik</a>
             <a href="/cek-plagiarisme.html" class="block px-4 py-2 hover:bg-teal-100">Cek Plagiarisme</a>
             <a href="/cek-judul.html" class="block px-4 py-2 hover:bg-teal-100">Cek Judul Skripsi</a>
