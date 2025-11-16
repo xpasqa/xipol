@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dosen Ilmu Politik</title>
+  <link rel="stylesheet" href="dist/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-onest">
+  <div id="header"></div>
+  <script src="components/style.js"></script>
+  <script src="components/header.js?v=3"></script>
+
+  <!-- Hero Section -->
+  <section id="home"
+    class="relative h-[300px] bg-cover bg-center flex items-center justify-center text-center text-white" style="
+        background-image: url('https://images.unsplash.com/photo-1668706971199-37e30a4e6298?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      ">
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative z-10 px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Dosen Ilmu POlitik</h1>
+      <p class="text-lg text-gray-200">
+        Program Studi Ilmu Politik FISIP UIN Bandung
+      </p>
+    </div>
+  </section>
+
+  <!-- Search and Filter Section -->
+  <section class="container mx-auto px-4 py-8">
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Search Bar -->
+        <div class="relative">
+          <input type="text" placeholder="Cari buku..."
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+          <svg class="absolute right-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+
+        <!-- Category Filter -->
+        <select
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+          <option value="">Semua Kategori</option>
+          <option value="politik">Ilmu Politik</option>
+          <option value="pemerintahan">Pemerintahan</option>
+          <option value="hubungan-internasional">Hubungan Internasional</option>
+          <option value="kebijakan-publik">Kebijakan Publik</option>
+          <option value="teori-politik">Teori Politik</option>
+        </select>
+
+        <!-- Author Filter -->
+        <select
+          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+          <option value="">Semua Penulis</option>
+          <option value="dr-ahmad">Dr. Ahmad Sutrisno</option>
+          <option value="prof-maria">Prof. Maria Sari</option>
+          <option value="dr-budi">Dr. Budi Prasetyo</option>
+          <option value="prof-siti">Prof. Siti Nurhaliza</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Books Grid Gallery -->
+  <section class="container mx-auto px-4 py-8">
+    <h2 class="text-3xl font-bold text-center mb-8">Koleksi Buku</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <!-- Book 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Teori Politik Kontemporer</h3>
+          <p class="text-sm text-gray-600 mb-3">Dr. Ahmad Sutrisno</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Demokrasi dan Partisipasi</h3>
+          <p class="text-sm text-gray-600 mb-3">Prof. Maria Sari</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Kebijakan Publik Indonesia</h3>
+          <p class="text-sm text-gray-600 mb-3">Dr. Budi Prasetyo</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 4 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Hubungan Internasional</h3>
+          <p class="text-sm text-gray-600 mb-3">Prof. Siti Nurhaliza</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 5 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Sistem Politik Indonesia</h3>
+          <p class="text-sm text-gray-600 mb-3">Dr. Ahmad Sutrisno</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 6 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Komunikasi Politik</h3>
+          <p class="text-sm text-gray-600 mb-3">Prof. Maria Sari</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 7 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Filsafat Politik</h3>
+          <p class="text-sm text-gray-600 mb-3">Dr. Budi Prasetyo</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 8 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Politik dan Pembangunan</h3>
+          <p class="text-sm text-gray-600 mb-3">Prof. Siti Nurhaliza</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 9 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Analisis Kebijakan</h3>
+          <p class="text-sm text-gray-600 mb-3">Dr. Ahmad Sutrisno</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 10 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Gerakan Sosial Politik</h3>
+          <p class="text-sm text-gray-600 mb-3">Prof. Maria Sari</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 11 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Otonomi Daerah</h3>
+          <p class="text-sm text-gray-600 mb-3">Dr. Budi Prasetyo</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 12 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Politik Global</h3>
+          <p class="text-sm text-gray-600 mb-3">Prof. Siti Nurhaliza</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 13 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Etika Politik</h3>
+          <p class="text-sm text-gray-600 mb-3">Dr. Ahmad Sutrisno</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 14 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Metodologi Penelitian Politik</h3>
+          <p class="text-sm text-gray-600 mb-3">Prof. Maria Sari</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 15 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Gender dan Politik</h3>
+          <p class="text-sm text-gray-600 mb-3">Dr. Budi Prasetyo</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Book 16 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?w=180&h=280&fit=crop" alt="Cover Buku"
+          class="w-full h-80 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-lg mb-2 text-gray-800">Politik Identitas</h3>
+          <p class="text-sm text-gray-600 mb-3">Prof. Siti Nurhaliza</p>
+          <div class="flex space-x-2">
+            <button
+              class="flex-1 bg-blue-600 text-white py-2 px-3 rounded text-sm hover:bg-blue-700 transition-colors">Detail</button>
+            <button
+              class="flex-1 bg-green-600 text-white py-2 px-3 rounded text-sm hover:bg-green-700 transition-colors">Beli</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+  <script src="components/footer.js"></script>
+  <!-- Google Translate init -->
+
+
+</body>
+
+</html>
