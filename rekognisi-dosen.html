@@ -9,6 +9,70 @@
       href="https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <style>
+      .rekognisi-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .rekognisi-table thead {
+        background: linear-gradient(90deg, #7f1d1d, #991b1b);
+        color: #ffffff;
+      }
+
+      .rekognisi-table th,
+      .rekognisi-table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #e5e7eb;
+        vertical-align: top;
+      }
+
+      .rekognisi-table th {
+        text-align: left;
+        font-weight: 600;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+
+      .rekognisi-table tbody tr:nth-child(even) {
+        background-color: #f9fafb;
+      }
+
+      .rekognisi-table tbody tr:hover {
+        background-color: #eef2ff;
+        transition: background-color 0.2s ease-in-out;
+      }
+
+      .rekognisi-table td:first-child {
+        text-align: center;
+        font-weight: 600;
+        color: #1f2937;
+      }
+
+      .rekognisi-table td:nth-child(5),
+      .rekognisi-table td:nth-child(6) {
+        text-align: center;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 768px) {
+        .rekognisi-table {
+          font-size: 12px;
+        }
+
+        .rekognisi-table th,
+        .rekognisi-table td {
+          padding: 8px;
+        }
+      }
+    </style>
   </head>
   <body class="bg-gray-50 text-gray-800 font-onest">
     <div id="header"></div>
@@ -34,7 +98,7 @@
 
     <section class="py-12 px-4 max-w-6xl mx-auto">
       <div class="grid md:grid-cols-2 gap-8"></div>
-          <table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse;width:100%;font-size:14px;">
+          <table class="rekognisi-table">
   <thead>
     <tr>
       <th>No.</th>
