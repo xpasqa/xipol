@@ -75,6 +75,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/panduan-akademik.html" class="block px-4 py-2 hover:bg-teal-100">Panduan Akademik</a>
             <a href="/cek-plagiarisme.html" class="block px-4 py-2 hover:bg-teal-100">Cek Plagiarisme</a>
             <a href="/cek-judul.html" class="block px-4 py-2 hover:bg-teal-100">Cek Judul Skripsi</a>
+            <a href="/sop.html" class="block px-4 py-2 hover:bg-teal-100">Standard Operating Procedure</a>
+
             </div>
         </div>
       
@@ -219,6 +221,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/panduan-akademik.html" class="block px-4 py-2 hover:bg-teal-100">Panduan Akademik</a>
             <a href="/cek-plagiarisme.html" class="block px-4 py-2 hover:bg-teal-100">Cek Plagiarisme</a>
             <a href="/cek-judul.html" class="block px-4 py-2 hover:bg-teal-100">Cek Judul Skripsi</a>
+           <a href="/sop.html" class="block px-4 py-2 hover:bg-teal-100">Standard Operating Procedure</a>
+
+            
         </div>
       </div>
 
