@@ -14,6 +14,7 @@
     <div id="header"></div>
     <script src="components/style.js"></script>
     <script src="components/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Hero Section -->
     <section
@@ -27,16 +28,418 @@
       <div class="relative z-10 px-4">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Infografis Dosen</h1>
         <p class="text-lg text-gray-200">
-          Fakultas Ilmu Sosial dan Ilmu Politik UIN Bandung
+          Program Studi Ilmu Politik Fakultas Ilmu Sosial dan Ilmu Politik UIN Bandung
+        </p>
+      </div>
+    </section>
+    
+    <!-- <section class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <div class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
+        <div class="bg-white shadow-lg rounded-xl p-6 w-full max-w-xl">
+          <h2 class="text-2xl font-bold mb-4 text-center">Dosen Berdasar Jabatan Fungsional</h2>
+          <canvas id="dosenChart" class="w-full h-64"></canvas>
+        </div>
+      
+        <script>
+          const ctx = document.getElementById('dosenChart').getContext('2d');
+          const dosenChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Guru Besar', 'Lektor Kepala', 'Lektor', 'Asisten Ahli', 'Total Dosen'],
+              datasets: [{
+                data: [6, 10, 11, 2, 29],
+                backgroundColor: [
+                  'rgba(16, 185, 129, 0.4)', 
+                  'rgba(239, 68, 68, 0.4)',  
+                  'rgba(59, 130, 246, 0.4)', 
+                  'rgba(234, 179, 8, 0.4)',  
+                  'rgba(249, 115, 22, 0.4)'  
+                ],
+                borderColor: [
+                  '#6EE7B7',
+                  '#FCA5A5',
+                  '#93C5FD',
+                  '#FDE68A',
+                  '#FDBA74'
+                ],
+                borderWidth: 1,
+                borderRadius: 8
+              }]
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                legend: { display: false },
+                tooltip: { enabled: true }
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  grid: {
+                    display: false   // ⬅ hide line horizontal
+                  }
+                },
+                x: {
+                  grid: {
+                    display: false   // ⬅ hide line vertikal
+                  }
+                }
+              }
+            }
+          });
+        </script>
+      </div>
+
+    </section> -->
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto py-16 md:py-24 px-6 md:px-16 lg:px-24">
+      <div class="bg-white flex items-center justify-center py-8 px-6 md:px-16 rounded-xl shadow-md">
+        <div class="w-full max-w-2xl">
+          <canvas id="dosenChart" class="w-full h-[320px]"></canvas>
+        </div>
+      </div>
+      
+      <div>
+        <h2 class="text-4xl  md:text-5xl font-bold text-primary-950 mb-4 text-left">
+          Dosen Berdasar<br>
+          Jabatan Fungsional
+        </h2>
+        <p class="text-md text-gray-600  mb-4">
+          Dosen dengan Jabatan Akademik Guru besar sebanyak
+          6 (enam) orang, lektor kepala sebanyak 10 (sepuluh)
+          orang, lektor sebanyak 11 (sebelas) orang, dan 2
+          (dua) sisanya bergelar asisten ahli.
         </p>
       </div>
     </section>
 
+
+    <section class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 max-w-7xl mx-auto py-16 md:py-24 px-6 md:px-16 lg:px-24">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-bold text-primary-950 mb-4 text-center">
+          Karya Ilmiah
+          Dosen
+        </h2>
+        <p class="text-md text-gray-600 mb-4 text-center">
+          Data Infografis 4 Tahun Terakhir (2020-2023)
+        </p>
+      </div>
+
+      <div class="bg-white flex items-center justify-center py-10 px-16 md:px-28 xl:px-36 rounded-xl shadow-md" 
+      style="padding-left: 40px; padding-right: 40px;">
+        <div class="w-full max-w-4xl">
+          <canvas id="karyaChart" class="w-full h-[420px]"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto py-16 md:py-24 px-6 md:px-16 lg:px-24">
+      <div class="bg-white flex items-center justify-center py-8 px-6 md:px-16 rounded-xl shadow-md">
+        <div class="w-full max-w-2xl">
+          <canvas id="pkmChart" class="w-full h-[320px]"></canvas>
+        </div>
+      </div>
+      
+      <div>
+        <h2 class="text-4xl  md:text-5xl font-bold text-primary-950 mb-4 text-left">
+          PKM<br>
+          Dosen
+        </h2>
+        <p class="text-md text-gray-600  mb-4">
+          Data Infografis 3 Tahun Terakhir (2021-2023).
+        </p>
+      </div>
+    </section>
+
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto py-16 md:py-24 px-6 md:px-16 lg:px-24">    
+      <div>
+        <h2 class="text-4xl  md:text-5xl font-bold text-primary-950 mb-4 text-left">
+          Penelitian<br>
+          Dosen
+        </h2>
+        <p class="text-md text-gray-600  mb-4">
+          Data Infografis 3 Tahun Terakhir (2021-2023).
+        </p>
+      </div>
+      <div class="bg-white flex items-center justify-center py-8 px-6 md:px-16 rounded-xl shadow-md">
+        <div class="w-full max-w-2xl">
+          <canvas id="penelitianChart" class="w-full h-[320px]"></canvas>
+        </div>
+      </div>
+    </section>
+
+    
     <section class="py-12 px-4 max-w-6xl mx-auto">
       <div class="grid md:grid-cols-2 gap-8"></div>
     </section>
 
     <div id="footer"></div>
     <script src="components/footer.js"></script>
+
+    <script>
+      const ctx = document.getElementById('dosenChart').getContext('2d');
+      
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: [
+            'Guru Besar',
+            'Lektor Kepala',
+            'Lektor',
+            'Asisten Ahli',
+            'Total Dosen'
+          ],
+          datasets: [{
+            data: [6, 10, 11, 2, 29],
+            backgroundColor: [
+              'rgba(34,197,94,0.35)',
+              'rgba(239,68,68,0.35)',
+              'rgba(59,130,246,0.35)',
+              'rgba(234,179,8,0.35)',
+              'rgba(249,115,22,0.35)'
+            ],
+            borderColor: [
+              '#22C55E',
+              '#EF4444',
+              '#3B82F6',
+              '#EAB308',
+              '#F97316'
+            ],
+            borderWidth: 1,
+            borderRadius: 6,
+            barThickness: 50
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                stepSize: 5,
+                color: '#6B7280'
+              },
+              grid: {
+                color: 'rgba(0,0,0,0.08)',
+                drawBorder: false
+              }
+            },
+            x: {
+              ticks: {
+                color: '#6B7280'
+              },
+              grid: {
+                display: false
+              }
+            }
+          }
+        }
+      });
+    </script>
+
+  <script>
+    const karya = document.getElementById('karyaChart').getContext('2d');
+
+    new Chart(karya, {
+      type: 'bar',
+      data: {
+        labels: [
+          'Jurnal penelitian tidak terakreditasi',
+          'Jurnal penelitian nasional terakreditasi',
+          'Jurnal penelitian internasional',
+          'Jurnal penelitian internasional bereputasi',
+          'Seminar wilayah/lokal/perguruan tinggi',
+          'Seminar nasional',
+          'Seminar internasional',
+          'Tulisan di media massa wilayah',
+          'Tulisan di media massa nasional',
+          'Tulisan di media massa internasional'
+        ],
+        datasets: [{
+          data: [97, 62, 17, 4, 23, 20, 25, 0, 4, 0],
+          backgroundColor: [
+            'rgba(34,197,94,0.35)',
+            'rgba(59,130,246,0.35)',
+            'rgba(239,68,68,0.35)',
+            'rgba(234,179,8,0.35)',
+            'rgba(168,85,247,0.35)',
+            'rgba(14,165,233,0.35)',
+            'rgba(249,115,22,0.35)',
+            'rgba(156,163,175,0.35)',
+            'rgba(236,72,153,0.35)',
+            'rgba(34,211,238,0.35)'
+          ],
+          borderColor: [
+            '#22C55E',
+            '#3B82F6',
+            '#EF4444',
+            '#EAB308',
+            '#A855F7',
+            '#0EA5E9',
+            '#F97316',
+            '#9CA3AF',
+            '#EC4899',
+            '#22D3EE'
+          ],
+          borderWidth: 1,
+          borderRadius: 6,
+          barThickness: 28
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          x: {
+            beginAtZero: true,
+            ticks: {
+              color: '#6B7280'
+            },
+            grid: {
+              color: 'rgba(0,0,0,0.08)',
+              drawBorder: false
+            }
+          },
+          y: {
+            ticks: {
+              color: '#6B7280'
+            },
+            grid: {
+              display: false
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+  <script>
+    const pkm = document.getElementById('pkmChart').getContext('2d');
+
+    new Chart(pkm, {
+      type: 'bar',
+      data: {
+        labels: [
+          'Perguruan Tingga & Mandiri',
+          'Lembaga Dalam Negeri (Diluar PT)',
+          'Lembaga Luar Negeri',
+        ],
+        datasets: [{
+          data: [24, 1, 3],
+          backgroundColor: [
+            'rgba(34,197,94,0.35)',
+            'rgba(59,130,246,0.35)',
+            'rgba(239,68,68,0.35)',
+          ],
+          borderColor: [
+            '#22C55E',
+            '#3B82F6',
+            '#EF4444',
+          ],
+          borderWidth: 1,
+          borderRadius: 6,
+          barThickness: 28
+        }]
+      },
+      options: {
+        indexAxis: 'y', 
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          x: {
+            beginAtZero: true,
+            ticks: {
+              color: '#6B7280'
+            },
+            grid: {
+              color: 'rgba(0,0,0,0.08)',
+              drawBorder: false
+            }
+          },
+          y: {
+            ticks: {
+              color: '#6B7280'
+            },
+            grid: {
+              display: false
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+<script>
+  const penelitian = document.getElementById('penelitianChart').getContext('2d');
+
+  new Chart(penelitian, {
+    type: 'bar',
+    data: {
+      labels: [
+        'Perguruan Tingga & Mandiri',
+        'Lembaga Dalam Negeri (Diluar PT)',
+        'Lembaga Luar Negeri',
+      ],
+      datasets: [{
+        data: [28, 3, 3],
+        backgroundColor: [
+          'rgba(34,197,94,0.35)',
+          'rgba(59,130,246,0.35)',
+          'rgba(239,68,68,0.35)',
+        ],
+        borderColor: [
+          '#22C55E',
+          '#3B82F6',
+          '#EF4444',
+        ],
+        borderWidth: 1,
+        borderRadius: 6,
+        barThickness: 28
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          ticks: {
+            color: '#6B7280'
+          },
+          grid: {
+            color: 'rgba(0,0,0,0.08)',
+            drawBorder: false
+          }
+        },
+        y: {
+          ticks: {
+            color: '#6B7280'
+          },
+          grid: {
+            display: false
+          }
+        }
+      }
+    }
+  });
+</script>
+
+      
   </body>
 </html>
