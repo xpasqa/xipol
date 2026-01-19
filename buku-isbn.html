@@ -33,10 +33,85 @@
     </section>
 
     <section class="py-12 px-4 max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8"></div>
+      <div class="grid md:grid-cols-1 gap-8">
+        <div class="overflow-x-auto w-full col-span-full">
+          <table class="w-full table-auto border-collapse border border-gray-300">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="border border-gray-300 px-4 py-2 text-left">No</th>
+                <th class="border px-4 py-2 text-left">Buku ber-ISBN, Book Chapter</th>
+                <th class="border px-4 py-2 text-left">Tahun</th>
+                <th class="border px-4 py-2 text-left">Keterangan</th>
+              </tr>
+            </thead>
+            <tbody id="isbnTable">
+              <tr class="bg-white">
+                <td class="border border-gray-300 px-4 py-2"></td>
+                <td class="border border-gray-300 px-4 py-2">Strategi Pengelolaan BUM Des Berbasis Pemberdayaan Masyarakat</td>
+                <td class="border border-gray-300 px-4 py-2">2023</td>
+                <td class="border border-gray-300 px-4 py-2">
+                  <a href="https://drive.google.com/file/d/1AftX96ib5AZ7_Gb3n6LNMAt9EB1EJvVX/view?usp=drive_link" target="_blank" class="text-primary-950 underline">ISBN Nomor: 978-623-459-320-4</a>
+                </td>
+              </tr>
+
+              <tr class="bg-white">
+                <td class="border border-gray-300 px-4 py-2"></td>
+                <td class="border border-gray-300 px-4 py-2">PENYUSUNAN INSTRUMEN MITIGASI RISIKO KONSENTRASI PEMBIAYAAN PERBANKAN SYARIAH DI INDONESIA</td>
+                <td class="border border-gray-300 px-4 py-2">2022</td>
+                <td class="border border-gray-300 px-4 py-2">
+                  <a href="hhttps://repository.penerbitwidina.com/publications/558772/penyusunan-instrumen-mitigasi-risiko-konsentrasi-pembiayaan-perbankan-syariah-di" target="_blank" class="text-primary-950 underline">ISBN Nomor : 978-623-459-302-0</a>
+                </td>
+              </tr>
+
+              <tr class="bg-white">
+                <td class="border border-gray-300 px-4 py-2"></td>
+                <td class="border border-gray-300 px-4 py-2">Model Pemberdayaan Wakaf Produktif Berbasis Analisis Kebermanfaatan</td>
+                <td class="border border-gray-300 px-4 py-2">2023</td>
+                <td class="border border-gray-300 px-4 py-2">
+                  <a href="https://books.uinsgd.ac.id/index.php/books/catalog/book/81" target="_blank" class="text-primary-950 underline">ISBN Nomor : 978-623-5485-53-9</a>
+                </td>
+              </tr>
+
+              <tr class="bg-white">
+                <td class="border border-gray-300 px-4 py-2"></td>
+                <td class="border border-gray-300 px-4 py-2">Studi Ilmu Al-Qur'an: Pendekatan Analitik</td>
+                <td class="border border-gray-300 px-4 py-2">2024</td>
+                <td class="border border-gray-300 px-4 py-2">
+                  <a href="https://drive.google.com/file/d/1tcRM6SS4WC2VcLymVrJMxmbPA0DidEY2/view?usp=sharing" target="_blank" class="text-primary-950 underline">ISBN Nomor: 978-623-6625-92-7</a>
+                </td>
+              </tr>
+
+              <tr class="bg-white">
+                <td class="border border-gray-300 px-4 py-2"></td>
+                <td class="border border-gray-300 px-4 py-2">Penguatan Pemahaman Pluralisme dalam Bingkai Kesundaan untuk Mahasiswa di Jawa Barat</td>
+                <td class="border border-gray-300 px-4 py-2">2021</td>
+                <td class="border border-gray-300 px-4 py-2">
+                  <a href="https://drive.google.com/file/d/1c5AXYi8mX1b4GzJnHC5EVr6ue_zWQPwg/view?usp=sharing" target="_blank" class="text-primary-950 underline">ISBN Nomor: 978-623-947-024-1</a>
+                </td>
+              </tr>
+
+              <tr class="bg-white">
+                <td class="border border-gray-300 px-4 py-2"></td>
+                <td class="border border-gray-300 px-4 py-2">Memelihara Harapan Demokrasi: Pemilu dan Partai Politik di Indonesia 1955-2024</td>
+                <td class="border border-gray-300 px-4 py-2">2025</td>
+                <td class="border border-gray-300 px-4 py-2">
+                  <a href="" target="_blank" class="text-primary-950 underline">ISBN Nomor: 978-623-8234-45-5</a>
+                </td>
+              </tr>
+            
+            </tbody>
+          </table>
+        </div>
+      </div>
     </section>
 
     <div id="footer"></div>
     <script src="components/footer.js"></script>
+
+    <script>
+      document.querySelectorAll('#isbnTable tr').forEach((row, index) => {
+        row.children[0].textContent = index + 1;
+      });
+    </script>
   </body>
 </html>

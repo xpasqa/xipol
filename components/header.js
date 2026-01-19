@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="/infografis-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
                 <a href="/dosen.html" class="block px-4 py-2 hover:bg-teal-100">Profil Dosen</a>
                 <a href="/rekognisi-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen</a>
-                <a href="/kode-etik.html" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
+                <a href="/kode-etik.html" class="blocks px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
               </div>
             </div>
             <a href="../himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himpunan Mahasiswa</a>
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
                <a href="/integrasi-penelitian-pembelajaran.html#integrasi" class="block px-4 py-2 hover:bg-teal-100">Integrasi Penelitian & Pembelajaran</a>
              </div>
            </div>
-                       <a href="/pengabdian-masyarakat.html" class="block px-4 py-2 hover:bg-teal-100">Pengabdian Masyarakat</a>
+                <a href="/pkm.html" class="block px-4 py-2 hover:bg-teal-100">Pengabdian Masyarakat</a>
            <div class="relative">
              <button
                onclick="this.nextElementSibling.classList.toggle('hidden')"
@@ -284,6 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
 
           <a href="/pengabdian-masyarakat.html" class="block px-4 py-2 hover:bg-teal-100">Pengabdian Masyarakat</a>
+          <a href="/publikasi-ilmiah-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah Mahasiswa</a>
 
           <button
             class="w-full text-left px-4 py-2 hover:bg-teal-100 flex justify-between items-center"
