@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="/publikasi-ilmiah.html#integrasi" class="block px-4 py-2 hover:bg-teal-100">Integrasi Penelitian & Pembelajaran</a>
           </div>
 
-          <a href="/pengabdian-masyarakat.html" class="block px-4 py-2 hover:bg-teal-100">Pengabdian Masyarakat</a>
+          <a href="/pkm.html" class="block px-4 py-2 hover:bg-teal-100">Pengabdian Masyarakat</a>
           <a href="/publikasi-ilmiah-mahasiswa.html" class="block px-4 py-2 hover:bg-teal-100">Publikasi Ilmiah Mahasiswa</a>
 
           <button
