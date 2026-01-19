@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <a href="/infografis-dosen.html" class="block px-4 py-2 hover:bg-teal-100">Infografis Dosen</a>
                 <a href="/dosen.html" class="block px-4 py-2 hover:bg-teal-100">Profil Dosen</a>
                 <a href="/rekognisi-dosen.html#rekognisi" class="block px-4 py-2 hover:bg-teal-100">Rekognisi Dosen</a>
-                <a href="/kode-etik-dosen.html#kodeetik" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
+                <a href="/kode-etik.html#kodeetik" class="block px-4 py-2 hover:bg-teal-100">Kode Etik Dosen dan Tendik</a>
               </div>
             </div>
             <a href="../himapol.html" class="block px-4 py-2 hover:bg-teal-100">Himpunan Mahasiswa</a>
