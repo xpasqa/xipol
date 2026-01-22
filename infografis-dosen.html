@@ -15,6 +15,8 @@
     <script src="components/style.js"></script>
     <script src="components/header.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
 
     <!-- Hero Section -->
     <section
@@ -32,65 +34,6 @@
         </p>
       </div>
     </section>
-    
-    <!-- <section class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-      <div class="bg-gray-100 min-h-screen flex items-center justify-center p-6">
-        <div class="bg-white shadow-lg rounded-xl p-6 w-full max-w-xl">
-          <h2 class="text-2xl font-bold mb-4 text-center">Dosen Berdasar Jabatan Fungsional</h2>
-          <canvas id="dosenChart" class="w-full h-64"></canvas>
-        </div>
-      
-        <script>
-          const ctx = document.getElementById('dosenChart').getContext('2d');
-          const dosenChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-              labels: ['Guru Besar', 'Lektor Kepala', 'Lektor', 'Asisten Ahli', 'Total Dosen'],
-              datasets: [{
-                data: [6, 10, 11, 2, 29],
-                backgroundColor: [
-                  'rgba(16, 185, 129, 0.4)', 
-                  'rgba(239, 68, 68, 0.4)',  
-                  'rgba(59, 130, 246, 0.4)', 
-                  'rgba(234, 179, 8, 0.4)',  
-                  'rgba(249, 115, 22, 0.4)'  
-                ],
-                borderColor: [
-                  '#6EE7B7',
-                  '#FCA5A5',
-                  '#93C5FD',
-                  '#FDE68A',
-                  '#FDBA74'
-                ],
-                borderWidth: 1,
-                borderRadius: 8
-              }]
-            },
-            options: {
-              responsive: true,
-              plugins: {
-                legend: { display: false },
-                tooltip: { enabled: true }
-              },
-              scales: {
-                y: {
-                  beginAtZero: true,
-                  grid: {
-                    display: false   // ⬅ hide line horizontal
-                  }
-                },
-                x: {
-                  grid: {
-                    display: false   // ⬅ hide line vertikal
-                  }
-                }
-              }
-            }
-          });
-        </script>
-      </div>
-
-    </section> -->
 
     <section class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto py-16 md:py-24 px-6 md:px-16 lg:px-24">
       <div class="bg-white flex items-center justify-center py-8 px-6 md:px-16 rounded-xl shadow-md">
@@ -121,7 +64,7 @@
           Dosen
         </h2>
         <p class="text-md text-gray-600 mb-4 text-center">
-          Data Infografis 4 Tahun Terakhir (2020-2023)
+          Data Infografis 4 Tahun Terakhir (2022-2025)
         </p>
       </div>
 
@@ -146,7 +89,7 @@
           Dosen
         </h2>
         <p class="text-md text-gray-600  mb-4">
-          Data Infografis 3 Tahun Terakhir (2021-2023).
+          Data Infografis 4 Tahun Terakhir (2022-2025).
         </p>
       </div>
     </section>
@@ -159,7 +102,7 @@
           Dosen
         </h2>
         <p class="text-md text-gray-600  mb-4">
-          Data Infografis 3 Tahun Terakhir (2021-2023).
+          Data Infografis 4 Tahun Terakhir (2022-2025).
         </p>
       </div>
       <div class="bg-white flex items-center justify-center py-8 px-6 md:px-16 rounded-xl shadow-md">
@@ -179,7 +122,7 @@
 
     <script>
       const ctx = document.getElementById('dosenChart').getContext('2d');
-      
+    
       new Chart(ctx, {
         type: 'bar',
         data: {
@@ -215,7 +158,17 @@
           responsive: true,
           maintainAspectRatio: false,
           plugins: {
-            legend: { display: false }
+            legend: { display: false },
+            datalabels: {
+              anchor: 'end',
+              align: 'top',
+              color: '#111827',
+              font: {
+                weight: 'bold',
+                size: 12
+              },
+              formatter: (value) => value
+            }
           },
           scales: {
             y: {
@@ -238,9 +191,11 @@
               }
             }
           }
-        }
+        },
+        plugins: [ChartDataLabels]
       });
     </script>
+    
 
   <script>
     const karya = document.getElementById('karyaChart').getContext('2d');
@@ -318,7 +273,8 @@
             }
           }
         }
-      }
+      },
+      plugins: [ChartDataLabels]
     });
   </script>
 
@@ -377,7 +333,8 @@
             }
           }
         }
-      }
+      },
+      plugins: [ChartDataLabels]
     });
   </script>
 
@@ -436,7 +393,8 @@
           }
         }
       }
-    }
+    },
+    plugins: [ChartDataLabels]
   });
 </script>
 
