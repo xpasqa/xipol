@@ -35,6 +35,15 @@
     </section>
 
     <section class="px-6 py-8 max-w-4xl mx-auto">
+      <img
+        src="img/polabs.jpeg"
+        alt="Political Laboratorium"
+        class="w-full h-56 md:h-72 object-cover rounded-xl mb-6"
+      />
+
+      <h2 class="text-3xl font-semibold mb-4">
+        Political Laboratorium
+      </h2>
       <h2 class="text-3xl font-semibold mb-4"></h2>
       <p class="mb-4 text-gray-700 leading-relaxed">
         Political Laboratorium adalah sebuah wadah penelitian dan pengembangan
@@ -118,8 +127,126 @@
               ilmu politik untuk memperkuat jaringan dan kualitas riset.
             </p>
           </div>
+          <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center text-center w-full">
+            <div class="text-4xl mb-3">📚</div>
+            <h3 class="text-xl font-semibold mb-2">
+              Coaching Clinic
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+              Coaching Clinic Mahasiswa–Dosen adalah forum pendampingan akademik yang mempertemukan mahasiswa dengan dosen untuk membahas pengembangan akademik dan keilmuan, seperti penulisan karya ilmiah, riset, lomba akademik, praktikum keahlian dan perencanaan studi.
+            </p>
+          </div>
         </div>
       </section>
+
+      <section class="mt-12">
+        <h2 class="text-3xl font-semibold mb-6 text-start">
+          Informasi Political Laboratorium
+        </h2>
+      
+        <div class="bg-white rounded-xl shadow">
+          <!-- Tab Header -->
+          <div class="flex border-b overflow-x-auto">
+            <button
+              class="tab-btn px-6 py-4 font-semibold text-primary-950 border-b-2 border-primary-950"
+              data-tab="tab-Modul"
+            >
+            Modul
+            </button>
+            <button
+              class="tab-btn px-6 py-4 font-semibold text-gray-500"
+              data-tab="tab-evaluasi"
+            >
+              Laporan Evaluasi
+            </button>
+            <button
+              class="tab-btn px-6 py-4 font-semibold text-gray-500"
+              data-tab="tab-sop"
+            >
+              SOP & SK
+            </button>
+            <button
+              class="tab-btn px-6 py-4 font-semibold text-gray-500"
+              data-tab="tab-dokumentasi"
+            >
+              Dokumentasi
+            </button>
+          </div>
+      
+          <!-- Tab Content -->
+          <div class="p-6">
+            
+            <div id="tab-Modul" class="tab-content">
+              <section class="max-w-7xl mx-auto px-6 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+                  <div class="rounded-xl overflow-hidden">
+                    <iframe
+                      src="https://drive.google.com/file/d/1gXpX4soC-J6FNCcTp_DxmBoK3IDhdPAx/preview"
+                      class="w-full h-[420px]"
+                      allow="autoplay">
+                    </iframe>
+                    <div class="p-3 font-semibold text-sm text-gray-800 text-start line-clamp-2">
+                      LAPORAN KEGIATAN DESA ANTI POLITIK UANG
+                    </div>
+                  </div>
+              
+                  <div class="rounded-xl overflow-hidden">
+                    <iframe
+                      src="https://drive.google.com/file/d/19dqELrkTjwkzLnM0wiCrC9SVaFak3FMf/preview"
+                      class="w-full h-[420px]"
+                      allow="autoplay">
+                    </iframe>
+                    <div class="p-3 font-semibold text-sm text-gray-800 text-start line-clamp-2">
+                      Laporan Pemantauan Pemilu 2024_Prodi Ilmu Politik UIN Bandung
+                    </div>
+                  </div>
+
+                  <div class="rounded-xl overflow-hidden">
+                    <iframe
+                      src="https://drive.google.com/file/d/1JT8cJtFW7ZFTjDC4_m_1NeEcU8o5co7K/view?usp=sharing"
+                      class="w-full h-[420px]"
+                      allow="autoplay">
+                    </iframe>
+                    <div class="p-3 font-semibold text-sm text-gray-800 text-start line-clamp-2">
+                      MODUL PEMANTAU PEMILU 2024_IPOL UIN Bandung.pdf
+                    </div>
+                  </div>
+              
+                </div>
+              </section>
+              
+            </div>
+      
+            <div id="tab-evaluasi" class="tab-content hidden">
+              <ul class="space-y-3 text-gray-700">
+                <li>🎙️ Podcast Politik</li>
+                <li>🕌 MASAGI (Majelis Selasa Pagi)</li>
+                <li>📚 Coaching Clinic Mahasiswa–Dosen</li>
+                <li>📊 Riset & Publikasi Ilmiah</li>
+              </ul>
+            </div>
+      
+            <div id="tab-sop" class="tab-content hidden">
+              <ul class="space-y-2 text-gray-700">
+                <li>🏛️ Politik & Pemerintahan</li>
+                <li>🌍 Politik Global & Kebijakan Publik</li>
+                <li>📈 Data Politik & Inovasi Digital</li>
+                <li>🗳️ Demokrasi & Partisipasi Politik</li>
+              </ul>
+            </div>
+      
+            <div id="tab-dokumentasi" class="tab-content hidden">
+              <p class="text-gray-700 leading-relaxed">
+                Political Laboratorium secara rutin menyelenggarakan seminar,
+                workshop, diskusi publik, serta riset kolaboratif yang melibatkan
+                dosen, mahasiswa, dan mitra eksternal.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+            
 
       <section class="mt-10 mb-12">
         <div
@@ -146,5 +273,31 @@
     <section class="mt-16"></section>
     <div id="footer"></div>
     <script src="components/footer.js"></script>
+
+    <script>
+      const tabButtons = document.querySelectorAll(".tab-btn");
+      const tabContents = document.querySelectorAll(".tab-content");
+    
+      tabButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const target = btn.getAttribute("data-tab");
+    
+          tabButtons.forEach((b) => {
+            b.classList.remove("text-primary-950", "border-primary-950", "border-b-2");
+            b.classList.add("text-gray-500");
+          });
+    
+          btn.classList.add("text-primary-950", "border-primary-950", "border-b-2");
+          btn.classList.remove("text-gray-500");
+    
+          tabContents.forEach((content) => {
+            content.classList.add("hidden");
+          });
+    
+          document.getElementById(target).classList.remove("hidden");
+        });
+      });
+    </script>    
+
   </body>
 </html>
