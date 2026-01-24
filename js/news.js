@@ -5,9 +5,9 @@ const container = document.getElementById("news-list");
 const paginationContainer = document.getElementById("pagination");
 
 let currentPage = 1;
-const articlesPerPage = 6;
+const articlesPerPage = 12;
 
-async function fetchArticles(page = 1, limit = 6) {
+async function fetchArticles(page = 1, limit = 12) {
   const from = (page - 1) * limit;
   const to = from + limit - 1;
 
